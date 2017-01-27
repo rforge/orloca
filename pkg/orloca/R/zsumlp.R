@@ -9,7 +9,7 @@ setGeneric("zsumlp", function(o, x=0, y=0, p=2) standardGeneric("zsumlp"))
 setMethod("zsumlp", "loca.p", function(o, x=0, y=0, p=2)
    {
      if (p>=1) return(sum(o@w*(abs(o@x-x)^p+abs(o@y-y)^p)^(1/p)))
-     else stop(paste(p, gettext("is not a valid value for p, use 1 <= p")))
+     else stop(paste(p, gettext("is not a valid value for p, use 1 <= p", domain = "R-orloca")))
    }
 )
 
@@ -24,6 +24,6 @@ setMethod("zsumlpgra", "loca.p", function(o, x=0, y=0, p=2, partial=F)
        n<- o@w*(abs(x-o@x)^p+abs(y-o@y)^p)^(1/p-1)
        c(sum(sign(x-o@x)*abs(x-o@x)^(p-1)*n, na.rm=partial), sum(sign(y-o@y)*abs(y-o@y)^(p-1)*n, na.rm=partial))
      }
-     else stop(paste(p, gettext("is not a valid value for p, use 1 <= p")))
+     else stop(paste(p, gettext("is not a valid value for p, use 1 <= p", domain = "R-orloca")))
    }
 )

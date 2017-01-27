@@ -1,20 +1,12 @@
+export(as.loca.p)
+export(as.loca.p.matrix)
+export(as.matrix.loca.p)
+export(contour.loca.p)
+export(loca.p)
+export(persp.loca.p)
+export(plot.loca.p)
+export(rloca.p)
+export(zsum)
+export(zsumgra)
+export(zsummin)
 import(methods)
-
-## Classess
-exportClasses(
-   loca.p
-              )
-
-## Methods
-exportMethods(
-   czsum, czsumgra, czsummin, print, summary, zsum, zsuml2, zsumlp, zsumgra, zsuml2gra, zsumlpgra, zsummin,zsuml2min, zsumlpmin, as.loca.p, as.data.frame, as.matrix
-              )
-
-## Functions
-export(
-       contour.loca.p,
-       loca.p,
-       persp.loca.p,
-       plot.loca.p,
-       rloca.p
-       )

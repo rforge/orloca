@@ -10,7 +10,7 @@ setMethod("zsum", "loca.p", function(o, x=0, y=0, lp=numeric(0))
    {
      if (length(lp) == 0) return(zsuml2(o=o, x=x, y=y))
      else if (lp >= 1) return(zsumlp(o=o, x=x, y=y, p=lp))
-     else stop(paste(lp, gettext("is not a valid value for lp, use 1 <= lp")))
+     else stop(paste(lp, gettext("is not a valid value for lp, use 1 <= lp", domain = "R-orloca")))
    }
 )
 
@@ -23,6 +23,6 @@ setMethod("zsumgra", "loca.p", function(o, x=0, y=0, lp=numeric(0), partial=F)
    {
      if (length(lp) == 0) return(zsuml2gra(o=o, x=x, y=y, partial=partial))
      else if (lp >= 1) return(zsumlpgra(o=o, x=x, y=y, p=lp, partial=partial))
-     else stop(paste(lp, gettext("is not a valid value for lp, use 1 <= lp")))
+     else stop(paste(lp, gettext("is not a valid value for lp, use 1 <= lp", domain = "R-orloca")))
    }
 )

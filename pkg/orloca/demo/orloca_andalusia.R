@@ -21,7 +21,7 @@ img = readPNG(file)
 plot(o, img=img, main=gettext('Andalusia'), xleft=xmin, ybottom=ymin, xright=xmax, ytop=ymax)
 
 # Plot of capistals of Andalusia and contour plot
-contour.loca.p(o, img=img, main=gettext('Andalusia'), xleft=xmin, ybottom=ymin, xright=xmax, ytop=ymax)
+contour(o, img=img, main=gettext('Andalusia'), xleft=xmin, ybottom=ymin, xright=xmax, ytop=ymax)
 
 # Look for optimal location
 andalusia.loca.p <- loca.p(andalusia$x[1:8], andalusia$y[1:8])

@@ -10,7 +10,7 @@
   This method provides a graphical representations of an object of class \code{loca.p}.
 }
 \usage{
-\method{plot}{loca.p}(x, xlab="", ylab="", main=gettext("Plot of loca.p object"),
+\method{plot}{loca.p}(x, xlab="", ylab="", main=gettext("Plot of loca.p object", domain = "R-orloca"),
    img=NULL, xlim=c(min(xleft, min(x@x)), max(xright, max(x@x))),
    ylim=c(min(ybottom, min(x@y)), max(ytop, max(x@y))),
    xleft=min(x@x), ybottom=min(x@y), xright=max(x@x),

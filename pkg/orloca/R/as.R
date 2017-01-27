@@ -21,7 +21,7 @@ setAs("matrix", "loca.p",
             {
               if (dim(from)[2] == 2) loca.p(x=from[,1], y=from[,2])
               else if (dim(from)[2] == 3) loca.p(x=from[,1], y=from[,2], w=from[,3])
-              else stop(paste(gettext("The second dimension of matrix must be 2 or 3 not ", dim(from)[2], ".\n")))
+              else stop(gettext("The second dimension of matrix must be 2 or 3.", domain = "R-orloca"))
             }
       )
 

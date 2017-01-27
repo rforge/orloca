@@ -16,11 +16,11 @@ setValidity("loca.p",
 	 if (length(object@x)==length(object@w) || length(object@w)==0)
 	    {
             if (!any(is.na(object@x)) && !any(is.na(object@y) && !any(is.na(object@w)))) TRUE
-            else paste(gettext("NA's values are not allowed"), sep="")
+            else paste(gettext("NA's values are not allowed", domain = "R-orloca"), sep="")
 	    }
-	 else paste(gettext("The length of w ("), length(object@w), gettext(") should be the same as the length of x, and y ("), length(object@x) ,gettext(") or 0"))
+	 else paste(gettext("The length of w (", domain = "R-orloca"), length(object@w), gettext(") should be the same as the length of x, and y (", domain = "R-orloca"), length(object@x) ,gettext(") or 0", domain = "R-orloca"))
          }
-      else paste(gettext("The length of x and y are different: "), length(object@x), ", ", length(object@y), sep="")
+      else paste(gettext("The length of x and y are different", domain = "R-orloca"), length(object@x), ", ", length(object@y))
       }
    )
 
@@ -61,7 +61,7 @@ setMethod("print", "loca.p",
    function(x, ...)
       {
       # To ensure that orloca is included in pot file
-      gettext("orloca", domain="orloca")
+      gettext("orloca", domain="R-orloca")
       print(summary(x), ...)
       invisible(x)
       }

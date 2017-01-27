@@ -15,23 +15,23 @@ plot(o)
 zsum(o, x=0, y=.5)
 
 # Contour plot the objective function
-contour.loca.p(o)
+contour(o)
 
 # 3D plot of the objective function
-persp.loca.p(o)
+persp(o)
 
 # 3D nice plot
-persp.loca.p(o, col=cm.colors(10000), border=FALSE, shade=TRUE, theta=50, phi=5, ltheta=135)
+persp(o, col=cm.colors(10000), border=FALSE, shade=TRUE, theta=50, phi=5, ltheta=135)
 
 # Another 3D plot
-persp.loca.p(o, col=cm.colors(10000), border=FALSE, shade=TRUE, theta=50, phi=5, ltheta=135, lphi=90)
+persp(o, col=cm.colors(10000), border=FALSE, shade=TRUE, theta=50, phi=5, ltheta=135, lphi=90)
 
 # Plots with a background image
 if (require('png')) {  
   file = system.file('img', 'spain_provinces.png', package='orloca')
   img = readPNG(file)
   plot(loca.p(x=.55, y=.62), img=img,  xlim=c(0,1), ylim=c(0,1), xleft=0, ybottom=0, xright=1, ytop=1)
-  contour.loca.p(loca.p(x=.55, y=.62), img=img,  xmin=0, ymin=0, xmax=1, ymax=1, xleft=0, ybottom=0, xright=1, ytop=1)
+  contour(loca.p(x=.55, y=.62), img=img,  xmin=0, ymin=0, xmax=1, ymax=1, xleft=0, ybottom=0, xright=1, ytop=1)
 }
 
 # Find the minimum
