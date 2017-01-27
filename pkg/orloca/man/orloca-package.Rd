@@ -14,8 +14,8 @@
 \preformatted{
 Package:   orloca
 Type:      Package
-Version:   3.1
-Date:      2010-04-21
+Version:   3.2
+Date:      2010-05-22
 License:   GPL (>= 2)
 }
 The packages provides a class (\code{loca.p}) that represents a location

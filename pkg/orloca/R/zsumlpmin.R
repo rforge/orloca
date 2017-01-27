@@ -11,7 +11,12 @@ function (o, x=0, y=0, p=2, max.iter=100, eps=1.e-3, verbose=FALSE, algorithm="w
        if (algorithm=="gradient" || algorithm=="g") zsumlpmingradient.loca.p(o, x, y, p, max.iter, eps, verbose)
        else if (algorithm=="search" || algorithm=="s") zsumlpminsearch.loca.p(o, x, y, p, max.iter, eps, verbose)
        else if (algorithm=="weiszfeld" || algorithm=="w") zsumlpminweiszfeld.loca.p(o, x, y, p, max.iter, eps, verbose)
-   else stop(paste(algorithm, gettext("is not a valid value for algorithm parameter.\n")))
+   else
+     {
+       zzsummin <- function(x) zsumlp(o, x[1], x[2], p=p)
+       par <- c(sum(o@x*o@w)/sum(o@w), sum(o@y*o@w)/sum(o@w)) 
+       optim(par, zzsummin, method=algorithm, control=list(maxit=max.iter))$par
+     }
      }
    else stop(paste(p, gettext("is not a valid value for p, use 1 <= p")))
    }

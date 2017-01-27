@@ -3,17 +3,25 @@ setGeneric("zsuml2min",
            function (o, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE, algorithm="weiszfeld") standardGeneric("zsuml2min")
 )
 
-# Gradient Method
+# General zsuml2min function
+# L-BFGS-B seems to be the best similar to weiszfeld
+# Take into account that weiszfeld is completely implemented in R
 setMethod("zsuml2min", "loca.p",
 function (o, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE, algorithm="weiszfeld")
    {
    if (algorithm=="gradient" || algorithm=="g") zsuml2mingradient.loca.p(o, x, y, max.iter, eps, verbose)
    else if (algorithm=="search" || algorithm=="s") zsuml2minsearch.loca.p(o, x, y, max.iter, eps, verbose)
    else if (algorithm=="weiszfeld" || algorithm=="w") zsuml2minweiszfeld.loca.p(o, x, y, max.iter, eps, verbose)
-   else stop(paste(algorithm, gettext("is not a valid value for algorithm parameter.\n")))
+   else
+     {
+       zzsummin <- function(x) zsum(o, x[1], x[2])
+       par <- c(sum(o@x*o@w)/sum(o@w), sum(o@y*o@w)/sum(o@w)) 
+       optim(par, zzsummin, method=algorithm, control=list(maxit=max.iter))$par
+     }
    }
 )
 
+# Gradient Method
 zsuml2mingradient.loca.p <- function (o, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE)
    {
    lambda <- 1;

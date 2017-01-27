@@ -20,7 +20,7 @@ zsumlpmin(o, x=0, y=0, p=2, max.iter=100, eps=1.e-3,
   \item{algorithm}{The method to be use. For this version of the package, the valid values
     are: "gradient" or "g" for a gradient based method, "search" or "s"
     for local search method, and "weiszfeld" or "w" for the weiszfeld
-    method. "weiszfeld" is the default value.}
+    method or any of the valid method for optim function, now "Nelder-Mead", "BFGS", "CG", "L-BFGS-B", "SANN". "weiszfeld" is the default value.}
 }
 \details{
 If \eqn{p<1} then \eqn{l_p} is not a norm, so only \eqn{p>=1} are valid values.
