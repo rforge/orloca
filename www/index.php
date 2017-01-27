@@ -49,7 +49,7 @@ MMM -->
 
 <p>Está disponible una demostración en línea en <a href="http://knuth.uca.es/shiny/orloca/">Localizaci&oacute;n con orloca</a>.</p>
 
-<p>M&aacute; informaci&oacute;n en la <a href="http://<?php echo $domain; ?>/projects/<?php echo $group_name; ?>/"><strong>p&aacute;gina resumen del proyecto</strong></a>.</p>
+<p>M&aacute;s informaci&oacute;n en la <a href="http://<?php echo $domain; ?>/projects/<?php echo $group_name; ?>/"><strong>p&aacute;gina resumen del proyecto</strong></a>.</p>
 
 </body>
 </html>

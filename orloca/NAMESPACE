@@ -1,0 +1,19 @@
+import(methods)
+
+## Classess
+exportClasses(
+   loca.p
+)
+
+## Methods
+exportMethods(
+   print, summary, zsum, zsumgra, zsummin
+)
+
+## Functions
+export(
+       contour.loca.p,
+       persp.loca.p,
+       plot.loca.p,
+       rloca.p
+)
