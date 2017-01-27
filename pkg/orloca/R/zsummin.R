@@ -1,26 +1,26 @@
 # This function returns the solution of the minimization problem
 setGeneric("zsummin",
-           function (o, x=0, y=0, n=100, eps=1.e-3, verbose=FALSE, algorithm="weiszfeld") standardGeneric("zsummin")
+           function (o, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE, algorithm="weiszfeld") standardGeneric("zsummin")
 )
 
 # Gradient Method
 setMethod("zsummin", "loca.p",
-function (o, x=0, y=0, n=100, eps=1.e-3, verbose=FALSE, algorithm="weiszfeld")
+function (o, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE, algorithm="weiszfeld")
    {
-   if (algorithm=="gradient" || algorithm=="g") zsummingradient.loca.p(o, x, y, n, eps, verbose)
-   else if (algorithm=="search" || algorithm=="s") zsumminsearch.loca.p(o, x, y, n, eps, verbose)
-   else if (algorithm=="weiszfeld" || algorithm=="w") zsumminweiszfeld.loca.p(o, x, y, n, eps, verbose)
+   if (algorithm=="gradient" || algorithm=="g") zsummingradient.loca.p(o, x, y, max.iter, eps, verbose)
+   else if (algorithm=="search" || algorithm=="s") zsumminsearch.loca.p(o, x, y, max.iter, eps, verbose)
+   else if (algorithm=="weiszfeld" || algorithm=="w") zsumminweiszfeld.loca.p(o, x, y, max.iter, eps, verbose)
    else stop(paste(algorithm, gettext("is not a valid value for algorithm parameter.\n")))
    }
 )
 
-zsummingradient.loca.p <- function (o, x=0, y=0, n=100, eps=1.e-3, verbose=FALSE)
+zsummingradient.loca.p <- function (o, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE)
    {
    lambda = 1;
    eps2 <- eps^2
    u<-c(x,y)
    z <- zsum(o, u[1], u[2])
-   for (i in 1:n)
+   for (i in 1:max.iter)
       {
       g<-zsumgra(o, u[1], u[2])
       if (is.na(g[1]) || is.na(g[2]))
@@ -47,14 +47,14 @@ zsummingradient.loca.p <- function (o, x=0, y=0, n=100, eps=1.e-3, verbose=FALSE
    u
    }
 
-zsumminsearch.loca.p <- function (o, x=0, y=0, n=100, eps=1.e-3, verbose=FALSE)
+zsumminsearch.loca.p <- function (o, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE)
    {
    eps2 <- eps^2
    lambda <- c(1, 1)
    u <- c(x, y)
    z <- zsum(o, x, y)
    nu <- u
-   for(i in 1:n)
+   for(i in 1:max.iter)
       {
       for (j in 1:2)
          {
@@ -87,12 +87,12 @@ zsumminsearch.loca.p <- function (o, x=0, y=0, n=100, eps=1.e-3, verbose=FALSE)
    u
    }
 
-zsumminweiszfeld.loca.p <- function (o, x=0, y=0, n=100, eps=1.e-3, verbose=FALSE)
+zsumminweiszfeld.loca.p <- function (o, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE)
    {
    lambda = 1;
    eps2 <- eps^2
    u<-c(x,y)
-   for (i in 1:n)
+   for (i in 1:max.iter)
       {
       n <- o@w/sqrt((u[1]-o@x)^2+(u[2]-o@y)^2)
       g <- c(sum((u[1]-o@x)*n), sum((u[2]-o@y)*n))

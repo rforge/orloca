@@ -1,0 +1,64 @@
+\name{rloca.p}
+\alias{rloca.p}
+
+\title{rloca.p random instances generator of loca.p class object}
+\description{
+  \code{rloca.p} function returns a random instance of \code{loca.p} class object at a given
+  rectangular region.
+}
+\usage{
+rloca.p(n, xmin=0, xmax=1, ymin=0, ymax=1, groups=numeric(0),
+xgmin=xmin, xgmax=xmax, ygmin=ymin, ygmax=ymax)
+}
+\arguments{
+  \item{n}{The number of demand points.}
+  \item{xmin}{Minimum value for the x coordinates of the demand points.}
+  \item{xmax}{Maximum value for the x coordinates of the demand points.}
+  \item{ymin}{Minimum value for the y coordinates of the demand points.}
+  \item{ymax}{Maximum value for the y coordinates of the demand points.}
+  \item{groups}{The number of (almost) equal size groups to generate, or a size
+    list of the groups to generate. In the second case \code{n} will be ignored.}
+  \item{xgmin}{Minimum value for the x coordinate of demand points with
+    respect to the group reference point.}
+  \item{xgmax}{Maximum value for the x coordinate of demand points with
+    respect to the group reference point.}
+  \item{ygmin}{Minimum value for the y coordinate of demand points with
+    respect to the group reference point.}
+  \item{ygmax}{Maximum value for the y coordinate of demand points with
+    respect to the group reference point.}
+}
+\details{
+  \code{n} must be at least 1.
+
+  \code{xmin} must be less or equal than \code{xmax}.
+
+  \code{ymin} must be less or equal than \code{ymax}.
+
+  If \code{groups} parameter is given then a reference point for each
+  group are generated. At second stage, the offset part for each demand point
+  are generated, and added to the reference point generated at the first
+  stage.
+
+  Note that \code{groups = 1} is not equivalent to the default value
+  \code{groups = numeric(0)}, because at the first case a reference
+  point are generated at first stage.
+}
+\value{
+  If the arguments are valid values, it returns a new object of class
+  \code{loca.p}, else it returns an error.
+}
+\examples{
+# A random loca.p object at unit square with 5 demand points
+rloca.p(5)
+
+# At another region
+rloca.p(10, xmin=-2, xmax=2, ymin=-2, ymax=2)
+
+# Five groups
+rloca.p(48, groups=5)
+
+# Three unequal groups
+rloca.p(1, groups=c(10, 7, 2))
+}
+\keyword{datagen}
+\seealso{See also \code{\link{orloca-package}} and \code{loca.p}.}

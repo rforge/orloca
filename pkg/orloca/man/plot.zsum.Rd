@@ -7,7 +7,7 @@
 
 \title{Plots of the min-sum objective function}
 \description{
-  Provides two graphical representations of min-sum function (\code{zsum}).
+  \code{contour} and \code{persp} provide two graphical representations of min-sum function (\code{zsum}).
 }
 \usage{
 \method{contour}{loca.p}(x, xmin=min(x@x), xmax=max(x@x), ymin=min(x@y), ymax=max(x@y), n=100, \ldots)
@@ -23,12 +23,11 @@
   \item{\ldots}{Other options.}
 }
 \value{
-  The function plots the graphics. \code{contour.loca.p} plots a contour
-  like graphics and \code{persp.loca.p} a 3D plot.
+  \code{contour.loca.p} plots a contour like graphics and \code{persp.loca.p} a 3D plot.
 }
 \examples{
-# An unweigthed new loca.p object
-loca <- new("loca.p", x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
+# An unweighted new loca.p object
+loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
 # The contour plot of loca object
 contour(loca)

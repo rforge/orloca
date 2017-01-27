@@ -3,17 +3,18 @@ import(methods)
 ## Classess
 exportClasses(
    loca.p
-)
+              )
 
 ## Methods
 exportMethods(
-   print, summary, zsum, zsumgra, zsummin
-)
+   czsum, czsumgra, czsummin, print, summary, zsum, zsumgra, zsummin, as.loca.p, as.data.frame, as.matrix
+              )
 
 ## Functions
 export(
        contour.loca.p,
+       loca.p,
        persp.loca.p,
        plot.loca.p,
        rloca.p
-)
+       )

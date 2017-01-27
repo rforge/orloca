@@ -2,7 +2,7 @@
 \alias{orloca-package}
 \alias{orloca}
 \docType{package}
-\encoding{utf8}
+\encoding{UTF-8}
 \title{
   The package deals with Operations Research LOCational Analysis models}
 \description{
@@ -18,7 +18,7 @@ Date:      2008-06-12
 License:   GPL (>= 2)
 }
 The packages provides a class (loca.p) that represents a location
-problem with a finite set of demand points over the plane. Also, it is posible to plot
+problem with a finite set of demand points over the plane. Also, it is possible to plot
 the points and the objective function. Such objective function is the
 total distances travel by all the customers to the service.
 
@@ -51,11 +51,11 @@ problem.\cr
 }
 
 \seealso{Para la \enc{versión}{version} en \enc{español}{espanol} del paquete instale y consulte
-  el paquete \code{\link[orloca-es]{orloca-es-package}}. (For spanish version of the packages install and look at \code{\link[orloca-es]{orloca-es-package}}).
+  el paquete \code{\link[orloca-es]{orloca-es-package}}. (For the spanish version of the packages install and look at \code{\link[orloca-es]{orloca-es-package}}).
 }
 \examples{
-# An unweigthed new loca.p object
-o <- new("loca.p", x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
+# An unweighted new loca.p object
+o <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
 # Compute the objective function at point c(3, 4)
 zsum(o, 3, 4)

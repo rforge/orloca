@@ -4,7 +4,7 @@ require(graphics)
 opar <- par(ask = dev.interactive(orNone = TRUE))
 
 # Creation of new loca.p object
-o <- new("loca.p", x = c(-1, 1, 0), y = c(0, 0, 1))
+o <- loca.p(x = c(-1, 1, 0), y = c(0, 0, 1))
 
 # Summaring and printing the object
 print(o)
