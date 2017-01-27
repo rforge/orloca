@@ -10,8 +10,10 @@
   \code{contour} and \code{persp} provide two graphical representations of min-sum function (\code{zsum}).
 }
 \usage{
-\method{contour}{loca.p}(x, lp=numeric(0), xmin=min(x@x), xmax=max(x@x),
-   ymin=min(x@y), ymax=max(x@y), n=100, \ldots)
+\method{contour}{loca.p}(x, lp=numeric(0), xmin=min(min(x@x), xleft),
+   xmax=max(max(x@x), xright), ymin=min(min(x@y), ybottom),
+   ymax=max(max(x@y), ytop), n=100, img=NULL, xleft=min(x@x),
+   ybottom=min(x@y), xright=max(x@x), ytop=max(x@y), \ldots)
 \method{persp}{loca.p}(x, lp=numeric(0), xmin=min(x@x), xmax=max(x@x),
    ymin=min(x@y), ymax=max(x@y), n=100, \ldots)
 }
@@ -23,6 +25,11 @@
   \item{ymin}{The minimum value for y axis.}
   \item{ymax}{The maximum value for y axis.}
   \item{n}{The number of divisions for grid.}
+  \item{img}{A raster image to plot on background.}
+  \item{xleft}{The left position of the image.}
+  \item{ybottom}{The bottom position of the image.}
+  \item{xright}{The right position of the image.}
+  \item{ytop}{The top position of the image.}
   \item{\ldots}{Other options.}
 }
 \value{

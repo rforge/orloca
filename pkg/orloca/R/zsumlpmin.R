@@ -1,16 +1,27 @@
 # This function returns the solution of the minimization problem
 setGeneric("zsumlpmin",
-           function (o, x=0, y=0, p=2, max.iter=100, eps=1.e-3, verbose=FALSE, algorithm="weiszfeld") standardGeneric("zsumlpmin")
+           function (o, x=0, y=0, p=2, max.iter=100, eps=1.e-3, verbose=FALSE, algorithm="weiszfeld", ...) standardGeneric("zsumlpmin")
 )
+
+# Optimization by ucminf function from ucminf package
+zsumlpminucminf.loca.p <- function (o, x=0, y=0, p=2, max.iter=100, eps=1.e-3, verbose=FALSE)
+   {
+     require('ucminf')
+     zzsum <- function(xx) zsumlp(o, xx[1], xx[2], p=lp)
+     sol <- ucminf(par = c(x, y), fn = zzsum, control=list(maxeval=max.iter, trace=verbose))
+     if (verbose) cat(gettext(sol$message));
+     return(sol$par)
+   }
 
 # Gradient Method
 setMethod("zsumlpmin", "loca.p",
-function (o, x=0, y=0, p=2, max.iter=100, eps=1.e-3, verbose=FALSE, algorithm="weiszfeld")
+function (o, x=0, y=0, p=2, max.iter=100, eps=1.e-3, verbose=FALSE, algorithm="weiszfeld", ...)
    {
      if (p>=1) {
        if (algorithm=="gradient" || algorithm=="g") zsumlpmingradient.loca.p(o, x, y, p, max.iter, eps, verbose)
        else if (algorithm=="search" || algorithm=="s") zsumlpminsearch.loca.p(o, x, y, p, max.iter, eps, verbose)
-       else if (algorithm=="weiszfeld" || algorithm=="w") zsumlpminweiszfeld.loca.p(o, x, y, p, max.iter, eps, verbose)
+       else if (algorithm=="weiszfeld" || algorithm=="w") zsumlpminweiszfeld.loca.p(o, x, y, p, max.iter, eps, verbose, ...)
+       else if (algorithm=="ucminf" || algorithm=="u") zsumlpminucminf.loca.p(o, x, y, p, max.iter, eps, verbose)
    else
      {
        zzsummin <- function(x) zsumlp(o, x[1], x[2], p=p)
@@ -64,12 +75,13 @@ zsumlpmingradient.loca.p <- function (o, x=0, y=0, p=2, max.iter=100, eps=1.e-3,
          lambda <- lambda/2
          }
       }
-   if (verbose && i == max.iter) cat(gettext("Maximun number of itereation reached.\n"));
+   if (verbose && i == max.iter) cat(gettext("Maximun number of iteration reached.\n"));
    u
    }
 
 zsumlpminsearch.loca.p <- function (o, x=0, y=0, p=2, max.iter=100, eps=1.e-3, verbose=FALSE)
    {
+   warning(gettext('Deprecated option for algorithm in zsummin.'))
    eps2 <- eps^2
    lambda <- c(1, 1)
    u <- c(x, y)
@@ -108,36 +120,51 @@ zsumlpminsearch.loca.p <- function (o, x=0, y=0, p=2, max.iter=100, eps=1.e-3, v
         break
         }
       }
-   if (verbose && i == max.iter) cat(gettext("Maximun number of itereation reached.\n"));
+   if (verbose && i == max.iter) cat(gettext("Maximun number of iteration reached.\n"));
    u
    }
 
-zsumlpminweiszfeld.loca.p <- function (o, x=0, y=0, p=2, max.iter=100, eps=1.e-3, verbose=FALSE)
+zsumlpminweiszfeld.loca.p <- function (o, x=0, y=0, p=2, max.iter=100, eps=1.e-3, verbose=FALSE, csmooth=.5)
    {
-   lambda = 1;
+   # Check smooth value
+   if (!identical(csmooth >= 0 && csmooth < 1, TRUE))
+     {
+       warning(paste(gettext("Value for smooth parameter non valid:"), smooth, gettext("Reseting to its default value.\n")))
+       csmooth <- .5
+     }
    eps2 <- eps^2
    u<-c(x,y)
-   for (i in 0:max.iter)
+   # Begin iterations in non smooth mode
+   .smooth = 0
+   i.i = 0
+   i.s = round(max.iter*.5)
+   for (j in 1:2)
+     {
+   for (i in i.i:i.s)
       {
-      if (verbose) cat(paste(gettext("Iter."),i, ": (", u[1], ",", u[2], ") ", zsumlp(o, u[1], u[2], p), "\n", sep=""))
+      if (verbose) cat(paste(gettext("Iter. "),i, ": (", u[1], ",", u[2], ") ", zsumlp(o, u[1], u[2], p), "\n", sep=""))
+      # Compute the distances to demand points
+      n <- (abs(u[1]-o@x)^p+abs(u[2]-o@y)^p)^(1/p)
+      # Check for demand point proximities
+      ii <- (n > eps)
+      # Compute the numerator of iteration
       n <- o@w*(abs(u[1]-o@x)^p+abs(u[2]-o@y)^p)^(1/p-1)
-      ii <- is.finite(n)
       # Compute the gradient
-      g <- c(sum(sign(u[1]-o@x)*abs(u[1]-o@x)^(p-1)*n), sum(sign(u[2]-o@y)*abs(u[2]-o@y)^(p-1)*n))
+      g <- c(sum(sign(u[1]-o@x[ii])*abs(u[1]-o@x[ii])^(p-1)*n[ii]), sum(sign(u[2]-o@y[ii])*abs(u[2]-o@y[ii])^(p-1)*n[ii]))
       mg <- sum(g^2)
       # Check stop rule
-      if (is.na(mg))
+      if (all(ii))
          {
          # A demand point stop rule
-         g <- c(sum((u[1]-o@x)*n, na.rm=T), sum((u[2]-o@y)*n, na.rm=T))
          q <- p/(p-1)
          mg <- sum(abs(g)^q)^(1/q)
-         if (mg < sum(o@w[!ii]))
+         if (mg < sum(o@w[!ii]) || mg < eps2)
            {
            if(verbose) cat(gettext("Optimality condition reached at demand point.\n"));
            break
            }
          }
+      # Generic stop rule
       else if (mg<eps2)
         {
         if(verbose) cat(gettext("Optimality condition reached.\n"));
@@ -147,9 +174,17 @@ zsumlpminweiszfeld.loca.p <- function (o, x=0, y=0, p=2, max.iter=100, eps=1.e-3
       nx <- dx*o@x
       dy <- n*abs(u[2]-o@y)^(p-2)
       ny <- dy*o@y
-      u[1] <- sum(nx[ii])/sum(dx[ii])
-      u[2] <- sum(ny[ii])/sum(dy[ii])
+      u <- .smooth * u + (1-.smooth) * c(sum(nx[ii])/sum(dx[ii]), sum(ny[ii])/sum(dy[ii]))
       }
-   if (verbose && i == max.iter) cat(gettext("Maximun number of itereation reached.\n"))
+      # Check if optimality condition had been reached
+      if (i != i.s) break
+      # Changing to smooth version
+      .smooth = csmooth
+      if (j == 1) warning(gettext("The algorithm seems converges very slowly. Trying now with the smooth version."))
+   i.i = i.s
+   i.s = max.iter
+
+ }
+   if (i == max.iter) warning.max.iter(max.iter)
    u
    }

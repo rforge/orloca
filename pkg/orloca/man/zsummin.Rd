@@ -9,7 +9,7 @@
 }
 \usage{
 zsummin(o, x=0, y=0, lp=numeric(0), max.iter=100, eps=1.e-3, 
-   verbose=FALSE, algorithm="weiszfeld")
+   verbose=FALSE, algorithm="weiszfeld", \ldots)
 }
 \arguments{
   \item{o}{An object of loca.p class.}
@@ -22,8 +22,12 @@ zsummin(o, x=0, y=0, lp=numeric(0), max.iter=100, eps=1.e-3,
   \item{verbose}{If TRUE the function produces detailed output.}
   \item{algorithm}{The algorithm to be use. For this version of the package, the valid values
     are: "gradient" or "g" for a gradient based method, "search" or "s"
-    for local search method, and "weiszfeld" or "w" for the weiszfeld
-    method or any of the valid method for optim function, now "Nelder-Mead", "BFGS", "CG", "L-BFGS-B", "SANN". "weiszfeld" is the default value.}
+    for local search method, "ucminf" or "u" for optimization with
+    ucminf from ucminf package, and "weiszfeld" or "w" for the weiszfeld
+    method or any of the valid method for optim function, now
+    "Nelder-Mead", "BFGS", "CG", "L-BFGS-B", "SANN". "weiszfeld" is the
+    default value.}
+  \item{\ldots}{Other options for optimization algorithms.}
 }
 \value{
   \code{zsummin} returns an array with the coordinates of the solution point.

@@ -15,7 +15,7 @@ setValidity("loca.p",
          {
 	 if (length(object@x)==length(object@w) || length(object@w)==0)
 	    {
-            if (sum(is.na(object@x))+sum(is.na(object@y)+sum(is.na(object@w)))==0) TRUE
+            if (!any(is.na(object@x)) && !any(is.na(object@y) && !any(is.na(object@w)))) TRUE
             else paste(gettext("NA's values are not allowed"), sep="")
 	    }
 	 else paste(gettext("The length of w ("), length(object@w), gettext(") should be the same as the length of x, and y ("), length(object@x) ,gettext(") or 0"))

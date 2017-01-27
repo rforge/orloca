@@ -7,15 +7,15 @@
   The package deals with Operations Research LOCational Analysis models}
 \description{
   This version of the package deals with the min-sum location problem, also known as
-  Fermat--Weber problem or center location problems. 
+  Fermat--Weber problem. 
  The min-sum location problem look for a point such that the weighted sum of the distances to the demand points are minimized.
 }
 \details{
 \preformatted{
 Package:   orloca
 Type:      Package
-Version:   3.2
-Date:      2010-05-22
+Version:   4.0
+Date:      2012-05-08
 License:   GPL (>= 2)
 }
 The packages provides a class (\code{loca.p}) that represents a location
@@ -44,13 +44,13 @@ Maintainer: Manuel Munoz-Marquez <manuel.munoz@uca.es>
 \section{Index:}{
   \tabular{ll}{
 \code{\link{loca.p}}: \tab loca.p class description.\cr
-\code{\link{rloca.p}}: \tab random instances of loca.p class objects.\cr
-\code{\link{zsum}}: \tab function to compute objective function
+\code{\link{rloca.p}}: \tab generates random instances of loca.p class objects.\cr
+\code{\link{zsum}}: \tab computes the objective function
   for min-sum location models.\cr
-\code{\link{zsummin}}: \tab function to look for the minimum for the optimization
+\code{\link{zsummin}}: \tab looks for the minimum for the optimization
 problem.\cr
-\code{\link{plot.loca.p}}: \tab to make plots of loca.p objects.\cr
-\code{\link{plot.zsum}}: \tab to make plots of objective function.\cr
+\code{\link{plot.loca.p}}: \tab makes plots of loca.p objects.\cr
+\code{\link{plot.zsum}}: \tab makes plots of objective function.\cr
 }
 }
 

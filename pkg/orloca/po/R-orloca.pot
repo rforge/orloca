@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-28 17:45+0200\n"
+"POT-Creation-Date: 2012-05-09 10:32+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,7 +21,7 @@ msgstr ""
 msgid "The second dimension of matrix must be 2 or 3 not "
 msgstr ""
 
-#: orloca/R/czsummin.R:13 orloca/R/zsuml2min.R:13 orloca/R/zsumlpmin.R:14
+#: orloca/R/czsummin.R:13
 msgid "is not a valid value for algorithm parameter.\n"
 msgstr ""
 
@@ -32,9 +33,8 @@ msgstr ""
 msgid "Randomizing"
 msgstr ""
 
-#: orloca/R/czsummin.R:50 orloca/R/czsummin.R:93 orloca/R/zsuml2min.R:25
-#: orloca/R/zsuml2min.R:96 orloca/R/zsuml2min.R:113 orloca/R/zsumlpmin.R:28
-#: orloca/R/zsumlpmin.R:99 orloca/R/zsumlpmin.R:117
+#: orloca/R/czsummin.R:50 orloca/R/czsummin.R:93 orloca/R/zsuml2min.R:44
+#: orloca/R/zsuml2min.R:116 orloca/R/zsumlpmin.R:44 orloca/R/zsumlpmin.R:116
 msgid "Iter."
 msgstr ""
 
@@ -66,26 +66,57 @@ msgstr ""
 msgid "Plot of loca.p object"
 msgstr ""
 
-#: orloca/R/plot.zsum.R:22 orloca/R/plot.zsum.R:44 orloca/R/zsum.R:13
+#: orloca/R/plot.loca.p.R:12 orloca/R/plot.zsum.R:30
+msgid "The given img object is not a raster image and cannot be coerce to it."
+msgstr ""
+
+#: orloca/R/plot.zsum.R:22 orloca/R/plot.zsum.R:52 orloca/R/zsum.R:13
 #: orloca/R/zsum.R:26 orloca/R/zsummin.R:12
 msgid "is not a valid value for lp, use 1 <= lp"
 msgstr ""
 
-#: orloca/R/zsuml2min.R:37 orloca/R/zsuml2min.R:127 orloca/R/zsumlpmin.R:40
-#: orloca/R/zsumlpmin.R:132
+#: orloca/R/zsuml2min.R:56 orloca/R/zsuml2min.R:161 orloca/R/zsumlpmin.R:56
+#: orloca/R/zsumlpmin.R:163
 msgid "Optimality condition reached at demand point.\n"
 msgstr ""
 
-#: orloca/R/zsuml2min.R:43 orloca/R/zsuml2min.R:99 orloca/R/zsuml2min.R:133
-#: orloca/R/zsumlpmin.R:46 orloca/R/zsumlpmin.R:102 orloca/R/zsumlpmin.R:138
+#: orloca/R/zsuml2min.R:62 orloca/R/zsuml2min.R:119 orloca/R/zsuml2min.R:168
+#: orloca/R/zsumlpmin.R:62 orloca/R/zsumlpmin.R:119 orloca/R/zsumlpmin.R:170
 msgid "Optimality condition reached.\n"
 msgstr ""
 
-#: orloca/R/zsuml2min.R:59 orloca/R/zsuml2min.R:103 orloca/R/zsuml2min.R:142
-#: orloca/R/zsumlpmin.R:62 orloca/R/zsumlpmin.R:106 orloca/R/zsumlpmin.R:148
-msgid "Maximun number of itereation reached.\n"
+#: orloca/R/zsuml2min.R:132 orloca/R/zsumlpmin.R:132
+msgid "Value for smooth parameter non valid:"
 msgstr ""
 
-#: orloca/R/zsumlp.R:12 orloca/R/zsumlp.R:27 orloca/R/zsumlpmin.R:16
+#: orloca/R/zsuml2min.R:132 orloca/R/zsumlpmin.R:132
+msgid "Reseting to its default value.\n"
+msgstr ""
+
+#: orloca/R/zsuml2min.R:145 orloca/R/zsumlpmin.R:145
+msgid "Iter. "
+msgstr ""
+
+#: orloca/R/zsuml2min.R:181 orloca/R/zsumlpmin.R:183
+msgid ""
+"The algorithm seems converges very slowly. Trying now with the smooth "
+"version."
+msgstr ""
+
+#: orloca/R/zsumlp.R:12 orloca/R/zsumlp.R:27 orloca/R/zsumlpmin.R:32
 msgid "is not a valid value for p, use 1 <= p"
+msgstr ""
+
+#: orloca/R/zsumlpmin.R:78 orloca/R/zsumlpmin.R:123
+msgid "Maximun number of iteration reached.\n"
+msgstr ""
+
+#: orloca/R/zsummin.R:18
+msgid "zsummin: Maximun number of iteration reached."
+msgstr ""
+
+#: orloca/R/zsummin.R:18
+msgid ""
+"The solution may be non-optimal.\n"
+"Perhaps, you could try increasing max.iter value."
 msgstr ""
