@@ -14,9 +14,9 @@
 \preformatted{
 Package:   orloca
 Type:      Package
-Version:   4.0
-Date:      2012-05-08
-License:   GPL (>= 2)
+Version:   4.1
+Date:      2012-12-26
+License:   GPL (>= 3)
 }
 The packages provides a class (\code{loca.p}) that represents a location
 problem with a finite set of demand points over the plane. Also, it is possible to plot

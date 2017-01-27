@@ -39,7 +39,7 @@ zsum(loca)
 # Evaluation of zsum at (1, 3)
 zsum(loca, 1, 3)
 
-# Compute the objective function at point (3, 4) using lp norm
+# Compute the objective function at point (3, 4) using lp norm and p = 2.5
 zsum(loca, 3, 4, lp=2.5)
 
 # The gradient function at (1,3)

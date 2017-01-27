@@ -7,7 +7,7 @@
   rectangular region.
 }
 \usage{
-rloca.p(n, xmin=0, xmax=1, ymin=0, ymax=1, groups=numeric(0),
+rloca.p(n, xmin=0, xmax=1, ymin=0, ymax=1, groups=0,
    xgmin=xmin, xgmax=xmax, ygmin=ymin, ygmax=ymax)
 }
 \arguments{
@@ -40,7 +40,7 @@ rloca.p(n, xmin=0, xmax=1, ymin=0, ymax=1, groups=numeric(0),
   stage.
 
   Note that \code{groups = 1} is not equivalent to the default value
-  \code{groups = numeric(0)}, because in the first case a reference
+  \code{groups = 0}, because in the first case a reference
   point are generated at the first stage.
 }
 \value{

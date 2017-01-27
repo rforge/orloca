@@ -1,13 +1,14 @@
 #
 # Random instances generator of loca.p class object
 #
-rloca.p <- function (n, xmin=0, xmax=1, ymin=0, ymax=1, groups=numeric(0), xgmin=xmin, xgmax=xmax, ygmin=ymin, ygmax=ymax)
+rloca.p <- function (n, xmin=0, xmax=1, ymin=0, ymax=1, groups=0, xgmin=xmin, xgmax=xmax, ygmin=ymin, ygmax=ymax)
    {
-     if (length(groups) == 0)
+     if (!is.numeric(groups)) stop(paste(gettext("Parameter groups must be numeric.\n")))
+     if (identical(groups, 0))
        {
          new("loca.p", x=runif(n, xmin, xmax), y=runif(n, ymin, ymax))
        }
-     else if (length(groups) == 1)
+     else if (identical(length(groups),  1))
        {
          x = numeric(0)
          y = numeric(0)

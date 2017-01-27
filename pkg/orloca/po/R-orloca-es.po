@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: orloca 2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-09 10:32+0200\n"
-"PO-Revision-Date: 2012-05-09 10:35+0100\n"
-"Last-Translator: Manuel Muñoz Márquez <manuel.munoz@uca.es>\n"
+"POT-Creation-Date: 2012-12-26 22:55+0100\n"
+"PO-Revision-Date: 2012-12-26 22:56+0100\n"
+"Last-Translator: Manuel Munoz-Marquez <manuel.munoz@uca.es>\n"
 "Language-Team: Spanish <manuel.munoz@uca.es>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -84,6 +84,10 @@ msgstr "El objeto img no es una imagen raster y no se puede convertir en una."
 #: orloca/R/zsummin.R:12
 msgid "is not a valid value for lp, use 1 <= lp"
 msgstr "no es un valor válido para lp, use 1<=lp"
+
+#: orloca/R/rloca.p.R:6
+msgid "Parameter groups must be numeric.\n"
+msgstr "El parámetro groups debe ser numérico.\n"
 
 #: orloca/R/zsuml2min.R:56
 #: orloca/R/zsuml2min.R:161

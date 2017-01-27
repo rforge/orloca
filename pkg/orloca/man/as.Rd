@@ -59,6 +59,8 @@ loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
 # Conversion to matrix
 m <- as.matrix(loca)
+
+# Show matrix
 m
 
 # Conversion from matrix
