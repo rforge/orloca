@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-18 12:50+0100\n"
+"POT-Creation-Date: 2010-04-21 22:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,6 +56,10 @@ msgstr ""
 
 #: orloca/R/loca.p.R:23
 msgid "The length of x and y are different: "
+msgstr ""
+
+#: orloca/R/loca.p.R:64
+msgid "orloca"
 msgstr ""
 
 #: orloca/R/plot.loca.p.R:4

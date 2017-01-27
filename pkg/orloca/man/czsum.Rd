@@ -6,7 +6,7 @@
 
 \title{czsum and czsumgra at orloca package}
 \description{
-  zsum and zsumgra functions computed at the given snow cluster.
+  \code{zsum} and \code{zsumgra} functions computed at the given snow cluster.
 }
 \usage{
 czsum(o, cluster, x=0, y=0)

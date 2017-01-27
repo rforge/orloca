@@ -60,6 +60,8 @@ setMethod("summary", "loca.p",
 setMethod("print", "loca.p",
    function(x, ...)
       {
+      # To ensure that orloca is included in pot file
+      gettext("orloca", domain="orloca")
       print(summary(x), ...)
       invisible(x)
       }
