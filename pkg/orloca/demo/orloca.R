@@ -43,7 +43,7 @@ sol
 zsum(p, sol[1], sol[2])
 
 # Timing the algorithm
-proc.time(zsummin(p))
+system.time(zsummin(p))
 
 # Restoring graphics parameters
 par(opar)

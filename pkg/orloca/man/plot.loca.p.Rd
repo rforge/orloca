@@ -10,7 +10,7 @@
   This method provides a graphical representations of an object of class \code{loca.p}.
 }
 \usage{
-\method{plot}{loca.p}(x, xlab="", ylab="", main="Plot of loca.p object", \ldots)
+\method{plot}{loca.p}(x, xlab="", ylab="", main=gettext("Plot of loca.p object"), \ldots)
 }
 \arguments{
   \item{x}{The \code{loca.p} object to plot.}
@@ -26,7 +26,7 @@
   The function plots the required graphics.
 }
 \examples{
-# An unweighted new loca.p object
+# A new unweighted loca.p object
 loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
 # The plot of loca object
@@ -35,4 +35,4 @@ plot(loca)
 \keyword{classes}
 \keyword{hplot}
 \seealso{See also \code{\link{orloca-package}},
-  \code{\link[orloca]{loca.p}} and \code{\link[orloca]{plot.zsum}}.}
+  \code{\link{loca.p}} and \code{\link{plot.zsum}}.}

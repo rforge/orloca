@@ -42,7 +42,7 @@
   
   The \code{matrix} to convert into \code{loca.p} must have at least two columns. 
   The first column will be consider as the x coordinates, the second as the y
-  coordinates, and the third (if available) as the values of w.
+  coordinates, and the third (if given) as the values of w.
 
   The \code{data.frame} to convert into \code{loca.p} must have at least
   an \code{x} column for x coordinates, and an \code{y} column for y
@@ -50,11 +50,11 @@
 }
 
 \value{
-  If the arguments have valid values, it returns a new object of new class.
+  If the arguments have valid values, it returns a new object of the new class.
   }
 
 \examples{
-# An unweighted new loca.p object
+# A new unweighted loca.p object
 loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
 # Conversion to matrix
@@ -66,4 +66,4 @@ as.loca.p(m)
 }
 \keyword{classes}
 \keyword{methods}
-\seealso{See also \code{\link[orloca]{loca.p}}.}
+\seealso{See also \code{\link{loca.p}}.}

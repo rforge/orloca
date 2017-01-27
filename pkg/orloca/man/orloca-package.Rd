@@ -6,23 +6,26 @@
 \title{
   The package deals with Operations Research LOCational Analysis models}
 \description{
-  This version of the package deals with the min-sum or center location problems. 
- The min-sum location problem search for a point such that the weighted sum of the distances to the demand points are minimized.
+  This version of the package deals with the min-sum location problem, also known as
+  Fermat--Weber problem or center location problems. 
+ The min-sum location problem look for a point such that the weighted sum of the distances to the demand points are minimized.
 }
 \details{
 \preformatted{
 Package:   orloca
 Type:      Package
-Version:   1.0
-Date:      2008-06-12
+Version:   3.0
+Date:      2010-04-01
 License:   GPL (>= 2)
 }
-The packages provides a class (loca.p) that represents a location
+The packages provides a class (\code{loca.p}) that represents a location
 problem with a finite set of demand points over the plane. Also, it is possible to plot
 the points and the objective function. Such objective function is the
-total distances travel by all the customers to the service.
+total weighted distances travel by all the customers to the service.
 
 For a demo, load the package with \code{library(orloca)}, and use \code{demo(orloca)}.
+
+The package is ready for internationalization. The authors ask for translated version of the .mo file to include in the package.
 }
 \author{
 Fernando Fernandez-Palacin <fernando.fernandez@uca.es> and Manuel
@@ -40,25 +43,31 @@ Maintainer: Manuel Munoz-Marquez <manuel.munoz@uca.es>
 
 \section{Index:}{
   \tabular{ll}{
-\code{\link[orloca]{loca.p}}: \tab loca.p class description.\cr
-\code{\link[orloca]{rloca.p}}: \tab random instances of loca.p class objects.\cr
-\code{\link[orloca]{zsum}}: \tab function to compute objective function for min-sum models.\cr
-\code{\link[orloca]{zsummin}}: \tab to find minimum for the optimization
+\code{\link{loca.p}}: \tab loca.p class description.\cr
+\code{\link{rloca.p}}: \tab random instances of loca.p class objects.\cr
+\code{\link{zsum}}: \tab function to compute objective function
+  for min-sum location models.\cr
+\code{\link{zsummin}}: \tab function to look for the minimum for the optimization
 problem.\cr
-\code{\link[orloca]{plot.loca.p}}: \tab to make plots of loca.p objects.\cr
-\code{\link[orloca]{plot.zsum}}: \tab to make plots of objective function.\cr
+\code{\link{plot.loca.p}}: \tab to make plots of loca.p objects.\cr
+\code{\link{plot.zsum}}: \tab to make plots of objective function.\cr
 }
 }
 
-\seealso{Para la \enc{versión}{version} en \enc{español}{espanol} del paquete instale y consulte
-  el paquete \code{\link[orloca-es]{orloca-es-package}}. (For the spanish version of the packages install and look at \code{\link[orloca-es]{orloca-es-package}}).
+\seealso{Para la \enc{versión}{version} en \enc{español}{espanol},
+  instale el paquete orloca.es  y consulte la ayuda sobre
+  \code{\link[orloca.es]{orloca.es-package}}. (For the spanish version,
+  install the package orloca.es and see the help about \code{\link[orloca.es]{orloca.es-package}}).
 }
 \examples{
-# An unweighted new loca.p object
+# A new unweighted loca.p object
 o <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
-# Compute the objective function at point c(3, 4)
+# Compute the objective function at point (3, 4)
 zsum(o, 3, 4)
+
+# Compute the objective function at point (3, 4) using lp norm
+zsum(o, 3, 4, lp=2.5)
 
 # Solve the optimization problem
 zsummin(o)
@@ -66,6 +75,6 @@ zsummin(o)
 # Contour plot
 contour.loca.p(o)
 
-# Execute a demo of the package
+# Make a demo of the package
 demo(orloca)
 }

@@ -11,8 +11,8 @@
 \title{loca.p class for Operations Research LOCational Analysis}
 \description{
   An object of class \code{loca.p} represents a weighted location
-  problem with a demand points set. 
- The \code{\link[orloca]{orloca-package}} is mainly devoted to deals with location problems.
+  problem with a finite demand points set. 
+ The \code{\link{orloca-package}} is mainly devoted to deals with location problems.
 }
 \section{Generators}{
    The main generator is \code{loca.p(x, y, w = numeric(0), label =
@@ -40,14 +40,14 @@
   }
 
 \examples{
-# An unweighted new loca.p object
+# A new unweighted loca.p object
 loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 # or
 loca <- new("loca.p", x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
 # An example with weights and name
-locb <- new("loca.p", x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1), w = c(1, 2, 1, 2),
-   label = "Weighted case")
+locb <- new("loca.p", x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1),
+   w = c(1, 2, 1, 2), label = "Weighted case")
 }
 \keyword{classes}
 \keyword{optimize}

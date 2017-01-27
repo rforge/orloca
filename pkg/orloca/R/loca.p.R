@@ -16,11 +16,11 @@ setValidity("loca.p",
 	 if (length(object@x)==length(object@w) || length(object@w)==0)
 	    {
             if (sum(is.na(object@x))+sum(is.na(object@y)+sum(is.na(object@w)))==0) TRUE
-            else paste("Valores NA no permitidos", sep="")
+            else paste(gettext("NA's values are not allowed"), sep="")
 	    }
-	 else paste("La longitud de w (", length(object@w), ") debe ser la de x, y (", length(object@x) ,") o 0")
+	 else paste(gettext("The length of w ("), length(object@w), gettext(") should be the same as the length of x, and y ("), length(object@x) ,gettext(") or 0"))
          }
-      else paste("Diferentes longitudes de x, y: ", length(object@x), ", ", length(object@y), sep="")
+      else paste(gettext("The length of x and y are different: "), length(object@x), ", ", length(object@y), sep="")
       }
    )
 
@@ -49,7 +49,7 @@ loca.p <- function(x, y, w = numeric(0), label="") new("loca.p", x, y, w, label)
 setMethod("summary", "loca.p",
    function(object, ...)
           {
-            c("label"=object@label, "n"=length(object@x), "xmin"=min(object@x), "xmean"=mean(object@x), "xmax"=max(object@x), "ymin"=min(object@y), "ymean"=mean(object@y), "ymax"=max(object@y))
+            c("label"=object@label, "n"=length(object@x), "xmin"=min(object@x), "xwmean"=weighted.mean(object@x,object@w), "xmax"=max(object@x), "ymin"=min(object@y), "ywmean"=weighted.mean(object@y,object@w), "ymax"=max(object@y))
             }
           )
           

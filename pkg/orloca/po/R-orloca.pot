@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-12-18 12:50+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: orloca/R/as.R:24
+msgid "The second dimension of matrix must be 2 or 3 not "
+msgstr ""
+
+#: orloca/R/czsummin.R:13 orloca/R/zsuml2min.R:13 orloca/R/zsumlpmin.R:14
+msgid "is not a valid value for algorithm parameter.\n"
+msgstr ""
+
+#: orloca/R/czsummin.R:33
+msgid "Singular point found at"
+msgstr ""
+
+#: orloca/R/czsummin.R:33
+msgid "Randomizing"
+msgstr ""
+
+#: orloca/R/czsummin.R:50 orloca/R/czsummin.R:93 orloca/R/zsuml2min.R:25
+#: orloca/R/zsuml2min.R:96 orloca/R/zsuml2min.R:113 orloca/R/zsumlpmin.R:28
+#: orloca/R/zsumlpmin.R:99 orloca/R/zsumlpmin.R:117
+msgid "Iter."
+msgstr ""
+
+#: orloca/R/loca.p.R:19
+msgid "NA's values are not allowed"
+msgstr ""
+
+#: orloca/R/loca.p.R:21
+msgid "The length of w ("
+msgstr ""
+
+#: orloca/R/loca.p.R:21
+msgid ") should be the same as the length of x, and y ("
+msgstr ""
+
+#: orloca/R/loca.p.R:21
+msgid ") or 0"
+msgstr ""
+
+#: orloca/R/loca.p.R:23
+msgid "The length of x and y are different: "
+msgstr ""
+
+#: orloca/R/plot.loca.p.R:4
+msgid "Plot of loca.p object"
+msgstr ""
+
+#: orloca/R/plot.zsum.R:22 orloca/R/plot.zsum.R:44 orloca/R/zsum.R:13
+#: orloca/R/zsum.R:26 orloca/R/zsummin.R:12
+msgid "is not a valid value for lp, use 1 <= lp"
+msgstr ""
+
+#: orloca/R/zsuml2min.R:37 orloca/R/zsuml2min.R:127 orloca/R/zsumlpmin.R:40
+#: orloca/R/zsumlpmin.R:132
+msgid "Optimality condition reached at demand point.\n"
+msgstr ""
+
+#: orloca/R/zsuml2min.R:43 orloca/R/zsuml2min.R:99 orloca/R/zsuml2min.R:133
+#: orloca/R/zsumlpmin.R:46 orloca/R/zsumlpmin.R:102 orloca/R/zsumlpmin.R:138
+msgid "Optimality condition reached.\n"
+msgstr ""
+
+#: orloca/R/zsuml2min.R:59 orloca/R/zsuml2min.R:103 orloca/R/zsuml2min.R:142
+#: orloca/R/zsumlpmin.R:62 orloca/R/zsumlpmin.R:106 orloca/R/zsumlpmin.R:148
+msgid "Maximun number of itereation reached.\n"
+msgstr ""
+
+#: orloca/R/zsumlp.R:12 orloca/R/zsumlp.R:27 orloca/R/zsumlpmin.R:16
+msgid "is not a valid value for p, use 1 <= p"
+msgstr ""

@@ -25,7 +25,7 @@ czsummingradient.loca.p <- function (o, cluster, x=0, y=0, max.iter=100, eps=1.e
    eps2 <- eps^2
    u <- c(x, y)
    z <- czsumaux(cluster, u)
-   for (i in 1:max.iter)
+   for (i in 0:max.iter)
       {
       g<-czsumgraaux(cluster, u)
       if (is.na(g[1]) || is.na(g[2]))
@@ -47,7 +47,7 @@ czsummingradient.loca.p <- function (o, cluster, x=0, y=0, max.iter=100, eps=1.e
          {
          lambda <- lambda/2
          }
-      if (verbose) cat(paste("Iter.",i, ": (", u[1], ",", u[2], ") ", z, "\n", sep=""))
+      if (verbose) cat(paste(gettext("Iter."),i, ": (", u[1], ",", u[2], ") ", z, "\n", sep=""))
       }
    u
    }
@@ -64,7 +64,7 @@ czsumminsearch.loca.p <- function (o, cluster, x=0, y=0, max.iter=100, eps=1.e-3
    u <- c(x, y)
    z <- czsumaux(cluster, u)
    nu <- u
-   for(i in 1:max.iter)
+   for(i in 0:max.iter)
       {
       for (j in 1:2)
          {
@@ -90,7 +90,7 @@ czsumminsearch.loca.p <- function (o, cluster, x=0, y=0, max.iter=100, eps=1.e-3
             }
 
          }
-      if (verbose) cat(paste("Iter.",i, ": (", u[1], ",", u[2], ") ", z, "\n", sep=""))
+      if (verbose) cat(paste(gettext("Iter."),i, ": (", u[1], ",", u[2], ") ", z, "\n", sep=""))
       if (sum(lambda^2) < eps2) break;
       }
    u
@@ -107,7 +107,7 @@ czsumminsearch.loca.p <- function (o, cluster, x=0, y=0, max.iter=100, eps=1.e-3
 #   lambda = 1;
 #   eps2 <- eps^2
 #   u<-c(x,y)
-#   for (i in 1:max.iter)
+#   for (i in 0:max.iter)
 #      {
 #      n <- o@w/sqrt((u[1]-o@x)^2+(u[2]-o@y)^2)
 #      g <- c(sum((u[1]-o@x)*n), sum((u[2]-o@y)*n))
@@ -120,7 +120,7 @@ czsumminsearch.loca.p <- function (o, cluster, x=0, y=0, max.iter=100, eps=1.e-3
 #      u[1] <- sum(n*o@x)/sum(n)
 #      u[2] <- sum(n*o@y)/sum(n)
 #      if (sum(g^2)<eps2) break;
-#      if (verbose) cat(paste("Iter.",i, ": (", u[1], ",", u[2], ") ", zsum(o, u[1], u[2]), "\n", sep=""))
+#      if (verbose) cat(paste(gettext("Iter."),i, ": (", u[1], ",", u[2], ") ", zsum(o, u[1], u[2]), "\n", sep=""))
 #      }
 #   u
 #   }

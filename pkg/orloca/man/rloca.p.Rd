@@ -8,7 +8,7 @@
 }
 \usage{
 rloca.p(n, xmin=0, xmax=1, ymin=0, ymax=1, groups=numeric(0),
-xgmin=xmin, xgmax=xmax, ygmin=ymin, ygmax=ymax)
+   xgmin=xmin, xgmax=xmax, ygmin=ymin, ygmax=ymax)
 }
 \arguments{
   \item{n}{The number of demand points.}
@@ -16,8 +16,8 @@ xgmin=xmin, xgmax=xmax, ygmin=ymin, ygmax=ymax)
   \item{xmax}{Maximum value for the x coordinates of the demand points.}
   \item{ymin}{Minimum value for the y coordinates of the demand points.}
   \item{ymax}{Maximum value for the y coordinates of the demand points.}
-  \item{groups}{The number of (almost) equal size groups to generate, or a size
-    list of the groups to generate. In the second case \code{n} will be ignored.}
+  \item{groups}{The number of (almost) equal size groups to generate, or
+    a list size of the groups to generate. In the second case \code{n} will be ignored.}
   \item{xgmin}{Minimum value for the x coordinate of demand points with
     respect to the group reference point.}
   \item{xgmax}{Maximum value for the x coordinate of demand points with
@@ -34,18 +34,18 @@ xgmin=xmin, xgmax=xmax, ygmin=ymin, ygmax=ymax)
 
   \code{ymin} must be less or equal than \code{ymax}.
 
-  If \code{groups} parameter is given then a reference point for each
+  If \code{groups} parameter is given, then a reference point for each
   group are generated. At second stage, the offset part for each demand point
   are generated, and added to the reference point generated at the first
   stage.
 
   Note that \code{groups = 1} is not equivalent to the default value
-  \code{groups = numeric(0)}, because at the first case a reference
-  point are generated at first stage.
+  \code{groups = numeric(0)}, because in the first case a reference
+  point are generated at the first stage.
 }
 \value{
-  If the arguments are valid values, it returns a new object of class
-  \code{loca.p}, else it returns an error.
+  If the arguments are valid values, it returns a new object of
+  \code{loca.p} class, else it returns an error.
 }
 \examples{
 # A random loca.p object at unit square with 5 demand points

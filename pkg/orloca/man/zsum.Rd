@@ -9,23 +9,28 @@
   The objective function and the gradient function for the min-sum location problem.
 }
 \usage{
-zsum(o, x=0, y=0)
-zsumgra(o, x=0, y=0)
+zsum(o, x=0, y=0, lp=numeric(0))
+zsumgra(o, x=0, y=0, lp=numeric(0), partial=F)
 }
 \arguments{
   \item{o}{An object of \code{loca.p} class.}
   \item{x}{The x coordinate of the point to be evaluated.}
   \item{y}{The y coordinate of the point to be evaluated.}
+  \item{lp}{If given, then \eqn{l_p} norm will be used instead of the
+    Euclidean norm.}
+  \item{partial}{If (x,y) is a demand point \code{partial=T} means
+      ignore such point to compute the gradient. This option is mainly
+      for internal use.}
 }
 \value{
   \code{zsum} returns the objective function of the min-sum location
   problem, \eqn{\sum_{a_i \in o} w_i d(a_i, (x,y))}, where \eqn{d(a_i, (x,y))} gives the
-  euclidean distances between \eqn{a_i} and \eqn{(x,y)}. 
+  euclidean or the \eqn{l_p} distances between \eqn{a_i} and the point \eqn{(x,y)}. 
 
   \code{zsumgra} returns the gradient vector of the function \code{zsum}.
 }
 \examples{
-# An unweighted new loca.p object
+# A new unweighted loca.p object
 loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
 # Evaluation of zsum at (0, 0)
@@ -34,11 +39,14 @@ zsum(loca)
 # Evaluation of zsum at (1, 3)
 zsum(loca, 1, 3)
 
-# The gradient function
+# Compute the objective function at point (3, 4) using lp norm
+zsum(loca, 3, 4, lp=2.5)
+
+# The gradient function at (1,3)
 zsumgra(loca, 1, 3)
 }
 \keyword{classes}
 \keyword{optimize}
 \seealso{
-  See also \code{\link{orloca-package}} and \code{\link[orloca]{zsummin}}.
+  See also \code{\link{orloca-package}} and \code{\link{zsummin}}.
   }

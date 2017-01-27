@@ -3,11 +3,10 @@
 \alias{czsummin,loca.p-method}
 
 \title{czsummin at orloca package}
-\description{
-  Solve the min-sum location problem for a given loca.p class object.
-}
+\description{\code{czsummin} is the cluster version of the function \code{zsummin}.}
 \usage{
-czsummin(o, cluster, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE, algorithm="gradient")
+czsummin(o, cluster, x=0, y=0, max.iter=100, eps=1.e-3, 
+   verbose=FALSE, algorithm="gradient")
 }
 \arguments{
   \item{o}{An object of loca.p class.}
@@ -16,18 +15,18 @@ czsummin(o, cluster, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE, algorithm
   \item{y}{The y coordinate of the starting point.}
   \item{max.iter}{Maximum number of iterations allowed.}
   \item{eps}{The module of the gradient in the stop rule.}
-  \item{verbose}{If TRUE the function produces detailed output.}
-  \item{algorithm}{The method to be use. At the moment, the valid values
-    are: "gradient" or "g" for a gradient based method, and "search" or "s"
+  \item{verbose}{If TRUE then the function produces detailed output.}
+  \item{algorithm}{The algorithm to be use. For this version of the package, the valid values
+    are: "gradient" or "g" for a gradient based algorithm, and "search" or "s"
     for local search method. "gradient" is the default value.}
 }
 \value{
   \code{czsummin} returns an array with the coordinates of the solution point.
 
-  These computation are made at the given cluster.
+  These computation are made at the given snow cluster.
 }
 %\examples{
-%# An unweighted new loca.p object
+%# A new unweighted loca.p object
 %loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 %
 %# Compute the minimum
@@ -44,5 +43,5 @@ czsummin(o, cluster, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE, algorithm
 \seealso{
   See \url{http://www.stat.uiowa.edu/~luke/R/cluster/cluster.html} for information about computers clusters.
 
-  See also \code{\link[orloca-package]{zsummin}}, \code{\link[orloca]{loca.p}} and \code{\link[orloca]{zsum}}.
+  See also \code{\link{zsummin}}, \code{\link{loca.p}} and \code{\link{zsum}}.
   }

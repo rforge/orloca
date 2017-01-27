@@ -7,7 +7,7 @@ exportClasses(
 
 ## Methods
 exportMethods(
-   czsum, czsumgra, czsummin, print, summary, zsum, zsumgra, zsummin, as.loca.p, as.data.frame, as.matrix
+   czsum, czsumgra, czsummin, print, summary, zsum, zsuml2, zsumlp, zsumgra, zsuml2gra, zsumlpgra, zsummin,zsuml2min, zsumlpmin, as.loca.p, as.data.frame, as.matrix
               )
 
 ## Functions
