@@ -1,29 +1,33 @@
 # Some Rcmdr dialogs for the orloca package (non graphical functions)
 
-.First.lib <- function(libname, pkgname){
-    if (!interactive()) return()
-    Rcmdr <- options()$Rcmdr
-    plugins <- Rcmdr$plugins
-    assign(".RcmdrPlugin.orloca.l2", T, envir=sys.frame())
-    assign(".RcmdrPlugin.orloca.lp", NA, envir=sys.frame())
-    # Load required packages
-    require("orloca")
-    require("orloca.es")
-    if ((!pkgname %in% plugins) && !getRcmdr("autoRestart")) {
-        Rcmdr$plugins <- c(plugins, pkgname)
-        options(Rcmdr=Rcmdr)
-        closeCommander(ask=FALSE, ask.save=TRUE)
-        Commander()
-        }
-    }
+.onAttach <- function(libname, pkgname){
+   if (!interactive()) return()
+   Rcmdr <- options()$Rcmdr
+   plugins <- Rcmdr$plugins
+   options(list(".RcmdrPlugin.orloca.l2" = T))
+   options(list(".RcmdrPlugin.orloca.lp"  = NA))
+   if (!pkgname %in% plugins) {
+       Rcmdr$plugins <- c(plugins, pkgname)
+       options(Rcmdr=Rcmdr)
+       if("package:Rcmdr" %in% search()) {
+           if(!getRcmdr("autoRestart")) {
+               closeCommander(ask=FALSE, ask.save=TRUE)
+               Commander()
+           }
+       }
+       else {
+           Commander()
+       }
+   }
+} 
 
 .RcmdrPlugin.orloca.get.norma <- function(sep=",")
   {
-    l2 <- get(".RcmdrPlugin.orloca.l2", envir=sys.frame())
+    l2 <- options(".RcmdrPlugin.orloca.l2")
     command <- ""
-    if (!l2)
+    if (l2 != TRUE)
        {
-       lp <- get(".RcmdrPlugin.orloca.lp", envir=sys.frame())
+       lp <- options(".RcmdrPlugin.orloca.lp")
        command <- paste(sep, " lp = ", lp, sep="")
        }
     command
@@ -51,15 +55,12 @@ onOK <- function(){
               return()
              }
           }
-###
-        command <- "edit(data.frame(x=numeric(0), y=numeric(0), w=numeric(0)))"
-        assign(name, justDoIt(command), envir=.GlobalEnv)
-        logger(paste(name, "<-", command))
+        command <- paste(name, "<- edit(data.frame(x=numeric(0), y=numeric(0), w=numeric(0)))")
+        doItAndPrint(command)
         if (nrow(get(name)) == 0){
             errorCondition(recall=Rcmdr.new.loca.p, message=gettextRcmdr("empty data set."))
             return()
             }
-###
         activeDataSet(name)
         closeDialog()
 	tkfocus(CommanderWindow())
@@ -88,7 +89,7 @@ yminVar <- tclVar("0")
 yminEntry <- tkentry(top, width="8", textvariable=yminVar)
 ymaxVar <- tclVar("1")
 ymaxEntry <- tkentry(top, width="8", textvariable=ymaxVar)
-groupsVar <- tclVar("1")
+groupsVar <- tclVar("0")
 groupsEntry <- tkentry(top, width="8", textvariable=groupsVar)
 onOK <- function(){
 	closeDialog()
@@ -131,8 +132,8 @@ onOK <- function(){
             return()
             }
 	groups <- round(as.numeric(tclvalue(groupsVar)))
-        if (is.na(groups) || groups <= 0){
-            errorCondition(recall=Rcmdr.rloca.p, message=gettext("groups must be a positive integer.", domain="R-RcmdrPlugin.orloca"))
+        if (is.na(groups) || groups < 0){
+            errorCondition(recall=Rcmdr.rloca.p, message=gettext("groups must be a non negative integer.", domain="R-RcmdrPlugin.orloca"))
             return()
             }
 	command <- paste(name, " <- rloca.p(n = ", n,", xmin = ", xmin,", xmax = ", xmax,", ymin = ", ymin,", ymax = ", ymax,", groups = ", groups,")", sep="")
@@ -213,7 +214,7 @@ nVar <- tclVar("100")
 nEntry <- tkentry(top, width="6", textvariable=nVar)
 epsVar <- tclVar("0.001")
 epsEntry <- tkentry(top, width="6", textvariable=epsVar)
-radioButtons(name="algorithm", buttons=c("w", "g", "s"), values=c("w", "g", "s"), initialValue="w", labels=gettext(c("Weiszfeld", "Gradient", "Search method")), title=gettext("Algorithm", domain="R-RcmdrPlugin.orloca"))
+radioButtons(name="algorithm", buttons=c("w", "g", "s", "u"), values=c("w", "g", "s", "u"), initialValue="w", labels=gettext(c("Weiszfeld", "Gradient", "Search method", "ucminf"), domain="R-RcmdrPlugin.orloca"), title=gettext("Select algorithm", domain="R-RcmdrPlugin.orloca"))
 
 #tkgrid(labelRcmdr(statisticFrame), sticky="w")
 onOK <- function(){
@@ -238,7 +239,8 @@ onOK <- function(){
             errorCondition(recall=Rcmdr.zsummin, message=gettext("The norm of the gradient must be positive.", domain="R-RcmdrPlugin.orloca"))
             return()
             }
-        command <- paste(".sol <- zsummin(as(", ActiveDataSet(), ", \"loca.p\") , x = ", x,", y = ", y,", eps =", eps, sep="")
+        algorithm <- tclvalue(algorithmVariable)
+        command <- paste(".sol <- zsummin(as(", ActiveDataSet(), ", \"loca.p\") , x = ", x,", y = ", y,", eps =", eps, ", algorithm =\"", algorithm, "\"", sep="")
         command <- paste(command, .RcmdrPlugin.orloca.get.norma(), " ) # ", gettext("Solve the minsum location problem", domain="R-RcmdrPlugin.orloca"), sep="")
 	doItAndPrint(command)
         doItAndPrint(paste(".sol #", gettext("Show the solution", domain="R-RcmdrPlugin.orloca")))
@@ -250,16 +252,19 @@ onOK <- function(){
 	tkfocus(CommanderWindow())
 	}
 OKCancelHelp(helpSubject="zsummin")
-tkgrid(tklabel(top, text="Iter. Max."), nEntry, sticky="e")
-tkgrid(tklabel(top, text="x-axis"), xEntry, sticky="e")
-tkgrid(tklabel(top, text="y-axis"), yEntry, sticky="e")
-tkgrid(tklabel(top, text="Grad. norm."), epsEntry, sticky="e")
+tkgrid(tklabel(top, text="Iter. Max."), nEntry, sticky="w")
+tkgrid.configure(nEntry, sticky="e")
+tkgrid(tklabel(top, text="x-axis"), xEntry, sticky="w")
+tkgrid.configure(xEntry, sticky="e")
+tkgrid(tklabel(top, text="y-axis"), yEntry, sticky="w")
+tkgrid.configure(yEntry, sticky="e")
+tkgrid(tklabel(top, text="Grad. norm."), epsEntry, sticky="w")
+tkgrid.configure(epsEntry, sticky="e")
+tkgrid.configure(algorithmFrame, sticky="w")
+tkgrid(algorithmFrame, sticky="w", columnspan=2)
+tkgrid.configure(buttonsFrame, sticky="w")
 tkgrid(buttonsFrame, sticky="w", columnspan=2)
-tkgrid.configure(nEntry, sticky="w")
-tkgrid.configure(xEntry, sticky="w")
-tkgrid.configure(yEntry, sticky="w")
-tkgrid.configure(epsEntry, sticky="w")
-dialogSuffix(rows=4, columns=2, focus=xEntry)
+dialogSuffix(rows=20, columns=2, focus=xEntry)
 }
 
 
@@ -306,13 +311,19 @@ Rcmdr.orloca.norm <- function(){
   # To ensure that menu name is include in pot file
   gettext("Show/Set norm", domain="R-RcmdrPlugin.orloca")
   # Leemos los valores actuales
-  lp <- get(".RcmdrPlugin.orloca.lp", envir=sys.frame())
-  if (is.na(lp)) lp <- ""
-  l2 <- get(".RcmdrPlugin.orloca.l2", envir=sys.frame())
-  if (l2) iv <- "l2"
-  else iv <- "lp"
+  l2 <- options(".RcmdrPlugin.orloca.l2")
+  if (l2 == TRUE)
+    {
+      lp <- ""
+      iv <- "l2"
+    }
+  else
+    {
+      lp <- as.character(options(".RcmdrPlugin.orloca.lp"))
+      iv <- 'lp'
+    }
 initializeDialog(title=gettext("Selection of the norm", domain="R-RcmdrPlugin.orloca"))
-radioButtons(name="norma", title=  gettext("Select the norm", domain="R-RcmdrPlugin.orloca"), buttons=c("l2", "lp"), labels=gettextRcmdr(c("l_2 ", "l_p ")), values=c("l2", "lp"), initialValue=iv)
+radioButtons(name="norma", title= gettext("Select the norm", domain="R-RcmdrPlugin.orloca"), buttons=c("l2", "lp"), labels=gettext(c("l_2 ", "l_p "), domain="R-RcmdrPlugin.orloca"), values=c("l2", "lp"), initialValue=iv)
 
 nameVar <- tclVar(lp)
 nameEntry <- tkentry(top, width="8", textvariable=nameVar)
@@ -320,11 +331,11 @@ onOK <- function(){
 	closeDialog()
         name <- as.numeric(tclvalue(nameVar))
         on <- tclvalue(normaVariable)
-        if (identical(on, 'l2')) assign(".RcmdrPlugin.orloca.l2", T, envir=sys.frame())
+        if (identical(on, 'l2')) options(list(".RcmdrPlugin.orloca.l2" = T))
         else if (name >= 1)
             {
-            assign(".RcmdrPlugin.orloca.l2", F, envir=sys.frame())
-            assign(".RcmdrPlugin.orloca.lp", name, envir=sys.frame())
+            options(list(".RcmdrPlugin.orloca.l2" = F))
+            options(list(".RcmdrPlugin.orloca.lp" = name))
             tkfocus(CommanderWindow())
             }
           else

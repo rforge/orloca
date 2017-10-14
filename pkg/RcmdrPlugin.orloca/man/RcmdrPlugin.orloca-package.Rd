@@ -27,9 +27,9 @@
 \tabular{ll}{
 Package: \tab RcmdrPlugin.orloca\cr
 Type: \tab Package\cr
-Version: \tab 2.1-0\cr
-Date: \tab 2010-28-04\cr
-License: \tab GPL version 2 or newer\cr
+Version: \tab 4.1-0\cr
+Date: \tab 2013-01-20\cr
+License: \tab GPL version 3 or newer\cr
 }
 }
 
