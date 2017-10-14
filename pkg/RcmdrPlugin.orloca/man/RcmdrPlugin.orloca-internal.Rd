@@ -5,6 +5,7 @@
 \alias{Rcmdr.help.orloca}
 \alias{Rcmdr.help.RcmdrPlugin.orloca}
 \alias{Rcmdr.new.loca.p}
+\alias{Rcmdr.orloca.norm}
 \alias{Rcmdr.persp.zsum}
 \alias{Rcmdr.plot.contour.loca.p}
 \alias{Rcmdr.plot.loca.p}

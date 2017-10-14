@@ -17,7 +17,7 @@
 
   The main functions of \code{orloca} packages are available throughout the
   GUI. These functions include: data manipulation, plot of the demand 
-  points set and the objective function, and alsothe resolution of the location
+  points set and the objective function, and also the resolution of the location
   problem.
 
   Parallel computation functions provided by \code{orloca} package are not available
@@ -27,8 +27,8 @@
 \tabular{ll}{
 Package: \tab RcmdrPlugin.orloca\cr
 Type: \tab Package\cr
-Version: \tab 1.0-0\cr
-Date: \tab 2008-11-26\cr
+Version: \tab 2.0-0\cr
+Date: \tab 2010-23-04\cr
 License: \tab GPL version 2 or newer\cr
 }
 }
@@ -42,6 +42,10 @@ Maintainer: Manuel Munoz-Marquez <manuel.munoz@uca.es>
 
 \keyword{package}
 \seealso{
-For more information see \code{\link[Rcmdr]{Rcmdr-package}} and \code{\link[orloca]{orloca-package}}.
+For more information see \code{\link[Rcmdr]{Rcmdr-package}} and
+\code{\link[orloca]{orloca-package}}. 
+
+Para ayuda en \enc{español}{espanol}, \enc{véase}{vease}
+\link{RcmdrPlugin.orloca.es}. (For Spanish help see \link{RcmdrPlugin.orloca.es}.) 
 }
 
