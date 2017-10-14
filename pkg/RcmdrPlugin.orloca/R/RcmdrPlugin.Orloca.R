@@ -8,7 +8,7 @@
     assign(".RcmdrPlugin.orloca.lp", NA, envir=sys.frame())
     # Load required packages
     require("orloca")
-    try(require(gettext("orloca", domain="R-orloca"), character.only=T))
+    require("orloca.es")
     if ((!pkgname %in% plugins) && !getRcmdr("autoRestart")) {
         Rcmdr$plugins <- c(plugins, pkgname)
         options(Rcmdr=Rcmdr)
