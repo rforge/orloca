@@ -1,0 +1,13 @@
+Version 4.1
+2013-01-20
+ * Summary of loca.p object added
+Version 2.1
+2010-04-28
+ * Minor bugs fixed
+Version 2.0
+2010-04-23
+ * lp norm support added
+Version 1.0
+2008-11-26
+ * First release.
+ * Initial options: new loca.p, random loca.p, plot weighted distance function, minimize weighted distance function
