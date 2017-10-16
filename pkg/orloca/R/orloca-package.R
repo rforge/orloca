@@ -1,4 +1,4 @@
-#' The package deals with Operations Research LOCational Analysis models
+#' Operations Research LOCational Analysis Models
 #' 
 #' This version of the package deals with the min-sum location problem, also known as Fermat--Weber problem.
 #' 
@@ -14,9 +14,9 @@
 #' 
 #' Type:      Package
 #' 
-#' Version:   4.2
+#' Version:   4.3
 #' 
-#' Date:      2014-06-02
+#' Date:      2017-10-16
 #' 
 #' License:   GPL (>= 3)
 #' }
@@ -34,7 +34,7 @@
 #' 
 #' The package is ready for internationalization. The authors ask for translated version of the .mo file to include in the package.
 #'
-#' @author Fernando Fernandez-Palacin <fernando.fernandez@@uca.es> and Manuel Munoz-Marquez <manuel.munoz@@uca.es>
+#' @author Manuel Munoz-Marquez <manuel.munoz@@uca.es>
 #' 
 #' Mantainer: Manuel Munoz-Marquez <manuel.munoz@@uca.es>
 #' @references
@@ -62,8 +62,13 @@
 #'
 #' # Make a demo of the package
 #' demo(orloca)
-#' 
+#'
+#' @import graphics
+#' @import grDevices
 #' @import methods
+#' @import png
+#' @import stats
+#' @import ucminf
 #'
 #' @export as.loca.p
 #' @export as.loca.p.matrix

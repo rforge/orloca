@@ -1,4 +1,23 @@
-# This function returns the solution of the minimization problem
+#' zsuml2min at orloca package
+#' 
+#' \code{zsummin} function for the Euclidean norm (\eqn{l_2}).
+#' This function returns the solution of the minimization problem.
+#' Mainly for internal use.
+#'
+#' @name zsuml2min
+#' @aliases zsuml2min zsuml2min,loca.p-method
+#' @keywords internal classes optimize
+#'
+#' @param o An object of loca.p class.
+#' @param x The x coordinate of the starting point.
+#' @param y The y coordinate of the starting point.
+#' @param max.iter Maximum number of iterations allowed.
+#' @param eps The module of the gradient in the stop rule.
+#' @param verbose If TRUE the function produces detailed output.
+#' @param algorithm The method to be use. For this version of the package, the valid values are: "gradient" or "g" for a gradient based method, "search" or "s" for local search method (this option is deprecated), "ucminf" or "u" for optimization with ucminf from ucminf package, and "weiszfeld" or "w" for the weiszfeld method or any of the valid method for optim function, now "Nelder-Mead", "BFGS", "CG", "L-BFGS-B", "SANN". "weiszfeld" is the default value.
+#' @param \ldots Other options for optimization algorithms.
+#' @return \code{zsuml2min} returns an array with the coordinates of the solution point.
+#' @seealso See also \code{\link{orloca-package}}, \code{\link{zsummin}}, \code{\link{loca.p}} and \code{\link{zsum}}.
 setGeneric("zsuml2min",
            function (o, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE, algorithm="weiszfeld", ...) standardGeneric("zsuml2min")
 )
@@ -6,6 +25,7 @@ setGeneric("zsuml2min",
 # General zsuml2min function
 # L-BFGS-B seems to be the best similar to weiszfeld
 # Take into account that weiszfeld is completely implemented in R
+#' @export
 setMethod("zsuml2min", "loca.p",
 function (o, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE, algorithm="weiszfeld", ...)
    {
@@ -25,7 +45,6 @@ function (o, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE, algorithm="weiszf
 # Optimization by ucminf function from ucminf package
 zsuml2minucminf.loca.p <- function (o, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE)
    {
-     require('ucminf')
      zzsum <- function(xx) zsum(o, xx[1], xx[2])
      sol <- ucminf(par = c(x, y), fn = zzsum, control=list(maxeval=max.iter, trace=verbose))
      if (verbose) cat(gettext(sol$message));

@@ -21,6 +21,7 @@
 #' \code{xmin} must be less or equal than \code{xmax}.
 #'
 #' \code{ymin} must be less or equal than \code{ymax}.
+#' 
 #' If a non zero value is given for \code{groups} parameter, then a reference point for each group are generated. At second stage, the offset part for each demand point are generated, and added to the reference point generated at the first stage.
 #'
 #' Note that \code{groups = 1} is not equivalent to the default value \code{groups = 0}, because in the first case a reference point are generated at the first stage.

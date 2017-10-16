@@ -1,6 +1,7 @@
 # Loading required graphics packages
 require(grDevices)
 require(graphics)
+opar <- par(ask = dev.interactive(orNone = TRUE))
 
 # Creation of new loca.p object
 o <- loca.p(x = c(-1, 1, 0), y = c(0, 0, 1))
@@ -51,3 +52,6 @@ zsum(p, sol[1], sol[2])
 
 # Timing the algorithm
 system.time(zsummin(p))
+
+# Restoring graphical parameters
+par(opar)

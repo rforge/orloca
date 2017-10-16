@@ -1,6 +1,39 @@
-#
-# Class loca.p definition
-#
+#' loca.p class for Operations Research LOCational Analysis
+#'
+#' An object of class \code{loca.p} represents a weighted location problem with a finite demand points set.
+#' The \code{\link{orloca-package}} is mainly devoted to deals with location problems.
+#'
+#' @aliases initialize,loca.p-method loca.p loca.p-class print.loca.p print,loca.p-method summary-method summary,loca.p-method
+#' @docType class
+#' @name loca.p
+#' @details
+#' The main generator of the loca.p class is \code{loca.p(x, y, w = numeric(0), label = "")}.
+#' An alternative form is \code{new("loca.p", x, y, w = numeric(0), label = "")}.
+#'
+#' The lengths of \code{x} and \code{y} vector must be equals.
+#' The length of \code{w} must be equal to the previous ones or must be 0.
+#' NA's values are not allowed at any of the arguments.
+#'
+#' @keywords classes optimize
+#'
+#' @param x is a vector of the x coordinates of the demand points.
+#' @param y is a vector of the y coordinates of the demand points.
+#' @param w is a vector of weights of the demand points. If w is omitted then all weights are considered as 1.
+#' @param label If given, it is the label of the new object.
+#' @return If the arguments have valid values, it returns a new object of class \code{loca.p}, else it returns an error.
+#' \code{summary(x)} returns a summary of the \code{x} \code{loca.p} object and \code{print(x)} prints a summary of the \code{x} \code{loca.p} object.
+#' @examples
+#' # A new unweighted loca.p object
+#' loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
+#' # or
+#' loca <- new("loca.p", x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
+#' 
+#' # An example with weights and name
+#' locb <- new("loca.p", x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1),
+#' w = c(1, 2, 1, 2), label = "Weighted case")
+#'
+#' @seealso See also \code{\link{orloca-package}}.
+
 setClass("loca.p",
 	representation(x="numeric", y="numeric", w="numeric", label="character")
 	)
@@ -39,7 +72,7 @@ setMethod("initialize", "loca.p",
       .Object
       }
 )
-
+#' @export
 loca.p <- function(x, y, w = numeric(0), label="") new("loca.p", x, y, w, label)
 
 

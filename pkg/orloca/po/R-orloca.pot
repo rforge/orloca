@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the orloca package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: orloca 4.2\n"
 "Report-Msgid-Bugs-To: manuel.munoz@uca.es\n"
-"POT-Creation-Date: 2014-06-02 21:57+0200\n"
+"POT-Creation-Date: 2017-10-15 13:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "The second dimension of matrix must be 2 or 3."
+msgstr ""
+
+msgid "is not a valid value for lp, use 1 <= lp"
+msgstr ""
+
+msgid "The given img object is not a raster image and cannot be coerce to it."
 msgstr ""
 
 msgid "NA's values are not allowed"
@@ -39,12 +45,6 @@ msgid "orloca"
 msgstr ""
 
 msgid "Plot of loca.p object"
-msgstr ""
-
-msgid "The given img object is not a raster image and cannot be coerce to it."
-msgstr ""
-
-msgid "is not a valid value for lp, use 1 <= lp"
 msgstr ""
 
 msgid "Parameter groups must be numeric"

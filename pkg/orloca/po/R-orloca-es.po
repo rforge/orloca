@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: orloca 2.1\n"
 "Report-Msgid-Bugs-To: manuel.munoz@uca.es\n"
-"POT-Creation-Date: 2014-06-02 18:58+0200\n"
-"PO-Revision-Date: 2014-06-02 18:59+0100\n"
+"POT-Creation-Date: 2017-10-15 13:12+0200\n"
+"PO-Revision-Date: 2017-10-15 13:13+0200\n"
 "Last-Translator: Manuel Munoz-Marquez <manuel.munoz@uca.es>\n"
 "Language-Team: Spanish <manuel.munoz@uca.es>\n"
 "Language: es\n"
@@ -16,10 +16,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 2.0.1\n"
 
 msgid "The second dimension of matrix must be 2 or 3."
 msgstr "La segunda dimensión de la matriz debe ser 2 ó 3."
+
+msgid "is not a valid value for lp, use 1 <= lp"
+msgstr "no es un valor válido para lp, use 1<=lp"
+
+msgid "The given img object is not a raster image and cannot be coerce to it."
+msgstr "El objeto img no es una imagen raster y no se puede convertir en una."
 
 msgid "NA's values are not allowed"
 msgstr "Valores NA no permitidos"
@@ -41,12 +47,6 @@ msgstr "orloca.es"
 
 msgid "Plot of loca.p object"
 msgstr "Gráfico del objeto loca.p"
-
-msgid "The given img object is not a raster image and cannot be coerce to it."
-msgstr "El objeto img no es una imagen raster y no se puede convertir en una."
-
-msgid "is not a valid value for lp, use 1 <= lp"
-msgstr "no es un valor válido para lp, use 1<=lp"
 
 msgid "Parameter groups must be numeric"
 msgstr "El parámetro groups debe ser numérico"
