@@ -1,8 +1,3 @@
-# Adjusting graphics parameters
-require(grDevices)
-require(graphics)
-require(png)
-
 # Load data of cities
 data(andalusia)
 
