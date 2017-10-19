@@ -9,7 +9,7 @@ Suggests:
     graphics
 Title: Operations Research LOCational Analysis Models
 Version: 4.3
-Date: 2017-10-17
+Date: 2017-10-20
 Author: Manuel Munoz-Marquez <manuel.munoz@uca.es>
 Maintainer: Manuel Munoz-Marquez <manuel.munoz@uca.es>
 Description: This version of the package deals with the min-sum location

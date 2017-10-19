@@ -1,0 +1,39 @@
+Version 4.3
+2017-10-20
+ * Project in R-forge
+ * Changelog file added
+ * New build with current R version
+Version 4.2
+2014-06-02
+ * New demo added
+ * Functions for computation in cluster are deprecated
+Version 4.1
+2012-12-06
+ * Help in Spanish added
+ * Summary and print methods for class loca.p
+Version 4.0
+2012-05-08
+ * A dataset with the main capital cities of Andalusia
+ * The contour plot can be draw over a given image, like a map.
+Version 3.2
+2010-05-22
+ * The minimization problem can also be solved using global optimization algorithm
+Version 3.1
+2010-04-21
+ * Minor bugs fixed
+Version 3.0
+2 010-04-05
+ * Added lp norm support
+Version 2.0
+2008-10-09
+ * The generation of random instances of loca.p object has new parameters to generate points in groups
+ * The computation of weighted distance and the solution of the minimization problem can be made in a computer cluster
+ * Method to convert object from an to loca.p object to and from matrix and data.frame
+Version 1.0
+2008-06-12
+ * First release.
+ * Definition of loca.p class for planar location problem
+ * Generation of random loca.p objects
+ * Compute the weighted distance from a point to a loca.p object
+ * Find the minimum of the weighted distance
+ * Plot loca.p object and weighted distance
