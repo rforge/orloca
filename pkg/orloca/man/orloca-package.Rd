@@ -5,10 +5,12 @@
 \alias{orloca-package}
 \title{Operations Research LOCational Analysis Models}
 \description{
-This version of the package deals with the min-sum location problem, also known as Fermat--Weber problem.
+Objects and methods to handle and solve the min-sum location problem, also known as Fermat-Weber problem.
 }
 \details{
-The min-sum location problem look for a point such that the weighted sum of the distances to the demand points are minimized.
+The min-sum location problem search for a point such that the weighted sum of the distances to the demand points are minimized. See "The Fermat-Weber location problem revisited" by Brimberg, Mathematical Programming, 1, pg. 71-76, 1995. DOI: 10.1007/BF01592245.
+
+General global optimization algorithms are used to solve the problem, along with the adhoc Weiszfeld method, see "Sur le point pour lequel la Somme des distances de n points donnes est minimum", by Weiszfeld, Tohoku Mathematical Journal, First Series, 43, pg. 355-386, 1937.
 
 
 \preformatted{
