@@ -39,20 +39,20 @@ zsummin(o, x=0, y=0, lp=numeric(0), max.iter=100, eps=1.e-3,
   \code{zsummin} devuelve un vector con las coordenadas del punto \enc{solución}{solucion}.
 }
 \examples{
-# Un objeto loca.p no ponderado
+# Un objeto loca.p sin pesos
 loca <- new("loca.p", x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
-# Calcula el mínimo
-sol<-zsummin(loca)
+# Calcula el minimo
+sol <- zsummin(loca)
 
 # Muestra el resultado
 sol
 
-# Evaluación de la función objetivo en el punto solución
+# Evaluacion de la funcion objetivo en el punto solucion
 zsum(loca, sol[1], sol[2])
 }
 \keyword{classes}
 \keyword{optimize}
 \seealso{
-  Vea también \code{\link{orloca.es-package}}, \code{\link{loca.p}} y \code{\link{zsum}}.
+  \code{Véase}{Vease} \enc{también}{tambien} \code{\link{orloca.es-package}}, \code{\link{loca.p}} y \code{\link{zsum}}.
   }

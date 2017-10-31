@@ -1,6 +1,4 @@
 # Ajuste de parametros graficos
-require(grDevices)
-require(graphics)
 opar <- par(ask = dev.interactive(orNone = TRUE))
 
 # Creacion de un objeto loca.p
@@ -16,16 +14,22 @@ plot(o)
 zsum(o, x=0, y=0.5)
 
 # Grafica de las curvas de nivel de la funcion objetivo
-contour.loca.p(o)
+contour(o)
 
 # Grafica 3D de la funcion objetivo
-persp.loca.p(o)
+persp(o)
 
 # Grafica 3D
-persp.loca.p(o, col=cm.colors(10000), border=FALSE, shade=TRUE, theta=50, phi=5, ltheta=135)
+persp(o, col=cm.colors(10000), border=FALSE, shade=TRUE, theta=50, phi=5, ltheta=135)
 
 # Otra grafica 3D
-persp.loca.p(o, col=cm.colors(10000), border=FALSE, shade=TRUE, theta=50, phi=5, ltheta=135, lphi=90)
+persp(o, col=cm.colors(10000), border=FALSE, shade=TRUE, theta=50, phi=5, ltheta=135, lphi=90)
+
+# Grafica con una imagen de fondo
+file = system.file('img', 'spain_provinces.png', package='orloca')
+img = readPNG(file)
+plot(loca.p(x=.55, y=.62), img=img,  xlim=c(0,1), ylim=c(0,1), xleft=0, ybottom=0, xright=1, ytop=1)
+contour(loca.p(x=.55, y=.62), img=img,  xmin=0, ymin=0, xmax=1, ymax=1, xleft=0, ybottom=0, xright=1, ytop=1)
 
 # Busqueda del minimo
 zsummin(o)

@@ -37,10 +37,10 @@ Si \eqn{p<1} entonces \eqn{l_p} no es una norma, por tanto, \enc{sólo}{solo} va
 \note{Dado que \eqn{l_2} es la norma \enc{euclídea}{euclidea}, cuando \eqn{p=2}
   \code{zsumlp} es igual a \code{zsum}, y \code{zsumlpgra} es igual a
   \code{zsumgra}. Pero los \enc{cálculos}{calculos} necesarios son
-  mayors para la primera forma.}
+  mayores para la primera forma.}
 
 \keyword{classes}
 \keyword{optimize}
 \seealso{
-  \enc{Véase}{Vease} \code{\link{zsum}}, \code{\link{orloca.es-package}} y \code{\link{zsumlpmin}}.
+  \enc{Véase}{Vease} \enc{también}{tambien} \code{\link{zsum}}, \code{\link{orloca.es-package}} y \code{\link{zsumlpmin}}.
   }

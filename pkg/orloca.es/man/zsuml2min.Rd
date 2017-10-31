@@ -7,8 +7,8 @@
 \description{La \enc{función}{funcion} \code{zsummin} para la norma
   \enc{euclídea}{euclidea} (\eqn{l_2}). Principalmente para uso interno.}
 \usage{
-zsuml2min(o, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE,
-   algorithm="weiszfeld")
+zsuml2min(o, x=0, y=0, max.iter=100, eps=0.001, verbose=FALSE,
+   algorithm="weiszfeld", ...)
 }
 \arguments{
   \item{o}{Un objeto de la clase \code{loca.p}.}
@@ -23,7 +23,8 @@ zsuml2min(o, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE,
     "w" para el algoritmo de Weiszfeld o cualquiera de los
     \enc{métodos}{metodos} \enc{válidos}{validos} para la
     \enc{función}{funcion} optim, a saber, "Nelder-Mead", "BFGS", "CG", "L-BFGS-B", "SANN". 
-   "Weiszfeld" es el valor por defecto.}
+    "Weiszfeld" es el valor por defecto.}
+  \item{...}{Otras opciones para los algoritmos de optimizaci\enc{ó}{o}n.}
 }
 \value{
   \code{zsummin} devuelve un vector con las coordenadas del punto \enc{solución}{solucion}.
