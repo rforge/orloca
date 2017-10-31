@@ -11,7 +11,7 @@
 \alias{initialize,loca.p-method}
 \encoding{UTF-8}
 
-\title{Clase de objetos loca.p para el Analisis de Localizacion en Investigacion Operativa }
+\title{Clase de objetos loca.p para Localizacion en Investigacion Operativa}
 \description{
   Un objeto de la clase \code{loca.p} representa un problema de \enc{localización}{localizacion} ponderado con un conjunto de puntos de demanda. 
  El \code{\link[orloca]{orloca-package}} \enc{está}{esta} principalmente dedicado a abordar problemas de \enc{localización}{localizacion}.
@@ -37,12 +37,14 @@
 \value{
   Si los argumentos son valores \enc{válidos}{validos}, devuelve un objeto de la clase
   \code{loca.p}, en caso contrario devuelve un error.
-  \code{summary(x)} devuelve un sumario del objeto \code{x} de la clase \code{loca.p} y
-    \code{print(x)} imprime un sumario del objeto \code{x} de la clase \code{loca.p}.
+  \code{summary(x)} devuelve un resumen del objeto \code{x} de la clase \code{loca.p} y
+    \code{print(x)} imprime un resumen del objeto \code{x} de la clase \code{loca.p}.
   }
 
 \examples{
 # Un objeto loca.p no ponderado
+loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
+# o
 loca <- new("loca.p", x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
 # Un ejemplo con pesos y nombre

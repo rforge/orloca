@@ -17,8 +17,8 @@
 \preformatted{
 Package:   orloca.es
 Type:      Package
-Version:   1.0
-Date:      2008-07-03
+Version:   2.0
+Date:      2008-11-20
 License:   GPL (>= 2)
 }
 El paquete proporciona una clase (\code{loca.p}) que representa un problema de \enc{localización}{localizacion} con un conjunto finito de puntos de demanda sobre el plano. \enc{También}{Tambien} es posible representar los puntos y la \enc{función}{funcion} objetivo. Dicha \enc{función}{funcion} objetivo representa la suma de los desplazamientos de los usuarios a un servicio.
@@ -41,12 +41,12 @@ Maintainer: Manuel Munoz-Marquez <manuel.munoz@uca.es>
 
 \section{Index:}{
   \tabular{ll}{
-\code{\link[orloca]{loca.p}}: \tab descripción de la clase loca.p.\cr
-\code{\link[orloca]{rloca.p}}: \tab instancias aleatorias de objetos de la clase \code{loca.p}.\cr
-\code{\link[orloca]{zsum}}: \tab función para evaluar la función objetivo para modelos min-sum.\cr
-\code{\link[orloca]{zsummin}}: \tab para encontrar el mínimo del problema de localización.\cr
-\code{\link[orloca]{plot.loca.p}}: \tab para hacer gráficos de los objetos de la clase \code{loca.p}.\cr
-\code{\link[orloca]{plot.zsum}}: \tab para hacer gráficos de la función objetivo.\cr
+\code{\link{loca.p}}: \tab descripción de la clase loca.p.\cr
+\code{\link{rloca.p}}: \tab instancias aleatorias de objetos de la clase \code{loca.p}.\cr
+\code{\link{zsum}}: \tab función para evaluar la función objetivo para modelos min-sum.\cr
+\code{\link{zsummin}}: \tab para encontrar el mínimo del problema de localización.\cr
+\code{\link{plot.loca.p}}: \tab para hacer gráficos de los objetos de la clase \code{loca.p}.\cr
+\code{\link{plot.zsum}}: \tab para hacer gráficos de la función objetivo.\cr
 }
 }
 

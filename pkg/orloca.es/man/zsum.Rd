@@ -6,8 +6,7 @@
 \encoding{UTF-8}
 
 \title{zsum y zsumgra del paquete orloca}
-\description{
-  \enc{Función}{Funcion} objetivo y la \enc{función}{funcion} gradiente para el problema de \enc{localización}{localizacion} mini-sum.
+\description{La \enc{función}{funcion} objetivo y la \enc{función}{funcion} gradiente para el problema de \enc{localización}{localizacion} min-sum.
 }
 \usage{
 zsum(o, x=0, y=0)
@@ -25,7 +24,7 @@ zsumgra(o, x=0, y=0)
 }
 \examples{
 # Un objeto loca.p no ponderado
-loca <- new("loca.p", x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
+loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
 # Evaluación de zsum en (0, 0)
 zsum(loca)
@@ -39,5 +38,5 @@ zsumgra(loca, 1, 3)
 \keyword{classes}
 \keyword{optimize}
 \seealso{
-  \enc{Véase}{Vease} \enc{también}{tambien} \code{\link{orloca-package}} y \code{\link[orloca]{zsummin}}.
+  \enc{Véase}{Vease} \enc{también}{tambien} \code{\link{orloca-package}} y \code{\link{zsummin}}.
   }

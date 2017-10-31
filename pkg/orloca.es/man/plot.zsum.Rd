@@ -28,14 +28,14 @@
 }
 \examples{
 # Un objeto loca.p no ponderado
-loca <- new("loca.p", x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
+loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
-# El gráfico de curvas de nivel del objeto loca
+# El gráfico de curvas de nivel del objeto loca.p
 contour(loca)
 
-# El gráfico 3D del objeto loca
+# El gráfico 3D del objeto loca.p
 persp(loca)
 }
 \keyword{classes}
 \keyword{hplot}
-\seealso{\enc{Véase}{Vease} \enc{también}{tambien} \code{\link{orloca-package}}, \code{\link[orloca]{plot.loca.p}} y \code{\link[orloca]{loca.p}}.}
+\seealso{\enc{Véase}{Vease} \enc{también}{tambien} \code{\link{orloca-package}}, \code{\link{plot.loca.p}} y \code{\link{loca.p}}.}
