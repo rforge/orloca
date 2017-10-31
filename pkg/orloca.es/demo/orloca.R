@@ -1,49 +1,49 @@
-# Ajuste de parámetros gráficos
+# Ajuste de parametros graficos
 require(grDevices)
 require(graphics)
 opar <- par(ask = dev.interactive(orNone = TRUE))
 
-# Creación de un objeto loca.p
+# Creacion de un objeto loca.p
 o <- new("loca.p", x = c(-1, 1, 0), y = c(0, 0, 1))
 
 # Imprimiendo un resumen del objeto
 print(o)
 
-# Gráfica de los puntos de demanda
+# Grafica de los puntos de demanda
 plot(o)
 
-# Evaluación de la función en el punto (0, 0.5)
+# Evaluacion de la funcion en el punto (0, 0.5)
 zsum(o, x=0, y=0.5)
 
-# Gráfica de las curvas de nivel de la función objetivo
+# Grafica de las curvas de nivel de la funcion objetivo
 contour.loca.p(o)
 
-# Gráfica 3D de la función objetivo
+# Grafica 3D de la funcion objetivo
 persp.loca.p(o)
 
-# Gráfica 3D
+# Grafica 3D
 persp.loca.p(o, col=cm.colors(10000), border=FALSE, shade=TRUE, theta=50, phi=5, ltheta=135)
 
-# Otra gráfica 3D
+# Otra grafica 3D
 persp.loca.p(o, col=cm.colors(10000), border=FALSE, shade=TRUE, theta=50, phi=5, ltheta=135, lphi=90)
 
-# Búsqueda del mínimo
+# Busqueda del minimo
 zsummin(o)
 
-# Núevo objeto aleatorio loca.p con 10 puntos de demanda
+# Nuevo objeto aleatorio loca.p con 10 puntos de demanda
 p <- rloca.p(10)
 
-# Búsqueda del mínimo 
+# Busqueda del minimo 
 sol <- zsummin(p)
 
-# El mínimo
+# El minimo
 sol
 
-# Evaluación de la función en el mínimo
+# Evaluacion de la funcion en el minimo
 zsum(p, sol[1], sol[2])
 
-# Calculo del tiempo de ejecución
+# Calculo del tiempo de ejecucion
 system.time(zsummin(p))
 
-# Restauración de los parámetros gráficos
+# Restauracion de los parametros graficos
 par(opar)

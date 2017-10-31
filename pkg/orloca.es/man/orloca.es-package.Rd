@@ -8,16 +8,18 @@
 \title{
   Spanish version of orloca package - Version espanola del paquete orloca}
 \description{
-  El paquete ofrece modelos de \enc{Análisis}{Analisis} de \enc{Localización}{Localizacion}.
-  Esta \enc{versión}{version} aborda problemas de \enc{localización}{localizacion} min-sum. 
- El problema min-sum, \enc{también}{tambien} conocido como problema de Weber, localiza un punto tal que la suma ponderada de las distancias entre dicho punto y los puntos de demanda sea \enc{mínima}{minima}.
+  Esta \enc{versión}{version} del paquete aborda el problema de
+  \enc{localización}{localizacion} min-sum, \enc{también}{tambien}
+  conocido como problema de Fermat--Weber. El problema de
+  \enc{localización}{localizacion} min-sum busca un punto tal que la
+  suma ponderada de las distancias a los puntos de demanda sea \enc{mínima}{minima}.
 }
 \details{
 \preformatted{
 Package:   orloca.es
 Type:      Package
-Version:   3.2
-Date:      2010-05-22
+Version:   4.0
+Date:      2012-09-06
 License:   GPL (>= 2)
 }
 El paquete proporciona una clase (\code{loca.p}) que representa un problema de \enc{localización}{localizacion} con un conjunto finito de puntos de demanda sobre el plano. \enc{También}{Tambien} es posible representar los puntos y la \enc{función}{funcion} objetivo. Dicha \enc{función}{funcion} objetivo representa la suma de los desplazamientos de los usuarios a un servicio.

@@ -13,7 +13,8 @@
 
 \title{Clase de objetos loca.p para Localizacion en Investigacion Operativa}
 \description{
-  Un objeto de la clase \code{loca.p} representa un problema de \enc{localización}{localizacion} ponderado con un conjunto de puntos de demanda. 
+  Un objeto de la clase \code{loca.p} representa un problema de
+  \enc{localización}{localizacion} ponderado con un conjunto finito de puntos de demanda. 
  El \code{\link{orloca.es-package}} \enc{está}{esta} principalmente dedicado a abordar problemas de \enc{localización}{localizacion}.
 }
 \section{Generators}{

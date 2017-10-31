@@ -43,7 +43,7 @@
   Valores NA's no \enc{están}{estan} permitidos en ninguno de los argumentos.
   
   La \code{matrix} a convertir en \code{loca.p} debe tener al menos dos columnas. 
-  la primera columna \enc{será}{sera} considerada como la coordenada x,
+  La primera columna \enc{será}{sera} considerada como la coordenada x,
   la segunda como la coordenada y, y la tercera (si existe) como los
   valores de w.
 
@@ -64,6 +64,8 @@ loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
 # Conversión a matriz
 m <- as.matrix(loca)
+
+# Mostrar la matriz
 m
 
 # Conversión desde una matriz

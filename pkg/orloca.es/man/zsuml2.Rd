@@ -6,7 +6,8 @@
 \encoding{UTF-8}
 
 \title{zsuml2 y zsuml2gra del paquete orloca}
-\description{Las funciones \code{zsum} y \code{zsumgra} para la norma \enc{euclídea}{euclidea} (\eqn{l_2}).}
+\description{Las funciones \code{zsum} y \code{zsumgra} para la norma
+  \enc{euclídea}{euclidea} (\eqn{l_2}). Principalmente para uso interno.}
 \usage{
 zsuml2(o, x=0, y=0)
 zsuml2gra(o, x=0, y=0, partial=F)

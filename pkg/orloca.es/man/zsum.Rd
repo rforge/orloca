@@ -8,7 +8,7 @@
 \title{zsum y zsumgra del paquete orloca}
 \description{La \enc{función}{funcion} objetivo y la
   \enc{función}{funcion} gradiente para el problema de
-  \enc{localización}{localizacion} min-sum. Para uso interno.
+  \enc{localización}{localizacion} min-sum.
 }
 \usage{
 zsum(o, x=0, y=0, lp=numeric(0))
@@ -31,6 +31,22 @@ zsumgra(o, x=0, y=0, lp=numeric(0), partial=F)
   distancia \enc{euclídea}{euclidea} o la distancia \eqn{l_p} entre \eqn{a_i} y \eqn{(x,y)}. 
 
   \code{zsumgra} devuelve el vector gradiente de la \enc{función}{funcion} \code{zsum}.
+}
+\examples{
+# Un nuevo objeto loca.p sin pesos
+loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
+
+# Evaluacion de zsum en (0, 0)
+zsum(loca)
+
+# Evaluacion de zsum at (1, 3)
+zsum(loca, 1, 3)
+
+# Calculo de la fucion objetibo en el punto (3, 4) usando la norma lp con p = 2.5
+zsum(loca, 3, 4, lp=2.5)
+
+# La funcion gradiente en (1,3)
+zsumgra(loca, 1, 3)
 }
 \keyword{classes}
 \keyword{optimize}

@@ -6,33 +6,38 @@
 \encoding{UTF-8}
 
 \title{zsumlp y zsumlpgra del paquete orloca}
-\description{Las funciones zsum y zsumgra con norma \eqn{l_p}.}
+\description{Las funciones zsum y zsumgra con norma
+  \eqn{l_p}. Principalmente para uso interno.}
 \usage{
 zsumlp(o, x=0, y=0, p=2)
 zsumlpgra(o, x=0, y=0, p=2, partial=F)
 }
 \arguments{
-  \item{o}{An object of \code{loca.p} class.}
-  \item{x}{The x coordinate of the point to be evaluated.}
-  \item{y}{The y coordinate of the point to be evaluated.}
-  \item{p}{The \eqn{l_p} norm to use.}
-  \item{partial}{If (x,y) is a demand point \code{partial=T} means
-      ignore such point to compute the gradient. This option is mainly for internal use.}
+  \item{o}{Un objeto de clase \code{loca.p}.}
+  \item{x}{La coordenada x del punto a ser evaluado.}
+  \item{y}{La coordenada y del punto a ser evaluado.}
+  \item{p}{La norma \eqn{l_p} a usar.}
+  \item{partial}{Si (x,y) es un punto de demanda, \code{partial=T}
+    significa que se ignore dicho punto para el \enc{cálculo}{calculo} del
+    gradiente. Principalmente para uso interno.}
 }
 \value{
-  \code{zsumlp} returns the objective function of the min-sum location
-  problem with \eqn{l_p} norm, \eqn{\sum_{a_i \in o} w_i d(a_i, (x,y))}, where \eqn{d(a_i, (x,y))} gives the
-  distances between \eqn{a_i} and the point \eqn{(x,y)} using \eqn{l_p} norm. 
+  \code{zsumlp} devuelve el valor de la \enc{función}{funcion} objetivo
+  del problema de \enc{localización}{localizacion} min-sum con norma
+  \eqn{l_p}, \eqn{\sum_{a_i \in o} w_i d(a_i, (x,y))}, donde \eqn{d(a_i,
+    (x,y))} es la distancia entre \eqn{a_i} y el punto \eqn{(x,y)}
+  usando la norma \eqn{l_p}. 
 
-  \code{zsumlpgra} returns the gradient vector of the function \code{zsumlp}.
+  \code{zsumlpgra} devuelve el vector gradiente de la \enc{función}{funcion} \code{zsumlp}.
 }
 \details{
-If \eqn{p<1} then \eqn{l_p} ara not a norm, so only \eqn{p>=1} are valid values.
+Si \eqn{p<1} entonces \eqn{l_p} no es una norma, por tanto, \enc{sólo}{solo} valores
+\eqn{p>=1} son \enc{válidos}{validos}.
 }
-\note{Since \eqn{l_2}  norm is the Euclidean norm, when \eqn{p=2}
-  \code{zsumlp} are equal to \code{zsum}, and \code{zsumlpgra} are equal
-to \code{zsumgra}. But the computations involved are greater for the
-firsts form.}
+\note{Dado que \eqn{l_2} es la norma \enc{euclídea}{euclidea}, cuando \eqn{p=2}
+  \code{zsumlp} es igual a \code{zsum}, y \code{zsumlpgra} es igual a
+  \code{zsumgra}. Pero los \enc{cálculos}{calculos} necesarios son
+  mayors para la primera forma.}
 
 \keyword{classes}
 \keyword{optimize}

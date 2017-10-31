@@ -17,8 +17,8 @@ czsumgra(o, cluster, x=0, y=0)
 \arguments{
   \item{o}{Un objeto de la clase \code{loca.p}.}
   \item{cluster}{Un objeto snow cluster.}
-  \item{x}{La coordenada x del punto para ser evaluada.}
-  \item{y}{La coordenada y del punto para ser evaluada.}
+  \item{x}{La coordenada x del punto a ser evaluado.}
+  \item{y}{La coordenada y del punto a ser evaluado.}
 }
 \value{
   \code{czsum} devuelve la \enc{función}{funcion} objetivo del problema
