@@ -20,7 +20,10 @@ zsummin(o, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE,
   \item{verbose}{Si es TRUE la \enc{función}{funcion} proporciona salida
     detallada.}
   \item{algorithm}{El algoritmo a utilizar. Los valores \enc{válidos}{validos} son: "gradient" o "g" para el \enc{método}{metodo} basado en el gradiente, "search" o "s"
-    para \enc{método}{metodo} de busca local, y "weiszfeld" o "w" para el \enc{método}{metodo} de Weiszfeld. 
+    para \enc{método}{metodo} de busca local, y "weiszfeld" o "w" para
+    el \enc{método}{metodo} de Weiszfeld o cualquiera de los
+    \enc{métodos}{metodos} \enc{válidos}{validos} para la
+    \enc{función}{funcion} optim, a saber, "Nelder-Mead", "BFGS", "CG", "L-BFGS-B", "SANN". 
    "Weiszfeld" es el valor por defecto.}
 }
 \details{Si \eqn{p < 1} entonces \eqn{l_p} no es una norma, por tanto,

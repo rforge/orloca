@@ -16,8 +16,8 @@
 \preformatted{
 Package:   orloca.es
 Type:      Package
-Version:   3.0
-Date:      2010-04-02
+Version:   3.2
+Date:      2010-05-22
 License:   GPL (>= 2)
 }
 El paquete proporciona una clase (\code{loca.p}) que representa un problema de \enc{localización}{localizacion} con un conjunto finito de puntos de demanda sobre el plano. \enc{También}{Tambien} es posible representar los puntos y la \enc{función}{funcion} objetivo. Dicha \enc{función}{funcion} objetivo representa la suma de los desplazamientos de los usuarios a un servicio.

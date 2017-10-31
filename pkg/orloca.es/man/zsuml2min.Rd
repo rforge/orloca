@@ -18,7 +18,10 @@ zsuml2min(o, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE,
   \item{verbose}{Si es TRUE la \enc{función}{funcion} proporciona salida
     detallada.}
   \item{algorithm}{El algoritmo a utilizar. Los valores \enc{válidos}{validos} son: "gradient" o "g" para un algoritmo de gradiente, "search" o "s"
-    para un algoritmo de \enc{búsqueda}{busqueda} local, y "weiszfeld" o "w" para el algoritmo de Weiszfeld. 
+    para un algoritmo de \enc{búsqueda}{busqueda} local, y "weiszfeld" o
+    "w" para el algoritmo de Weiszfeld o cualquiera de los
+    \enc{métodos}{metodos} \enc{válidos}{validos} para la
+    \enc{función}{funcion} optim, a saber, "Nelder-Mead", "BFGS", "CG", "L-BFGS-B", "SANN". 
    "Weiszfeld" es el valor por defecto.}
 }
 \value{
