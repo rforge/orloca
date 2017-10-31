@@ -1,14 +1,12 @@
-\name{zsummin}
-\alias{zsummin}
-\alias{zsummin,loca.p-method}
+\name{zsuml2min}
+\alias{zsuml2min}
+\alias{zsuml2min,loca.p-method}
 \encoding{UTF-8}
 
-\title{zsummin en el paquete orloca}
-\description{
-  Resuelve el problema de \enc{localización}{localizacion} min-sum para un objeto dado de la clase \code{loca.p}.
-}
+\title{zsuml2min en el paquete orloca}
+\description{La \enc{función}{funcion} \code{zsummin} para la norma \enc{euclídea}{euclidea} (\eqn{l_2}).}
 \usage{
-zsummin(o, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE,
+zsuml2min(o, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE,
    algorithm="weiszfeld")
 }
 \arguments{
@@ -19,13 +17,10 @@ zsummin(o, x=0, y=0, max.iter=100, eps=1.e-3, verbose=FALSE,
   \item{eps}{La norma del gradiente en la regla de parada.}
   \item{verbose}{Si es TRUE la \enc{función}{funcion} proporciona salida
     detallada.}
-  \item{algorithm}{El algoritmo a utilizar. Los valores \enc{válidos}{validos} son: "gradient" o "g" para el \enc{método}{metodo} basado en el gradiente, "search" o "s"
-    para \enc{método}{metodo} de busca local, y "weiszfeld" o "w" para el \enc{método}{metodo} de Weiszfeld. 
+  \item{algorithm}{El algoritmo a utilizar. Los valores \enc{válidos}{validos} son: "gradient" o "g" para un algoritmo de gradiente, "search" o "s"
+    para un algoritmo de \enc{búsqueda}{busqueda} local, y "weiszfeld" o "w" para el algoritmo de Weiszfeld. 
    "Weiszfeld" es el valor por defecto.}
 }
-\details{Si \eqn{p < 1} entonces \eqn{l_p} no es una norma, por tanto,
-  \enc{sólo}{solo} \eqn{p \ge 1} es válido.
-  }
 \value{
   \code{zsummin} devuelve un vector con las coordenadas del punto \enc{solución}{solucion}.
 }

@@ -43,7 +43,7 @@ sol
 zsum(p, sol[1], sol[2])
 
 # Calculo del tiempo de ejecución
-proc.time(zsummin(p))
+system.time(zsummin(p))
 
 # Restauración de los parámetros gráficos
 par(opar)

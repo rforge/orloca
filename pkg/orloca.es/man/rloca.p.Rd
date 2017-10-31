@@ -62,4 +62,4 @@ rloca.p(48, groups=5)
 rloca.p(1, groups=c(10, 7, 2))
 }
 \keyword{datagen}
-\seealso{\enc{Véase}{Vease} \enc{también}{tambien} \code{\link{orloca-package}} y \code{\link{loca.p}}}
+\seealso{\enc{Véase}{Vease} \enc{también}{tambien} \code{\link[orloca]{orloca-package}} y \code{\link{loca.p}}}

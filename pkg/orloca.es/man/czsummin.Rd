@@ -4,10 +4,7 @@
 \encoding{UTF-8}
 
 \title{czsummin en el paquete orloca}
-\description{
-  Resuelve el problema de \enc{localización}{localizacion} min-sum para
-  un objeto de la clase loca.p.
-}
+\description{Es la \enc{versión}{version} para \enc{clúster}{cluster} de \code{zsummin}.}
 \usage{
 czsummin(o, cluster, x=0, y=0, max.iter=100, eps=1.e-3,
    verbose=FALSE, algorithm="gradient")
@@ -21,13 +18,13 @@ czsummin(o, cluster, x=0, y=0, max.iter=100, eps=1.e-3,
   \item{eps}{El \enc{módulo}{modulo} del gradiente en la regla de parada.}
   \item{verbose}{Si es TRUE la \enc{función}{funcion} proporciona una salida
     detallada.}
-  \item{algorithm}{El \enc{método}{metodo} que se \enc{usará}{usara}. Los valores \enc{válidos}{validos} son: "gradient" o "g"
-    para el \enc{método}{metodo} del gradiente, y "search" o "s"
-    para el \enc{método}{metodo} de busca local. "gradient" es el valor
+  \item{algorithm}{El algoritmo que se \enc{usará}{usara}. Los valores \enc{válidos}{validos} son: "gradient" o "g"
+    para un algoritmo de gradiente, y "search" o "s"
+    para un algoritmo de \enc{búsqueda}{busqueda} local. "gradient" es el valor
     por defecto.}
 }
 \value{
-  \code{czsummin} devuelve una matriz con las coordenadas del punto \enc{solución}{solucion}.
+  \code{czsummin} devuelve un vector con las coordenadas del punto \enc{solución}{solucion}.
 
   Los \enc{cálculos}{calculos} se realizan en el cluster dado.
 }

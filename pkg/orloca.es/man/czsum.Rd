@@ -8,7 +8,7 @@
 
 \title{czsum y czsumgra en el paquete orloca}
 \description{
- \enc{Función}{Funcion} objetivo y \enc{función}{funcion} gradiente para problemas de \enc{localización}{localizacion} min-sum.
+ Funciones \code{zsum} y \code{zsumgra} calculadas en el \enc{clúster}{cluster} snow dado.
 }
 \usage{
 czsum(o, cluster, x=0, y=0)
@@ -22,13 +22,13 @@ czsumgra(o, cluster, x=0, y=0)
 }
 \value{
   \code{czsum} devuelve la \enc{función}{funcion} objetivo del problema
-  de \enc{localización}{localizacion} mini-sum, \eqn{\sum_{a_i \in o}
+  de \enc{localización}{localizacion} min-sum, \eqn{\sum_{a_i \in o}
     w_i d(a_i, (x,y))}, donde \eqn{d(a_i, (x,y))} representa la
   distancia \enc{euclídea}{euclidea} entre \eqn{a_i} y \eqn{(x,y)}. 
 
   \code{czsumgra} devuelve el vector gradiente de la \enc{función}{funcion} \code{zsum}.
 
-  El \enc{cálculo}{calculo} se realiza en el cluster dado.
+  El \enc{cálculo}{calculo} se realiza en el \enc{clúster}{cluster} snow dado.
 }
 %\examples{
 %# An unweighted new loca.p object
@@ -49,5 +49,5 @@ czsumgra(o, cluster, x=0, y=0)
   Ver \url{http://www.stat.uiowa.edu/~luke/R/cluster/cluster.html} para
   \enc{información}{informacion} sobre \enc{computación}{computacion} en clusters.
 
-  Ver \enc{también}{tambien} \code{\link{zsum}}, \code{\link{zsumgra}} y \code{\link{zsummin}}
+  \enc{Véase}{Vease} \enc{también}{tambien} \code{\link{zsum}}, \code{\link{zsumgra}} y \code{\link{zsummin}}
   }

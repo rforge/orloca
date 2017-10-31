@@ -34,5 +34,5 @@ plot(loca)
 }
 \keyword{classes}
 \keyword{hplot}
-\seealso{\enc{Véase}{Vease} \enc{también}{tambien} \code{\link{orloca-package}},
+\seealso{\enc{Véase}{Vease} \enc{también}{tambien} \code{\link{orloca.es-package}},
   \code{\link{loca.p}} y \code{\link{plot.zsum}}.}

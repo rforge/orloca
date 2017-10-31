@@ -14,7 +14,7 @@
 \title{Clase de objetos loca.p para Localizacion en Investigacion Operativa}
 \description{
   Un objeto de la clase \code{loca.p} representa un problema de \enc{localización}{localizacion} ponderado con un conjunto de puntos de demanda. 
- El \code{\link[orloca]{orloca-package}} \enc{está}{esta} principalmente dedicado a abordar problemas de \enc{localización}{localizacion}.
+ El \code{\link{orloca.es-package}} \enc{está}{esta} principalmente dedicado a abordar problemas de \enc{localización}{localizacion}.
 }
 \section{Generators}{
    El principal generador es \code{loca.p(x, y, w = numeric(0), label =
@@ -48,9 +48,9 @@ loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 loca <- new("loca.p", x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
 # Un ejemplo con pesos y nombre
-locb <- new("loca.p", x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1), w = c(1, 2, 1, 2),
-   label = "Caso Ponderado")
+locb <- new("loca.p", x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1), 
+   w = c(1, 2, 1, 2), label = "Caso Ponderado")
 }
 \keyword{classes}
 \keyword{optimize}
-\seealso{\enc{Véase}{Vease} \enc{también}{tambien} \code{\link{orloca-package}}.}
+\seealso{\enc{Véase}{Vease} \enc{también}{tambien} \code{\link{orloca.es-package}}.}
