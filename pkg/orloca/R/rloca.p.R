@@ -30,6 +30,7 @@
 #' @param xmax Maximum value for the x coordinates of the demand points.
 #' @param ymin Minimum value for the y coordinates of the demand points.
 #' @param ymax Maximum value for the y coordinates of the demand points.
+#' @param label The label for the new loca.p object.
 #' @param groups The number of (almost) equal size groups to generate, or a list size of the groups to generate. In the second case \code{n} will be ignored.
 #' @param xgmin Minimum value for the x coordinate of demand points with respect to the group reference point.
 #' @param xgmax Maximum value for the x coordinate of demand points with respect to the group reference point.
@@ -37,12 +38,12 @@
 #' @param ygmax Maximum value for the y coordinate of demand points with respect to the group reference point.
 #' @return If the arguments are valid values, it returns a new object of \code{loca.p} class, else it returns an error.
 #' @export
-rloca.p <- function (n, xmin=0, xmax=1, ymin=0, ymax=1, groups=0, xgmin=xmin, xgmax=xmax, ygmin=ymin, ygmax=ymax)
+rloca.p <- function (n, xmin=0, xmax=1, ymin=0, ymax=1, label = '', groups=0, xgmin=xmin, xgmax=xmax, ygmin=ymin, ygmax=ymax)
    {
      if (!is.numeric(groups)) stop(paste(gettext("Parameter groups must be numeric", domain = "R-orloca")))
      if (identical(groups, 0))
        {
-         new("loca.p", x=runif(n, xmin, xmax), y=runif(n, ymin, ymax))
+         new("loca.p", x=runif(n, xmin, xmax), y=runif(n, ymin, ymax), label = label)
        }
      else if (isTRUE(length(groups) ==  1))
        {
@@ -60,7 +61,7 @@ rloca.p <- function (n, xmin=0, xmax=1, ymin=0, ymax=1, groups=0, xgmin=xmin, xg
 #             w <- c(w, rep(i,gn))
            }
 #         new("loca.p", x=x, y=y, w=w)
-         new("loca.p", x = x, y = y)
+         new("loca.p", x = x, y = y, label = label)
        }
      else
        {
@@ -78,6 +79,6 @@ rloca.p <- function (n, xmin=0, xmax=1, ymin=0, ymax=1, groups=0, xgmin=xmin, xg
              i <- i + 1
            }
 #         new("loca.p", x=x, y=y, w=w)
-         new("loca.p", x=x, y=y)
+         new("loca.p", x=x, y=y, label = label)
        }
    }

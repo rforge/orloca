@@ -21,18 +21,21 @@
 #' @param w is a vector of weights of the demand points. If w is omitted then all weights are considered as 1.
 #' @param label If given, it is the label of the new object.
 #' @return If the arguments have valid values, it returns a new object of class \code{loca.p}, else it returns an error.
-#' \code{summary(x)} returns a summary of the \code{x} \code{loca.p} object and \code{print(x)} prints a summary of the \code{x} \code{loca.p} object.
+#' \code{summary(x)} returns a summary of the \code{x} \code{loca.p} object and \code{print(x)} prints the \code{x} \code{loca.p} object in table format.
 #' @examples
 #' # A new unweighted loca.p object
 #' loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 #' # or
 #' loca <- new("loca.p", x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
-#' 
+#'
 #' # An example with weights and name
 #' locb <- new("loca.p", x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1),
 #' w = c(1, 2, 1, 2), label = "Weighted case")
 #'
 #' @seealso See also \code{\link{orloca-package}}.
+
+## To ensure that orloca is included in pot file
+gettext("orloca", domain="R-orloca")
 
 setClass("loca.p",
 	representation(x="numeric", y="numeric", w="numeric", label="character")
@@ -41,7 +44,7 @@ setClass("loca.p",
 #
 # loca.p Validity method
 #
-setValidity("loca.p", 
+setValidity("loca.p",
    function(object)
       {
       if(length(object@x)==length(object@y))
@@ -60,7 +63,7 @@ setValidity("loca.p",
 #
 # loca.p initialize method
 #
-setMethod("initialize", "loca.p",  
+setMethod("initialize", "loca.p",
    function(.Object, x, y, w = numeric(0), label="")
       {
       .Object@x <- x
@@ -78,24 +81,17 @@ loca.p <- function(x, y, w = numeric(0), label="") new("loca.p", x, y, w, label)
 
 #
 # loca.p summary method
-#
-setMethod("summary", "loca.p",
-   function(object, ...)
-          {
-            c("label"=object@label, "n"=length(object@x), "xmin"=min(object@x), "xwmean"=weighted.mean(object@x,object@w), "xmax"=max(object@x), "ymin"=min(object@y), "ywmean"=weighted.mean(object@y,object@w), "ymax"=max(object@y))
-            }
-          )
-          
+#' @S3method summary loca.p
+summary.loca.p <- function(object, ...) {
+    c("label"=object@label, "n"=length(object@x), "xmin"=min(object@x), "xwmean"=weighted.mean(object@x,object@w), "xmax"=max(object@x), "ymin"=min(object@y), "ywmean"=weighted.mean(object@y,object@w), "ymax"=max(object@y))
+    }
+# setMethod("summary", "loca.p", summary.loca.p)
 
 #
 # loca.p print method
-#
-setMethod("print", "loca.p",
-   function(x, ...)
-      {
-      # To ensure that orloca is included in pot file
-      gettext("orloca", domain="R-orloca")
-      print(summary(x), ...)
-      invisible(x)
-      }
-)
+#' @S3method print loca.p
+print.loca.p <- function(x, ...) {
+  print(as.data.frame(x), ...)
+  invisible(x)
+}
+# setMethod("print", "loca.p", print.loca.p)

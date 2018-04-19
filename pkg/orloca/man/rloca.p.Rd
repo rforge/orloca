@@ -4,8 +4,8 @@
 \alias{rloca.p}
 \title{Random instances generator of loca.p class object}
 \usage{
-rloca.p(n, xmin = 0, xmax = 1, ymin = 0, ymax = 1, groups = 0,
-  xgmin = xmin, xgmax = xmax, ygmin = ymin, ygmax = ymax)
+rloca.p(n, xmin = 0, xmax = 1, ymin = 0, ymax = 1, label = "",
+  groups = 0, xgmin = xmin, xgmax = xmax, ygmin = ymin, ygmax = ymax)
 }
 \arguments{
 \item{n}{The number of demand points.}
@@ -17,6 +17,8 @@ rloca.p(n, xmin = 0, xmax = 1, ymin = 0, ymax = 1, groups = 0,
 \item{ymin}{Minimum value for the y coordinates of the demand points.}
 
 \item{ymax}{Maximum value for the y coordinates of the demand points.}
+
+\item{label}{The label for the new loca.p object.}
 
 \item{groups}{The number of (almost) equal size groups to generate, or a list size of the groups to generate. In the second case \code{n} will be ignored.}
 

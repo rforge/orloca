@@ -9,7 +9,8 @@
 \title{plot of loca.p class objects}
 \usage{
 \method{plot}{loca.p}(x, xlab = "", ylab = "",
-  main = gettext("Plot of loca.p object", domain = "R-orloca"), img = NULL,
+  main = paste(gettext("Plot of loca.p", domain = "R-orloca"), ifelse(x@label
+  == "", "", paste0(": \\"", x@label, "\\""))), img = NULL,
   xlim = c(min(xleft, min(x@x)), max(xright, max(x@x))),
   ylim = c(min(ybottom, min(x@y)), max(ytop, max(x@y))), xleft = min(x@x),
   ybottom = min(x@y), xright = max(x@x), ytop = max(x@y), ...)

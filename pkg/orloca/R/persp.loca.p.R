@@ -22,12 +22,12 @@
 #' @examples
 #' # A new unweighted loca.p object
 #' loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
-#' 
+#'
 #' # The 3D graphics
 #' persp(loca)
-#' 
+#'
 #' @export
-persp.loca.p <- function(x, lp=numeric(0), xmin=min(x@x), xmax=max(x@x), ymin=min(x@y), ymax=max(x@y), n=100, ...)
+persp.loca.p <- function(x, lp=numeric(0), xmin=min(x@x), xmax=max(x@x), ymin=min(x@y), ymax=max(x@y), n=10, ...)
    {
    .x<-seq(xmin, xmax, length.out=n)
    .y<-seq(ymin, ymax, length.out=n)

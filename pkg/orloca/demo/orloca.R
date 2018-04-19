@@ -1,4 +1,4 @@
-# Loading required graphics packages
+# Adjust graphical parameters
 opar <- par(ask = dev.interactive(orNone = TRUE))
 
 # Creation of new loca.p object

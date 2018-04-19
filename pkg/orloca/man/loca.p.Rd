@@ -21,7 +21,7 @@
 }
 \value{
 If the arguments have valid values, it returns a new object of class \code{loca.p}, else it returns an error.
-\code{summary(x)} returns a summary of the \code{x} \code{loca.p} object and \code{print(x)} prints a summary of the \code{x} \code{loca.p} object.
+\code{summary(x)} returns a summary of the \code{x} \code{loca.p} object and \code{print(x)} prints the \code{x} \code{loca.p} object in table format.
 }
 \description{
 An object of class \code{loca.p} represents a weighted location problem with a finite demand points set.
