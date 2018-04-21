@@ -8,8 +8,8 @@ Suggests:
     grDevices, graphics, knitr
 VignetteBuilder: knitr
 Title: Operations Research LOCational Analysis Models
-Version: 4.4
-Date: 2018-04-20
+Version: 4.5
+Date: 2018-04-23
 Author: Manuel Munoz-Marquez <manuel.munoz@uca.es>
 Maintainer: Manuel Munoz-Marquez <manuel.munoz@uca.es>
 Description: Objects and methods to handle and solve the min-sum location problem, also known as Fermat-Weber problem. The min-sum location problem search for a point such that the weighted sum of the distances to the demand points are minimized. See "The Fermat-Weber location problem revisited" by Brimberg, Mathematical Programming, 1, pg. 71-76, 1995. <DOI:10.1007/BF01592245>.

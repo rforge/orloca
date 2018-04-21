@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: orloca 4.2\n"
 "Report-Msgid-Bugs-To: manuel.munoz@uca.es\n"
-"POT-Creation-Date: 2017-10-15 13:12+0200\n"
+"POT-Creation-Date: 2018-04-21 19:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,6 +26,9 @@ msgstr ""
 msgid "The given img object is not a raster image and cannot be coerce to it."
 msgstr ""
 
+msgid "orloca"
+msgstr ""
+
 msgid "NA's values are not allowed"
 msgstr ""
 
@@ -41,10 +44,7 @@ msgstr ""
 msgid "The length of x and y are different"
 msgstr ""
 
-msgid "orloca"
-msgstr ""
-
-msgid "Plot of loca.p object"
+msgid "Plot of loca.p"
 msgstr ""
 
 msgid "Parameter groups must be numeric"

@@ -19,9 +19,9 @@ Package:   orloca
 
 Type:      Package
 
-Version:   4.4
+Version:   4.5
 
-Date:      2018-04-20
+Date:      2018-04-23
 
 License:   GPL (>= 3)
 }

@@ -1,0 +1,273 @@
+---
+title: "Localización plana con orloca"
+author: "Manuel Munoz-Marquez"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Localización plana con orloca}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 6,
+  fig.height = 4
+)
+library('orloca')
+```
+
+# Introducción
+
+En un problema de localización se busca encontrar la ubicación óptima de un servicio, o un conjunto de ellos, de forma que la calidad que dicho servicio presta a un conjunto de puntos de demanda sea, según cierta medida, óptimo. 
+Algunos ejemplos de problemas de localización son:
+
+* Encontrar la ubicación óptima del almacen central de una red de distribución de mercancías para que se minimice el costo total de transporte
+* Encontrar la ubicación óptima de una ambulancia que debe atender a los pacientes de cierta región para que se minimice el tiempo en atender al paciente más lejano
+
+Son numerosos los contextos en los que se plantean problemas de localización, debido a ello la teoría de localización ha sido objeto de gran atención en los últimos años, pudiendo decirse que es un tema de gran 
+actualidad y vigencia. 
+A ello contribuye la aparición de facetas del problema hasta ahora no 
+estudiadas. 
+Por ejemplo, junto a los ya clásicos criterios de minimización de costos, aparecen nuevos criterios: ambientales, sociales, calidad de vida, etc. 
+Estas nuevas vertientes del problema hacen que sea un campo abierto de estudio. 
+
+El paquete que se presenta está dedicado a la resolución del problema de localizar un único punto en el plano usando como objetivo la minimización de la suma de las distancias ponderadas a los puntos de demanda. 
+Nuevas versiones del paquete incluirán nuevos modelos de localización.
+
+# La clase de objetos loca.p
+
+En un problema de localización plana el conjunto de puntos de demanda viene dado por las coordenadas de dichos puntos. 
+Opcionalmente, se puede asignar a dichos puntos una ponderación, que da mayor importancia a unos puntos que a otros, dado que el objetivo que se considera es minimizar la suma ponderada de las distancias entre el punto de servicio y dicho conjunto demandante. 
+Por ejemplo, si se busca la localización de un hospital comarcal, los puntos de demanda pueden ser las localidades a las que el hospital debe atender y las ponderaciones la población de cada localidad.
+
+Para la resolución de estos problemas se ha definido una clase de objetos designada `loca.p`, de forma que un objeto `loca.p` almacena las coordenadas de los puntos de demanda y las ponderaciones de cada uno de los puntos. 
+Cada objeto `loca.p` tiene tres slots, `x` e `y` que almacenan las coordenadas y `w` que almacena las ponderaciones. 
+Cuando las ponderaciones no se den de forma explícita, se considerará que todos los puntos de demanda tienen igual importancia. 
+
+En el resto de esta sección se expondrá la forma de hacer las operaciones básicas con objetos loca.p.
+
+## Creación de objetos de clase loca.p
+
+Consideremos un problema de localización en el que el conjunto de puntos de demanda es $(0,0)$, $(4,0)$ y $(2,2)$. 
+Para crear un objeto `loca.p` que represente a dicho conjunto, se puede hacer llamando a la función constructora usando como argumentos el vector con las coordenadas $x$ y el vector con las coordenadas $y$ del conjunto de puntos:
+```{r}
+loca.p(c(0, 4, 2), c(0, 0, 2))
+```
+o alternativamente:
+```{r  results = 'hide'}
+loca.p(x = c(0, 4, 2), y = c(0, 0, 2))
+```
+
+El constructor tiene dos argumentos opcionales más, el tercero `w` se usa para especificar un vector de pesos y el cuarto para especificar una etiqueta que se usará para identificar el objeto. 
+Si, usando el mismo conjunto de puntos, se quiere asignar los pesos 1, 1, 3, a dichos puntos y la etiqueta "Problema 1", se usa:
+```{r include=TRUE}
+loca.p(x = c(0, 4, 2), y = c(0, 0, 2), w = c(1, 1, 3), label = "Problema 1")
+```
+
+Un objeto `loca.p` también se puede obtener convirtiendo un objeto `data.frame` que tenga las columnas `x` e `y`, y opcionalmente `w`. 
+Partiendo del `data.frame`
+```{r include = FALSE}
+d <- data.frame(x = c(0, 10, 2), y = c(0, 0, 8), w = c(1, 3, 1))
+```
+```{r}
+d
+```
+se puede construir un objeto `loca.p` llamando a la función `as`:
+```{r}
+as(d, "loca.p")
+```
+o alternativamente:
+```{r results='hide'}
+as.loca.p(d)
+```
+
+Recíprocamente, un objeto `loca.p` se puede convertir en un objeto `data.frame` mediante:
+```{r}
+p1 <- loca.p(x = c(0, 4, 2), y = c(0, 0, 2), w = c(1, 1, 3), label = "Problema 1")
+as(p1, 'data.frame')
+```
+o alternativamente
+```{r results='hide'}
+as.data.frame(p1)
+```
+
+En las conversiones, el slot `label` del objeto `loca.p` se almacena como un atributo del objeto `data.frame`. 
+La etiqueta se puede leer y modificar accediendo a ellos:
+```{r}
+p1@label
+dp1 <- as.data.frame(p1)
+attr(dp1, "label")
+```
+
+Los objetos `loca.p` también pueden transformase en o construirse desde objetos de tipo `matrix`.
+
+## Generación aleatoria de objetos de clase loca.p
+
+Se pueden crear objetos aleatorios de clase `loca.p` usando la función `rloca.p`. 
+El primer argumento, `n` indica el número de puntos a generar. 
+Por defecto, dichos puntos se generan en el cuadrado unidad $[0,1] \times [0, 1]$. 
+Así, para generar un objeto `loca.p` con 5 puntos en el cuadrado unidad, se usa:
+```{r}
+set.seed(161236)
+rloca.p(5)
+```
+Los argumentos `xmin`, `xmax`, `ymin` e `ymax` permiten especificar el rectángulo en el que se generarán los puntos. 
+Además, la función `rloca.p` permite especificar la etiqueta para el nuevo objeto. 
+Por ejemplo, para generar los puntos en el rectángulo $[-1, 1] \times [-5,5]$ con etiqueta "Rectángulo" se usa:
+```{r}
+rloca.p(5, xmin = -1, xmax = 1, ymin = -5, ymax = 5, label = "Rectángulo")
+```
+
+Los puntos generados por la función `rloca.p` se pueden generar en grupos repartidos espacialmente. 
+El argumento `groups` permite especificar el número de grupos mediante un número o el número de puntos en cada grupo a través de un vector. 
+En este segundo caso, el valor dado al argumento `n` se ignora. 
+Para generar aleatoriamente un conjunto de demanda con tres grupos iguales:
+```{r}
+rloca.p(9, groups = 3, label = "Tres grupos iguales")
+```
+para tres grupos desiguales:
+```{r}
+rloca.p(groups = c(2, 2, 5), label = "Tres grupos desiguales")
+```
+
+Para generar los datos en grupos se genera en primer lugar un desplazamiento del centro de cada grupo y luego se generan los puntos sumando a cada punto el desplazamiento que corresponda a su grupo.
+Por tal motivo, `groups = 1` no es equivalente a no especificar dicho parámetro. 
+El desplazamiento de los centros se puede especificar mediante los argumentos `xgmin`, `xgmax`, `ygmin` e `ygmax`. 
+Para ilustrar mejor el funcionamiento de la función se puede pintar el resultado:
+```{r}
+rl <- rloca.p(60, groups = 3, xmin = -10, xmax = 10, ymin = -10, ymax = 10, xgmin = -1, xgmax = 1, ygmin = -1, ygmax = 1, label = "Tres grupos")
+plot(rl)
+```
+
+## Resumiendo los datos
+
+Para obtener un resumen numérico de un objeto `loca.p` se puede usar la función `summary`:
+```{r}
+summary(rl)
+```
+
+En el resumen se muestran los valores mínimo, máximo y medio de ambas coordenadas, además de la medias ponderadas de las coordenadas de los puntos para cada componente.
+
+# Distancia media ponderada
+
+Dado un objeto `loca.p` se puede evaluar la distancia ponderada desde un punto dado. 
+Así mismo, se puede evaluar el gradiente de dicha función y se puede resolver el problema de minimizar dicho objetivo.
+
+## Evaluación
+
+La función distancia media ponderada se denomina en el paquete `zsum`, dado un punto, por ejemplo: $(3, 1)$ se puede evaluar la distancia media ponderada a un objeto `loca.p`:
+```{r}
+pt3 <- loca.p(x = c(0, 4, 2), y = c(0, 0, 2), label = "Tres puntos")
+zsum(o = pt3, x = 3, y = 1)
+```
+También se puede calcular el gradiente de `zsum` llamado `zsumgra`:
+```{r}
+zsumgra(o = pt3, x = 3, y = 1)
+```
+
+## Resolución
+
+Para encontrar la solución óptima al problema de localización anterior se usa la función `zsummin`:
+```{r}
+s <- zsummin(pt3)
+s
+```
+Evaluando la función y el gradiente en el punto obtenido
+```{r}
+zsum(o = pt3, x = s[1], y = s[2])
+zsumgra(o = pt3, x = s[1], y = s[2])
+```
+Como se puede comprobar por el valor del gradiente, la solución encontrada es un óptimo local y al ser la función objetivo convexa un óptimo global.
+
+Estas tres funciones admiten un argumento opcional `lp`, si se omite este argumento, se utiliza la norma euclídea, es decir, la norma $l_2$, si se especifica un valor para `lp` se utilizará la norma $l_p$ para dicho valor de $p$.
+
+Obsérvese que si se especifica `lp = 2` se utiliza el algoritmo genérico para la norma `l_p` con $p$ igual a 2. 
+La utilización del algoritmo genérico requiere un mayor esfuerzo computacional para la resolución del problema, por lo que no es recomendable especificar dicho argumento para usar la norma euclídea.
+
+# Dibujando
+
+Tanto los objetos `loca.p` como la función objetivo pueden representarse en un gráfico. 
+Para la función objetivo se proporciona una representación basada en curvas de nivel y otra en un gráfico 3D.
+
+## Dibujar un objeto `loca.p`
+
+La gráfica de un objeto `loca.p` consiste en representar en el plano el diagrama de dispersión del conjunto de puntos de demanda usando la función plot:
+```{r}
+plot(pt3)
+```
+
+## Gráfico de curvas de nivel
+
+El gráfico de curvas de nivel se realiza con la función `contour`:
+```{r}
+contour(pt3)
+```
+
+En el gráfico se puede observar cómo la función alcanza el mínimo en el punto calculado anterioremente. 
+Ampliando:
+```{r}
+contour(pt3, xlim = c(1.9, 2.1), ylim = c(1, 1.2), levels = c(5.465, 5.47, 5.475))
+```
+
+Las funciones `plot` y `contour` admiten un argumento opcional `img` que permite especificar un gráfico raster que se usará como fondo del gráfico.
+
+## Gráfico en 3D
+
+Análogamente se puede realizar una representación en tres dimensiones usando la función `persp`:
+```{r}
+persp(pt3)
+persp(pt3, col = "lightblue", theta = 45, ltheta = 120, shade = 0.75, ticktype = "detailed")
+```
+
+Las tres funciones de representación pasarán los restantes argumentos opcionales a la función genérica plot.
+
+## Ejemplo de localización en Andalucía
+
+Se cargan los datos de las capitales andaluzas y se convierte en un objeto de clase `loca.p`:
+```{r}
+data(andalusia)
+o <- loca.p(x=andalusia$x[1:8], y=andalusia$y[1:8])
+```
+
+Se calculan los valores límite para el gráfico:
+```{r}
+xmin <- min(andalusia$x)
+ymin <- min(andalusia$y)
+xmax <- max(andalusia$x)
+ymax <- max(andalusia$y)
+```
+
+Se carga el mapa de Andalucía y se representan los puntos con el mapa de fondo
+```{r}
+file = system.file('img', 'andalusian_provinces.png', package='orloca')
+img = readPNG(file)
+plot(o, img=img, main='Andalucía', xleft=xmin, ybottom=ymin, xright=xmax, ytop=ymax)
+```
+
+El gráfico de curvas de nivel es:
+```{r}
+contour(o, img=img, main='Andalucía', xleft=xmin, ybottom=ymin, xright=xmax, ytop=ymax)
+```
+
+La solución óptima del problema de localización con las 8 capitales, ocho primeras filas, se obtiene:
+```{r}
+andalusia.loca.p <- loca.p(andalusia$x[1:8], andalusia$y[1:8])
+sol <- zsummin(andalusia.loca.p)
+sol
+```
+
+La solución óptima que proporciona el algoritmo está localizada a unos 35 Km al norte de Antequera. 
+Recuérdese que usualmente se considera a Antequera como el centro geográfico de Andalucía. 
+El gráfico presenta la solución como un punto de color rojo:
+```{r}
+contour(o, img=img, main='Andalucía', xleft=xmin, ybottom=ymin, xright=xmax, ytop=ymax)
+points(sol[1], sol[2], type='p', col='red')
+```
+
+Por simplicidad en el ejemplo, no se ha tenido en cuenta la curvatura terrestre.
+
+
+
