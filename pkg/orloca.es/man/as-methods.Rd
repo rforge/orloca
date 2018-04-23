@@ -33,7 +33,7 @@ objeto de la nueva clase.
 \description{Conversiones entre la clase loca.p y algunas otras}
 \section{Detalles}{Métodos para convertir desde y a la clase \code{loca.p}.
 
-Valores NA no son permitidos en ningún argumento.
+No se permiten valores NA en ningún argumento.
 
 La \code{matrix} a convertir en \code{loca.p} debe tener al menos dos columnas. 
 La primera \enc{será}{sera} considerada como la coordenada x, y la segunda como la coordenada y, y la tercera (si se ha suministrado) \enc{serán}{seran} los valores de w.

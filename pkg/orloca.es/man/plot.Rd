@@ -44,9 +44,11 @@
   \code{\link{loca.p}} y \code{\link{plot.zsum}}.}
 \section{Ejemplos}{
 # Un objeto de la clase loca.p sin pesos
+  
 loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
 # El grafico del objeto loca.p
+
 plot(loca)
 }
 \keyword{classes}

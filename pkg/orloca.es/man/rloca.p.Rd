@@ -20,7 +20,7 @@ rloca.p(n, xmin = 0, xmax = 1, ymin = 0, ymax = 1, groups = 0,
   \item{ymax:}{\enc{Máximo}{Maximo} valor para la coordenada y de los puntos de demanda.}
   \item{groups:}{El \enc{número}{numero} de grupos (de aproximadamente
     igual \enc{tamaño}{tamano}) o una lista con los \enc{tamaños}{tamanos} de los
-    grupos a generar.}
+    grupos a generar. En el segundo caso \code{n} se ignora.}
   \item{xgmin:}{\enc{Mínimo}{Minimo} valor para la coordenada x de los
     puntos de demanda respecto del punto referencia del grupo.}
   \item{xgmax:}{\enc{Máximo}{Maximo} valor para la coordenada x de los
@@ -57,15 +57,19 @@ rloca.p(n, xmin = 0, xmax = 1, ymin = 0, ymax = 1, groups = 0,
 
 \section{Ejemplos}{
 # Un objeto aleatorio loca.p en el cuadrado unidad con 5 puntos de demanda
+
 rloca.p(5)
 
 # En otra region
+
 rloca.p(10, xmin=-2, xmax=2, ymin=-2, ymax=2)
 
 # Cinco grupos
+
 rloca.p(48, groups=5)
 
 # Tres grupos de distinto tamano
+
 rloca.p(1, groups=c(10, 7, 2))
 }
 \keyword{datagen}

@@ -35,18 +35,23 @@ eucl\enc{í}{i}dea o la distancia \eqn{l_p} entre \eqn{a_i} y el punto \eqn{(x,y
 
 \section{Ejemplos}{
 # Un nuevo objeto loca.p no ponderado
+
 loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
 # Evaluacion de zsum en (0, 0)
+
 zsum(loca)
 
 # Evaluacion de zsum en (1, 3)
+
 zsum(loca, 1, 3)
 
 # Calculo de la funcion objetivo en el punto (3, 4) usando la norma lp con p = 2.5
+
 zsum(loca, 3, 4, lp=2.5)
 
 # El gradiente de la funcion en el punto (1,3)
+
 zsumgra(loca, 1, 3)
 
 }

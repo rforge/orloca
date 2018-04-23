@@ -3,7 +3,7 @@
 \alias{contour.loca.p}
 \encoding{UTF-8}
 
-\title{Grafica de la funcion objetivo min-sum}
+\title{Gr\enc{á}{a}fica de la funci\enc{ó}{o}n objetivo min-sum}
 \description{
   \code{contour} proporcionan la \enc{representación}{representacion} \enc{gráfica}{grafica} de la \enc{función}{funcion} del problema min-sum (\code{zsum}).
 }
@@ -46,9 +46,11 @@
 
 \section{Ejemplos}{
 # Un objeto loca.p sin pesos
+
 loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
 # El grafico de curvas de nivel de la fucion min-sum para el objeto
+
 contour(loca)
 
 }
