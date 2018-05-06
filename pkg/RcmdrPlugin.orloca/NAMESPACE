@@ -1,3 +1,19 @@
-import(stats, Rcmdr)
+import(orloca, orloca.es, stats, Rcmdr)
 importFrom(tcltk, tkfont.create, ttkprogressbar, tkwidget, setTkProgressBar)
-exportPattern("^[^\\.]") 
+
+export(activeDataSetLocaP,
+       Rcmdr.contour.zsum,
+       Rcmdr.help.orloca, Rcmdr.help.RcmdrPlugin.orloca,
+       Rcmdr.new.loca.p,
+       Rcmdr.orloca.norm,
+       Rcmdr.persp.zsum, Rcmdr.plot.contour.loca.p, Rcmdr.plot.loca.p,
+       Rcmdr.rloca.p,
+       Rcmdr.summary.loca.p,
+       Rcmdr.zsum, Rcmdr.zsummin)
+
+
+
+
+
+
+ 

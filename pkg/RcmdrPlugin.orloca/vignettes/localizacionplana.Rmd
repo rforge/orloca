@@ -1,0 +1,199 @@
+---
+title: "Localización plana con R-Commander: RcmdrPlugin.orloca"
+author: "Manuel Munoz-Marquez"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Localización plana con R-Commander: RcmdrPlugin.orloca}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 6,
+  fig.height = 4
+)
+library(RcmdrPlugin.orloca)
+```
+
+# Introducción
+
+En un problema de localización se busca encontrar la ubicación óptima de un servicio, o un conjunto de ellos, de forma que la calidad que dicho servicio presta a un conjunto de puntos de demanda sea, según cierta medida, óptimo. 
+Algunos ejemplos de problemas de localización son:
+
+* Encontrar la ubicación óptima del almacen central de una red de distribución de mercancías para que se minimice el costo total de transporte
+* Encontrar la ubicación óptima de una ambulancia que debe atender a los pacientes de cierta región para que se minimice el tiempo en atender al paciente más lejano
+
+Son numerosos los contextos en los que se plantean problemas de localización, debido a ello la teoría de localización ha sido objeto de gran atención en los últimos años, pudiendo decirse que es un tema de gran 
+actualidad y vigencia. 
+A ello contribuye la aparición de facetas del problema hasta ahora no 
+estudiadas. 
+Por ejemplo, junto a los ya clásicos criterios de minimización de costos, aparecen nuevos criterios: ambientales, sociales, calidad de vida, etc. 
+Estas nuevas vertientes del problema hacen que sea un campo abierto de estudio. 
+
+El paquete que se presenta está dedicado a la resolución del problema de localizar un único punto en el plano usando como objetivo la minimización de la suma de las distancias ponderadas a los puntos de demanda. 
+Nuevas versiones del paquete incluirán nuevos modelos de localización.
+
+El paquete __RcmdrPlugin.orloca__ añade algunas opciones al menú de Rcmdr para la resolución de problemas de localización plana. 
+La entrada principal del menú es __Orloca__ y las opciones de dicho menú son:
+
+* Nuevo loca.p
+* Nueva instancia aleatoria loca.p
+* Resumen
+* Evaluación de la función objetivo del problema de localización de suma ponderada
+* Gráficos
+* Opciones
+* Ayuda
+
+En las siguientes secciones se describirán detalladamente cada una de estas opciones.
+
+
+# La clase de objetos loca.p
+
+En un problema de localización plana el conjunto de puntos de demanda viene dado por las coordenadas de dichos puntos. 
+Opcionalmente, se puede asignar a dichos puntos una ponderación, que da mayor importancia a unos puntos que a otros, dado que el objetivo que se considera es minimizar la suma ponderada de las distancias entre el punto de servicio y dicho conjunto demandante. 
+Por ejemplo, si se busca la localización de un hospital comarcal, los puntos de demanda pueden ser las localidades a las que el hospital debe atender y las ponderaciones la población de cada localidad.
+
+Para la resolución de estos problemas se ha definido una clase de objetos designada `loca.p`, de forma que un objeto `loca.p` almacena las coordenadas de los puntos de demanda y las ponderaciones de cada uno de los puntos. 
+Cada objeto `loca.p` tiene tres slots, `x` e `y` que almacenan las coordenadas y `w` que almacena las ponderaciones. 
+Cuando las ponderaciones no se den de forma explícita, se considerará que todos los puntos de demanda tienen igual importancia. 
+
+En el resto de esta sección se expondrá la forma de hacer las operaciones básicas con objetos `loca.p`.
+
+## Creación de objetos de clase loca.p
+
+Consideremos un problema de localización en el que el conjunto de puntos de demanda es $(0,0)$, $(4,0)$ y $(2,2)$. 
+Para crear un objeto `loca.p` que represente a dicho conjunto, se seleccionan en el menú las opciones "Orloca" -> "Nuevo loca.p", obteniéndose el diálogo:
+
+![Diálogo "Nuevo loca.p"](../../../img/dialogo.nuevo.loca.p.png)
+
+Cambiando el nombre y pulsando en "Aceptar" se accede a la ventana del editor de datos. 
+En la columna `x` se introducen los valores $0$, $4$, $2$ y $0$, $0$, $2$ en la columna `y`, y por último, se introducen tres unos en la columna `w`. 
+Al salir del editor se habrá creado y activado un nuevo conjunto de datos `loca1` que representa un objeto `loca.p`.
+```{r include=FALSE}
+loca1 <- loca.p(c(0, 4, 2), c(0, 0, 2))
+```
+
+Las conversiones necesarias entre el tipo `data.frame` y el tipo `loca.p` se hacen de forma automática.
+
+## Generación aleatoria de objetos de clase loca.p
+
+Se pueden crear objetos aleatorios de clase `loca.p` usando las opciones "Orloca" -> "Nueva instancia aleatoria loca.p", obteniéndose el diálogo:
+
+![Diálogo "Nueva instancia aleatoria loca.p"](../../../img/dialogo.nuevo.rloca.p.png)
+
+Cambiando los campos del diálogo como se muestra en la figura, se genera un nuevo objeto `loca.p` de nombre `loca2` con 100 puntos de demanda con ambas coordenadas entre 0 y 100 y con tres grupos.
+Tras pulsar en aceptar en la ventana de instrucciones se obtiene:
+```{r}
+loca2 <- rloca.p(n = 100, xmin = 0, xmax = 10, ymin = 0, ymax = 10, groups = 3)
+loca2 <- as(loca2, "data.frame")
+```
+El nuevo conjunto de datos activo pasa a ser `loca2` y puede ser visualizado usando el botón "Visualizar conjunto de datos".
+
+## Resumiendo los datos
+
+Se puede obtener un resumen numérico de un objeto `loca.p`.
+En el resumen se muestran los valores mínimo, máximo y medio de ambas coordenadas, además de la medias ponderadas de las coordenadas de los puntos para cada componente.
+
+Activando previamente el conjunto de datos `loca1` y seleccionando "Orloca" -> "Resumen", se obtiene:
+```{r}
+summary(loca1)
+```
+
+# Distancia media ponderada
+
+Dado un objeto `loca.p` se puede evaluar la distancia media ponderada desde un punto dado. 
+Así mismo, se puede evaluar el gradiente de dicha función y se puede resolver el problema de minimizar dicho objetivo.
+
+## Evaluación
+
+La función distancia media ponderada se denomina en el paquete `zsum`. 
+Dado un punto, por ejemplo: $(3, 1)$ para evaluar la distancia media ponderada a `loca1` se elige "Orloca" -> "Evaluación de la función objetivo del problema de localización de suma ponderada" y se obtiene el diálogo:
+
+![Diálogo "Evaluación de la función objetivo del problema de suma ponderada"](../../../img/dialogo.zsum.png)
+
+Introduciendo los valores mostrados se obtiene:
+```{r}
+zsum(as(loca1, "loca.p") , x = 3, y = 1) # Suma ponderada de las distancias
+zsumgra(as(loca1, "loca.p") , x = 3, y = 1) # Gradiente de la función suma ponderada de las distancias
+```
+
+Obsérvese que también se ha obtenido el gradiente en dicho punto de la función objetivo.
+
+## Resolución
+
+Para encontrar la solución óptima al problema de localización anterior se selecciona "Orloca" -> "Resolver el problema de localización de suma ponderada", obteniéndose el cuadro de diálogo:
+
+![Diálogo "Resolver el problema de localización de suma ponderada"](../../../img/dialogo.solve.png)
+
+Y pulsando en "Aceptar" se obtiene:
+```{r}
+.sol <- zsummin(as(loca1, "loca.p") , x = 0, y = 0, eps =0.001, algorithm ="w" ) # Resolver el problema de localización minsum
+.sol # Muestra la solución
+zsum(as( loca1 , "loca.p") , x = 2.00000022259505 , y =  1.15332010901434 ) # Suma ponderada de las distancias
+remove(.sol)
+```
+
+Donde se muestra que la solución es el punto $(2, 1.15)$, se evalúa la función en él, resultando un valor de $5.46$ y un gradiente practicamente nulo, lo cual indica que el punto es un punto extremo. 
+La solución encontrada es un óptimo local y al ser la función objetivo convexa un óptimo global.
+
+# Dibujando
+
+Tanto los objetos `loca.p` como la función objetivo pueden representarse en un gráfico. 
+Para la función objetivo se proporciona una representación basada en curvas de nivel y otra en un gráfico 3D.
+
+## Dibujar un objeto `loca.p`
+
+La gráfica de un objeto `loca.p` consiste en representar en el plano el diagrama de dispersión del conjunto de puntos de demanda.
+Eligiendo "Orloca" -> "Gráficos" -> "Gráfica del conjunto de puntos de demanda", se obtiene:
+```{r}
+plot(as(loca1, "loca.p"), main= "Gráfica del conjunto de puntos loca1")
+```
+
+## Gráfico de curvas de nivel
+
+El gráfico de curvas de nivel se realiza eligiendo "Orloca" -> "Gráficos" -> "Gráfica de curvas de nivel de zsum", obteniéndose:
+```{r}
+contour(as(loca1, "loca.p"), main="Gráfica de las curvas de nivel de la función objetivo para loca1")
+```
+
+En el gráfico se puede observar como la función alcanza el mínimo en el punto calculado anterioremente. 
+
+Seleccionando "Orloca" -> "Gráficos" -> "Gráficas de demanda y curvas de nivel" se obtienen los dos gráficos anteriores superpuestos:
+```{r}
+plot(as(loca1, "loca.p"), main= "Gráfica del conjunto de puntos de demanda y las curvas de nivel para loca1")
+contour(as(loca1,"loca.p"), add=T)
+```
+
+## Gráfico en 3D
+
+Análogamente se puede realizar una representación en tres dimensiones seleccionando las opciones "Orloca" -> "Gráficos" -> "Gráfica 3D de zsum", obteniéndose:
+```{r}
+persp(as(loca1, "loca.p"), main="Gráfica 3D de la función objetivo min-sum para loca1")
+```
+
+# Uso de otras normas
+
+La norma que se usa por defecto es la norma euclídea o norma $l_2$. 
+Mediante las opciones "Orloca" -> "Opciones" -> "Mostrar/Seleccionar norma" se puede visualizar la norma en uso o elegir una nueva norma dentro de la familia de normas $l_p$.
+Al elegir dichas opciones del menú se muestra el diálogo:
+
+![Diálogo "Mostrar/Seleccionar norma"](../../../img/dialogo.norma.png)
+
+En dicho diálogo se puede especificar un nuevo valor para $p$ mayor o igual a 1, ya que, de lo contrario $l_p$ no sería norma. 
+Todos los cálculos y gráficos se realizaran usando dicha norma hasta que se especifique un valor nuevo o se vuelva a elegir la norma $l_2$.
+El nuevo gráfico de curvas de nivel es:
+```{r}
+contour(as(loca1, "loca.p"), main="Gráfica de las curvas de nivel de la función objetivo para loca1\n(Norma lp = 2.5)",  lp = 2.5)
+```
+
+# El menú ayuda
+
+Las dos opciones disponibles dentro del menú "Orloca" -> "Ayuda", a saber, "Ayuda sobre orloca" y "Ayuda sobre RcmdrPlugin.orloca" facilitan el acceso directo a la ayuda de ambos paquetes.
+
+# Conclusiones
+
+El paquete presentado permite resolver el problema de localización plana de un único servicio con norma $l_p$ usando un sistema amigable de menús.

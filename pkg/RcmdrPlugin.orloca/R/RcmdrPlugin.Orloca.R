@@ -33,6 +33,8 @@
     command
   }
 
+gettext("Planar location", domain="R-RcmdrPlugin.orloca")
+
 ###
 # New loca.p object as data.frame
 ###
@@ -185,7 +187,7 @@ onOK <- function(){
             }
         command <- paste("zsum(as(", ActiveDataSet(), ", \"loca.p\") , x = ", x,", y = ", y, sep="")
         command <- paste(command, .RcmdrPlugin.orloca.get.norma(), sep="")
-        command <- paste(command, ") # ", sep="")
+        command <- paste(command, ") \n# ", sep="")
         command <- paste(command, gettext("Weighted sum of distances", domain="R-RcmdrPlugin.orloca"), sep="")
 	doItAndPrint(command)
         command <- paste("zsumgra(as(", ActiveDataSet(), ", \"loca.p\") , x = ", x,", y = ", y, sep="")

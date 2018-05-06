@@ -1,12 +1,12 @@
 \name{RcmdrPlugin.orloca-package}
-\title{RcmdrPlugin.orloca: A GUI for orloca-package}
+\title{A GUI for Planar Location Problems}
 \alias{RcmdrPlugin.orloca-package}
 \alias{RcmdrPlugin.orloca}
 \docType{package}
 \encoding{UTF-8}
 \description{
-  This package provides a GUI (Graphical User Interface) for the
-  orloca-package. It is a Plug-in for Rcmdr (R Commander).
+  RcmdrPlugin.orloca provides a GUI for the orloca package as a Rcmdr
+  plug-in. The package deals with location problems on the plane.
 
   In order to use the full power of the Rcmdr interface, the data for
   location problems are stored as \code{data.frame} objects. These
@@ -27,8 +27,8 @@
 \tabular{ll}{
 Package: \tab RcmdrPlugin.orloca\cr
 Type: \tab Package\cr
-Version: \tab 4.1-0\cr
-Date: \tab 2013-01-20\cr
+Version: \tab 4.5-0\cr
+Date: \tab 2018-05-06\cr
 License: \tab GPL version 3 or newer\cr
 }
 }
