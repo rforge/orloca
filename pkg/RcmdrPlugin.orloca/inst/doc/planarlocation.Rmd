@@ -63,7 +63,7 @@ The rest of this section will explain how to do basic operations with `loca.p` o
 Consider a localization problem in which the set of demand points is $(0,0)$, $(4,0)$ and $(2,2)$.
 To create a `loca.p` object that represents that set, the options "Orloca" -> "New loca.p" are selected in the menu, obtaining the dialog:
 
-![Dialog "New loca.p"](../../../img/dialog.new.loca.p.png)
+![Dialog "New loca.p"](img/dialog.new.loca.p.png)
 
 Changing the name and clicking on "OK" accesses the data editor window.
 In the `x` column the values $0$, $4$, $2$ and $0$, $0$, $2$ are entered in the `y` column, and finally, three ones are entered in the `w` column.
@@ -78,7 +78,7 @@ The necessary conversions between the `data.frame` type and the `loca.p` type ar
 
 You can create random objects of class `loca.p` using the options "Orloca" -> "New loca.p Random Instance", obtaining the dialog:
 
-![Dialog "New loca.p Random Instance"](../../../img/dialog.new.rloca.p.png)
+![Dialog "New loca.p Random Instance"](img/dialog.new.rloca.p.png)
 
 Changing the dialog fields as shown in the figure, a new object `loca.p` of name `loca2` is generated with 100 demand points with both coordinates between 0 and 100 and with three groups.
 After clicking on OK in the instructions window you get:
@@ -108,7 +108,7 @@ Likewise, the gradient of said function can be evaluated and the problem of mini
 The weighted average distance function is called `zsum` in the package.
 Given a point, for example: $(3, 1)$ to evaluate the weighted average distance to `loca1`, chose from the menu "Orloca" -> "Evaluation of the Objective Function of the weighted sum Location Problem" and the dialog is obtained:
 
-![Dialog "Evaluation of the Objective Function of the weighted sum Location Problem"](../../../img/dialog.zsum.png)
+![Dialog "Evaluation of the Objective Function of the weighted sum Location Problem"](img/dialog.zsum.png)
 
 By entering the values shown you get:
 ```{r}
@@ -122,7 +122,7 @@ Note that the gradient at that point of the objective function has also been obt
 
 To find the optimal solution to the previous location problem, select "Orloca" -> "Solve weighted sum Location Problem", obtaining the dialog box:
 
-![Dialog "Solve weighted sum Location Problem"](../../../img/dialog.solve.png)
+![Dialog "Solve weighted sum Location Problem"](img/dialog.solve.png)
 
 And clicking on "OK" you get:
 ```{r}
@@ -179,7 +179,7 @@ Through the options "Orloca" -> "Options" -> "Show/Set norm" you can display the
 
 When choosing those options from the menu, we get the dialog:
 
-![Dialog "Show/Set norm"](../../../img/dialog.norm.png)
+![Dialog "Show/Set norm"](img/dialog.norm.png)
 
 In this dialog you can specify a new value for $p$ greater than or equal to 1, and that otherwise, $l_p$ would not be a norm.
 All calculations and graphs will be made using this norm until a new value is specified or the norm $l_2$ is chosen again.

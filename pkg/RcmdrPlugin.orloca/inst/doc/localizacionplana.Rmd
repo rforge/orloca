@@ -68,7 +68,7 @@ En el resto de esta sección se expondrá la forma de hacer las operaciones bás
 Consideremos un problema de localización en el que el conjunto de puntos de demanda es $(0,0)$, $(4,0)$ y $(2,2)$. 
 Para crear un objeto `loca.p` que represente a dicho conjunto, se seleccionan en el menú las opciones "Orloca" -> "Nuevo loca.p", obteniéndose el diálogo:
 
-![Diálogo "Nuevo loca.p"](../../../img/dialogo.nuevo.loca.p.png)
+![Diálogo "Nuevo loca.p"](img/dialogo.nuevo.loca.p.png)
 
 Cambiando el nombre y pulsando en "Aceptar" se accede a la ventana del editor de datos. 
 En la columna `x` se introducen los valores $0$, $4$, $2$ y $0$, $0$, $2$ en la columna `y`, y por último, se introducen tres unos en la columna `w`. 
@@ -83,7 +83,7 @@ Las conversiones necesarias entre el tipo `data.frame` y el tipo `loca.p` se hac
 
 Se pueden crear objetos aleatorios de clase `loca.p` usando las opciones "Orloca" -> "Nueva instancia aleatoria loca.p", obteniéndose el diálogo:
 
-![Diálogo "Nueva instancia aleatoria loca.p"](../../../img/dialogo.nuevo.rloca.p.png)
+![Diálogo "Nueva instancia aleatoria loca.p"](img/dialogo.nuevo.rloca.p.png)
 
 Cambiando los campos del diálogo como se muestra en la figura, se genera un nuevo objeto `loca.p` de nombre `loca2` con 100 puntos de demanda con ambas coordenadas entre 0 y 100 y con tres grupos.
 Tras pulsar en aceptar en la ventana de instrucciones se obtiene:
@@ -113,7 +113,7 @@ Así mismo, se puede evaluar el gradiente de dicha función y se puede resolver 
 La función distancia media ponderada se denomina en el paquete `zsum`. 
 Dado un punto, por ejemplo: $(3, 1)$ para evaluar la distancia media ponderada a `loca1` se elige "Orloca" -> "Evaluación de la función objetivo del problema de localización de suma ponderada" y se obtiene el diálogo:
 
-![Diálogo "Evaluación de la función objetivo del problema de suma ponderada"](../../../img/dialogo.zsum.png)
+![Diálogo "Evaluación de la función objetivo del problema de suma ponderada"](img/dialogo.zsum.png)
 
 Introduciendo los valores mostrados se obtiene:
 ```{r}
@@ -127,7 +127,7 @@ Obsérvese que también se ha obtenido el gradiente en dicho punto de la funció
 
 Para encontrar la solución óptima al problema de localización anterior se selecciona "Orloca" -> "Resolver el problema de localización de suma ponderada", obteniéndose el cuadro de diálogo:
 
-![Diálogo "Resolver el problema de localización de suma ponderada"](../../../img/dialogo.solve.png)
+![Diálogo "Resolver el problema de localización de suma ponderada"](img/dialogo.solve.png)
 
 Y pulsando en "Aceptar" se obtiene:
 ```{r}
@@ -181,7 +181,7 @@ La norma que se usa por defecto es la norma euclídea o norma $l_2$.
 Mediante las opciones "Orloca" -> "Opciones" -> "Mostrar/Seleccionar norma" se puede visualizar la norma en uso o elegir una nueva norma dentro de la familia de normas $l_p$.
 Al elegir dichas opciones del menú se muestra el diálogo:
 
-![Diálogo "Mostrar/Seleccionar norma"](../../../img/dialogo.norma.png)
+![Diálogo "Mostrar/Seleccionar norma"](img/dialogo.norma.png)
 
 En dicho diálogo se puede especificar un nuevo valor para $p$ mayor o igual a 1, ya que, de lo contrario $l_p$ no sería norma. 
 Todos los cálculos y gráficos se realizaran usando dicha norma hasta que se especifique un valor nuevo o se vuelva a elegir la norma $l_2$.
