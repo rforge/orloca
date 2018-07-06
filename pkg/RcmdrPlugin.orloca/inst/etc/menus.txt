@@ -31,8 +31,8 @@ menu    oorlocaMenu      orlocapMenu      ""                                    
 item    oorlocaMenu      command         "Show/Set norm"			 Rcmdr.orloca.norm             ""                      "packageAvailable('orloca')"
 
 # uplp location menu
-item    orlocaMenu       cascade         "Uncapacitated plan location problem"   orlocauplpMenu              ""                      ""
-menu    orlocauplpMenu   orlocaMenu      ""                                      ""                          ""                      ""
+#item    orlocaMenu       cascade         "Uncapacitated plan location problem"   orlocauplpMenu              ""                      ""
+#menu    orlocauplpMenu   orlocaMenu      ""                                      ""                          ""                      ""
 
 # General orloca menu items
 item    orlocaMenu       cascade         "Help"                                  orlocahelpMenu                   ""                      "packageAvailable('orloca')"

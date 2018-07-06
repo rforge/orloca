@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RcmdrPlugin.orloca 4.5\n"
 "Report-Msgid-Bugs-To: manuel.munoz@uca.es\n"
-"POT-Creation-Date: 2018-05-06 12:54+0200\n"
+"POT-Creation-Date: 2018-07-06 20:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,7 +80,19 @@ msgstr ""
 msgid "Gradient of the weighted sum of distances function"
 msgstr ""
 
+msgid "x-axis"
+msgstr ""
+
+msgid "y-axis"
+msgstr ""
+
 msgid "Solve weighted sum Location Problem"
+msgstr ""
+
+msgid "Gradient"
+msgstr ""
+
+msgid "Search method"
 msgstr ""
 
 msgid "Select algorithm"
@@ -96,6 +108,12 @@ msgid "Solve the minsum location problem"
 msgstr ""
 
 msgid "Show the solution"
+msgstr ""
+
+msgid "Maximum number of iterations"
+msgstr ""
+
+msgid "Maximum gradient norm"
 msgstr ""
 
 msgid "Help about orloca"

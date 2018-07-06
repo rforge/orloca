@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RcmdrPlugin.orloca\n"
 "Report-Msgid-Bugs-To: manuel.munoz@uca.es\n"
-"POT-Creation-Date: 2018-05-06 12:54+0200\n"
-"PO-Revision-Date: 2018-05-06 12:56+0200\n"
+"POT-Creation-Date: 2018-07-06 20:05+0200\n"
+"PO-Revision-Date: 2018-07-06 20:06+0200\n"
 "Last-Translator: Manuel Munoz-Marquez <manuel.munoz@uca.es>\n"
 "Language-Team: Spanish <manuel.munoz@uca.es>\n"
 "Language: es\n"
@@ -83,8 +83,20 @@ msgstr "Suma ponderada de las distancias"
 msgid "Gradient of the weighted sum of distances function"
 msgstr "Gradiente de la función suma ponderada de las distancias"
 
+msgid "x-axis"
+msgstr "Coordenada x"
+
+msgid "y-axis"
+msgstr "Coordenada y"
+
 msgid "Solve weighted sum Location Problem"
 msgstr "Resolver el problema de localización de suma ponderada"
+
+msgid "Gradient"
+msgstr "Gradiente"
+
+msgid "Search method"
+msgstr "Método de búsqueda"
 
 msgid "Select algorithm"
 msgstr "Seleccione el algoritmo"
@@ -100,6 +112,12 @@ msgstr "Resolver el problema de localización minsum"
 
 msgid "Show the solution"
 msgstr "Muestra la solución"
+
+msgid "Maximum number of iterations"
+msgstr "Número máximo de iteraciones"
+
+msgid "Maximum gradient norm"
+msgstr "Máxima norma del gradiente"
 
 msgid "Help about orloca"
 msgstr "Ayuda sobre orloca"
@@ -160,9 +178,3 @@ msgstr "Gráficas de demanda y curvas de nivel"
 
 msgid "Plot of demand points and contour plot of"
 msgstr "Gráfica del conjunto de puntos de demanda y las curvas de nivel para"
-
-#~ msgid "Algorithm"
-#~ msgstr "Algoritmo"
-
-#~ msgid "Evaluation Objective Function for mini-sum Location Problem"
-#~ msgstr "Evaluación de la función objetivo del  problema mini-sum"
