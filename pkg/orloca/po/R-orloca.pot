@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the orloca package.
+# This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: orloca 4.2\n"
-"Report-Msgid-Bugs-To: manuel.munoz@uca.es\n"
-"POT-Creation-Date: 2018-04-21 19:50+0200\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-25 19:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,78 +17,106 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: orloca/R/as.R:63
 msgid "The second dimension of matrix must be 2 or 3."
 msgstr ""
 
+#: orloca/R/contour.loca.p.R:51 orloca/R/contour.loca.p.R:81
+#: orloca/R/distsum.R:44 orloca/R/distsumgra.R:45 orloca/R/distsummin.R:55
+#: orloca/R/persp.loca.p.R:46
 msgid "is not a valid value for lp, use 1 <= lp"
 msgstr ""
 
+#: orloca/R/contour.loca.p.R:58 orloca/R/plot.loca.p.R:38
 msgid "The given img object is not a raster image and cannot be coerce to it."
 msgstr ""
 
-msgid "orloca"
-msgstr ""
-
-msgid "NA's values are not allowed"
-msgstr ""
-
-msgid "The length of w ("
-msgstr ""
-
-msgid ") should be the same as the length of x, and y ("
-msgstr ""
-
-msgid ") or 0"
-msgstr ""
-
-msgid "The length of x and y are different"
-msgstr ""
-
-msgid "Plot of loca.p"
-msgstr ""
-
-msgid "Parameter groups must be numeric"
-msgstr ""
-
+#: orloca/R/distsuml2min.R:51 orloca/R/distsumlpmin.R:50
 msgid "Iter."
 msgstr ""
 
+#: orloca/R/distsuml2min.R:63 orloca/R/distsuml2min.R:123
+#: orloca/R/distsumlpmin.R:62 orloca/R/distsumlpmin.R:126
 msgid "Optimality condition reached at demand point."
 msgstr ""
 
+#: orloca/R/distsuml2min.R:69 orloca/R/distsuml2min.R:130
+#: orloca/R/distsumlpmin.R:68 orloca/R/distsumlpmin.R:133
 msgid "Optimality condition reached."
 msgstr ""
 
+#: orloca/R/distsuml2min.R:94
 msgid "Value for smooth parameter non valid:"
 msgstr ""
 
+#: orloca/R/distsuml2min.R:94
 msgid "Reseting to its default value."
 msgstr ""
 
+#: orloca/R/distsuml2min.R:107 orloca/R/distsumlpmin.R:108
 msgid "Iter. "
 msgstr ""
 
+#: orloca/R/distsuml2min.R:143 orloca/R/distsumlpmin.R:146
 msgid ""
 "The algorithm seems converges very slowly. Trying now with the smooth "
 "version."
 msgstr ""
 
+#: orloca/R/distsumlp.R:38 orloca/R/distsumlp.R:54 orloca/R/distsumlpmin.R:37
 msgid "is not a valid value for p, use 1 <= p"
 msgstr ""
 
+#: orloca/R/distsumlpmin.R:84
 msgid "Maximun number of iteration reached"
 msgstr ""
 
+#: orloca/R/distsumlpmin.R:95
 msgid "Value for smooth parameter non valid"
 msgstr ""
 
+#: orloca/R/distsumlpmin.R:95
 msgid "Reseting to its default value"
 msgstr ""
 
-msgid "zsummin: Maximun number of iteration reached"
+#: orloca/R/distsummin.R:61
+msgid "distsummin: Maximun number of iteration reached"
 msgstr ""
 
+#: orloca/R/distsummin.R:61
 msgid ""
 "The solution may be non-optimal.\n"
 "Perhaps, you could try increasing max.iter value."
+msgstr ""
+
+#: orloca/R/loca.p.R:38
+msgid "orloca"
+msgstr ""
+
+#: orloca/R/loca.p.R:55
+msgid "NA's values are not allowed"
+msgstr ""
+
+#: orloca/R/loca.p.R:57
+msgid "The length of w ("
+msgstr ""
+
+#: orloca/R/loca.p.R:57
+msgid ") should be the same as the length of x, and y ("
+msgstr ""
+
+#: orloca/R/loca.p.R:57
+msgid ") or 0"
+msgstr ""
+
+#: orloca/R/loca.p.R:59
+msgid "The length of x and y are different"
+msgstr ""
+
+#: orloca/R/plot.loca.p.R:31
+msgid "Plot of loca.p"
+msgstr ""
+
+#: orloca/R/rloca.p.R:43
+msgid "Parameter groups must be numeric"
 msgstr ""

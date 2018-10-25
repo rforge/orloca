@@ -158,27 +158,27 @@ Así mismo, se puede evaluar el gradiente de dicha función y se puede resolver 
 
 ## Evaluación
 
-La función distancia media ponderada se denomina en el paquete `zsum`, dado un punto, por ejemplo: $(3, 1)$ se puede evaluar la distancia media ponderada a un objeto `loca.p`:
+La función distancia media ponderada se denomina en el paquete `distsum`, dado un punto, por ejemplo: $(3, 1)$ se puede evaluar la distancia media ponderada a un objeto `loca.p`:
 ```{r}
 pt3 <- loca.p(x = c(0, 4, 2), y = c(0, 0, 2), label = "Tres puntos")
-zsum(o = pt3, x = 3, y = 1)
+distsum(o = pt3, x = 3, y = 1)
 ```
-También se puede calcular el gradiente de `zsum` llamado `zsumgra`:
+También se puede calcular el gradiente de `distsum` llamado `distsumgra`:
 ```{r}
-zsumgra(o = pt3, x = 3, y = 1)
+distsumgra(o = pt3, x = 3, y = 1)
 ```
 
 ## Resolución
 
-Para encontrar la solución óptima al problema de localización anterior se usa la función `zsummin`:
+Para encontrar la solución óptima al problema de localización anterior se usa la función `distsummin`:
 ```{r}
-s <- zsummin(pt3)
+s <- distsummin(pt3)
 s
 ```
 Evaluando la función y el gradiente en el punto obtenido
 ```{r}
-zsum(o = pt3, x = s[1], y = s[2])
-zsumgra(o = pt3, x = s[1], y = s[2])
+distsum(o = pt3, x = s[1], y = s[2])
+distsumgra(o = pt3, x = s[1], y = s[2])
 ```
 Como se puede comprobar por el valor del gradiente, la solución encontrada es un óptimo local y al ser la función objetivo convexa un óptimo global.
 
@@ -255,7 +255,7 @@ contour(o, img=img, main='Andalucía', xleft=xmin, ybottom=ymin, xright=xmax, yt
 La solución óptima del problema de localización con las 8 capitales, ocho primeras filas, se obtiene:
 ```{r}
 andalusia.loca.p <- loca.p(andalusia$x[1:8], andalusia$y[1:8])
-sol <- zsummin(andalusia.loca.p)
+sol <- distsummin(andalusia.loca.p)
 sol
 ```
 

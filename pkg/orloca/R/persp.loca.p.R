@@ -1,9 +1,8 @@
 #' Plots of the min-sum objective function
 #'
-#' \code{persp} provides a graphical representations of min-sum function (\code{zsum}).
+#' \code{persp} provides a graphical representations of min-sum function (\code{distsum}).
 #'
 #' @name persp.loca.p
-#' @aliases persp.loca.p persp,loca.p-method
 #'
 #' @details
 #' If \eqn{p<1} then \eqn{l_p} ara not a norm, so only \eqn{p>=1} are valid values.
@@ -36,13 +35,13 @@ persp.loca.p <- function(x, lp=numeric(0), xmin=min(x@x), xmax=max(x@x), ymin=mi
      {
        for(i in 1:n)
          for(j in 1:n)
-           .z[i,j] <- zsum(x, .x[i], .y[j])
+           .z[i,j] <- distsum(x, .x[i], .y[j])
      }
    else if (lp >= 1)
      {
        for(i in 1:n)
          for(j in 1:n)
-           .z[i,j] <- zsumlp(x, .x[i], .y[j], p=lp)
+           .z[i,j] <- distsumlp(x, .x[i], .y[j], p=lp)
     }
    else stop(paste(lp, gettext("is not a valid value for lp, use 1 <= lp", domain = "R-orloca")))
    persp(.x, .y, .z, ...)

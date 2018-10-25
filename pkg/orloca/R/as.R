@@ -1,7 +1,7 @@
-#' Conversions between loca.p class and some others
+#' Conversions between loca.p class and some others classes
 #'
 #' Methods to convert from and to \code{loca.p} class.
-#' @aliases as.data.frame as.data.frame.loca.p as.data.frame,loca.p-method as.loca.p as.loca.p.data.frame as.loca.p,data.frame-method as.loca.p.matrix as.loca.p,matrix-method as.matrix as.matrix.loca.p as.matrix,loca.p-method as-methods
+#' @aliases as.data.frame as.matrix as-methods as.loca.p,data.frame-method as.loca.p,matrix-method
 #' @docType methods
 #' @name as-methods
 #' @title as-methods
@@ -64,19 +64,42 @@ setAs("matrix", "loca.p",
       }
       )
 
-#
-# The following is for S3 compatibility, mainly for documentation check
-#
+#' @name as.loca.p
+#' @title as.loca.p 
+#' The following is for S3 compatibility, mainly for documentation check
+#' @inherit as-methods
+#' @export
 setGeneric("as.loca.p", function(x, ...) standardGeneric("as.loca.p"))
-#' @S3method as.loca.p matrix
+
+#' @name as.loca.p.matrix
+#' @title as.loca.p.matrix
+#' S3 method to convert from matrix to loca.p
+#' @inherit as-methods
+#' @export
 as.loca.p.matrix <- function(x,...) as(x, "loca.p")
 setMethod("as.loca.p", "matrix", as.loca.p.matrix)
-#' @S3method as.loca.p data.frame
+
+#' @name as.loca.p.data.frame
+#' @title as.loca.p.data.frame
+#' S3 method to convert from data.frame to loca.p
+#' @inherit as-methods
+#' @export
 as.loca.p.data.frame <- function(x, ...) as(x, "loca.p")
 setMethod("as.loca.p", "data.frame", as.loca.p.data.frame)
-#' @S3method as.matrix loca.p
+
+#' @name as.matrix.loca.p
+#' @title as.matrix.loca.p
+#' S3 method to convert from loca.p to matrix
+#' @inherit as-methods
+#' @param rownames.force If True the rownames is setted
+#' @export
 as.matrix.loca.p <- function(x, rownames.force = NA, ...) as(x, "matrix")
 #setMethod("as.matrix", "loca.p", as.matrix.loca.p)
-#' @S3method as.data.frame loca.p
+
+#' @name as.data.frame.loca.p
+#' @title as.data.frame.loca.p
+#' S3 method to convert from loca.p to data.frame
+#' @inherit as-methods
+#' @export
 as.data.frame.loca.p <- function(x, row.names = NULL, optional = FALSE, ...) as(x, "data.frame")
 #setMethod("as.data.frame", "loca.p", as.data.frame.loca.p)

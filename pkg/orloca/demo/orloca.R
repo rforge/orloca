@@ -11,7 +11,7 @@ print(o)
 plot(o)
 
 # Evaluation at point (0, .5)
-zsum(o, x=0, y=.5)
+distsum(o, x=0, y=.5)
 
 # Contour plot the objective function
 contour(o)
@@ -32,22 +32,22 @@ plot(loca.p(x=.55, y=.62), img=img,  xlim=c(0,1), ylim=c(0,1), xleft=0, ybottom=
 contour(loca.p(x=.55, y=.62), img=img,  xmin=0, ymin=0, xmax=1, ymax=1, xleft=0, ybottom=0, xright=1, ytop=1)
 
 # Find the minimum
-zsummin(o)
+distsummin(o)
 
 # New random loca.p object with 10 demand point
 p <- rloca.p(10)
 
 # Find the minimun 
-sol <- zsummin(p)
+sol <- distsummin(p)
 
 # Show it
 sol
 
 # Eval the function at minimun
-zsum(p, sol[1], sol[2])
+distsum(p, sol[1], sol[2])
 
 # Timing the algorithm
-system.time(zsummin(p))
+system.time(distsummin(p))
 
 # Restoring graphical parameters
 par(opar)

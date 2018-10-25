@@ -1,9 +1,8 @@
 #' Plots of the min-sum objective function
 #'
-#' \code{contour} provides a graphical representations of min-sum function (\code{zsum}).
+#' \code{contour} provides a graphical representations of min-sum function (\code{distsum}).
 #'
 #' @name contour.loca.p
-#' @aliases contour.loca.p contour,loca.p-method
 #'
 #' @details
 #' If \eqn{p<1} then \eqn{l_p} ara not a norm, so only \eqn{p>=1} are valid values.
@@ -22,7 +21,7 @@
 #' @param xright The right position of the image.
 #' @param ytop The top position of the image.
 #' @param \ldots Other options.
-#' @return \code{contour.loca.p} plots a contour plot of min-sum function (\code{zsum}).
+#' @return \code{contour.loca.p} plots a contour plot of min-sum function (\code{distsum}).
 #' @seealso See also \code{\link{orloca-package}}, \code{\link{plot.loca.p}} and \code{\link{loca.p}}.
 #' @examples
 #' # A new unweighted loca.p object
@@ -41,13 +40,13 @@ contour.loca.p <- function(x, lp=numeric(0), xmin=min(min(x@x), xleft), xmax=max
      {
        for(i in 1:n)
          for(j in 1:n)
-           .z[i,j] <- zsum(x, .x[i], .y[j])
+           .z[i,j] <- distsum(x, .x[i], .y[j])
      }
    else if (lp >= 1)
      {
        for(i in 1:n)
          for(j in 1:n)
-           .z[i,j] <- zsumlp(x, .x[i], .y[j], p=lp)
+           .z[i,j] <- distsumlp(x, .x[i], .y[j], p=lp)
     }
    else stop(paste(lp, gettext("is not a valid value for lp, use 1 <= lp", domain = "R-orloca")))
    contour(.x, .y, .z, ...) 
@@ -71,13 +70,13 @@ persp.loca.p <- function(x, lp=numeric(0), xmin=min(x@x), xmax=max(x@x), ymin=mi
      {
        for(i in 1:n)
          for(j in 1:n)
-           .z[i,j] <- zsum(x, .x[i], .y[j])
+           .z[i,j] <- distsum(x, .x[i], .y[j])
      }
    else if (lp >= 1)
      {
        for(i in 1:n)
          for(j in 1:n)
-           .z[i,j] <- zsumlp(x, .x[i], .y[j], p=lp)
+           .z[i,j] <- distsumlp(x, .x[i], .y[j], p=lp)
     }
    else stop(paste(lp, gettext("is not a valid value for lp, use 1 <= lp", domain = "R-orloca")))
    persp(.x, .y, .z, ...)

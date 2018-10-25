@@ -3,7 +3,7 @@
 #' An object of class \code{loca.p} represents a weighted location problem with a finite demand points set.
 #' The \code{\link{orloca-package}} is mainly devoted to deals with location problems.
 #'
-#' @aliases initialize,loca.p-method loca.p loca.p-class print.loca.p print,loca.p-method summary-method summary,loca.p-method
+#' @aliases initialize loca.p print summary
 #' @docType class
 #' @name loca.p
 #' @details
@@ -81,7 +81,7 @@ loca.p <- function(x, y, w = numeric(0), label="") new("loca.p", x, y, w, label)
 
 #
 # loca.p summary method
-#' @S3method summary loca.p
+#' @export
 summary.loca.p <- function(object, ...) {
     c("label"=object@label, "n"=length(object@x), "xmin"=min(object@x), "xwmean"=weighted.mean(object@x,object@w), "xmax"=max(object@x), "ymin"=min(object@y), "ywmean"=weighted.mean(object@y,object@w), "ymax"=max(object@y))
     }
@@ -89,7 +89,7 @@ summary.loca.p <- function(object, ...) {
 
 #
 # loca.p print method
-#' @S3method print loca.p
+#' @export
 print.loca.p <- function(x, ...) {
   print(as.data.frame(x), ...)
   invisible(x)

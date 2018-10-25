@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: orloca 2.1\n"
-"Report-Msgid-Bugs-To: manuel.munoz@uca.es\n"
-"POT-Creation-Date: 2017-10-15 13:12+0200\n"
-"PO-Revision-Date: 2017-10-15 13:13+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-25 19:49+0200\n"
+"PO-Revision-Date: 2018-10-25 19:50+0200\n"
 "Last-Translator: Manuel Munoz-Marquez <manuel.munoz@uca.es>\n"
 "Language-Team: Spanish <manuel.munoz@uca.es>\n"
 "Language: es\n"
@@ -16,59 +16,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.0.4\n"
 
+#: orloca/R/as.R:63
 msgid "The second dimension of matrix must be 2 or 3."
 msgstr "La segunda dimensión de la matriz debe ser 2 ó 3."
 
+#: orloca/R/contour.loca.p.R:51 orloca/R/contour.loca.p.R:81
+#: orloca/R/distsum.R:44 orloca/R/distsumgra.R:45 orloca/R/distsummin.R:55
+#: orloca/R/persp.loca.p.R:46
 msgid "is not a valid value for lp, use 1 <= lp"
 msgstr "no es un valor válido para lp, use 1<=lp"
 
+#: orloca/R/contour.loca.p.R:58 orloca/R/plot.loca.p.R:38
 msgid "The given img object is not a raster image and cannot be coerce to it."
 msgstr "El objeto img no es una imagen raster y no se puede convertir en una."
 
-msgid "NA's values are not allowed"
-msgstr "Valores NA no permitidos"
-
-msgid "The length of w ("
-msgstr "La longitud de w ("
-
-msgid ") should be the same as the length of x, and y ("
-msgstr ") debería ser la misma que la longitud de x, e y ("
-
-msgid ") or 0"
-msgstr ") ó 0"
-
-msgid "The length of x and y are different"
-msgstr "La longitud de x y de y son diferentes"
-
-msgid "orloca"
-msgstr "orloca.es"
-
-msgid "Plot of loca.p object"
-msgstr "Gráfico del objeto loca.p"
-
-msgid "Parameter groups must be numeric"
-msgstr "El parámetro groups debe ser numérico"
-
+#: orloca/R/distsuml2min.R:51 orloca/R/distsumlpmin.R:50
 msgid "Iter."
 msgstr "Iter."
 
+#: orloca/R/distsuml2min.R:63 orloca/R/distsuml2min.R:123
+#: orloca/R/distsumlpmin.R:62 orloca/R/distsumlpmin.R:126
 msgid "Optimality condition reached at demand point."
 msgstr "Se ha alcanzado la condición de optimalidad en un punto de demanda."
 
+#: orloca/R/distsuml2min.R:69 orloca/R/distsuml2min.R:130
+#: orloca/R/distsumlpmin.R:68 orloca/R/distsumlpmin.R:133
 msgid "Optimality condition reached."
 msgstr "Se ha alcanzado la condición de optimalidad."
 
+#: orloca/R/distsuml2min.R:94
 msgid "Value for smooth parameter non valid:"
 msgstr "Valor del parámetro de suavizado no válido:"
 
+#: orloca/R/distsuml2min.R:94
 msgid "Reseting to its default value."
 msgstr "Restaurando a su valor por defecto."
 
+#: orloca/R/distsuml2min.R:107 orloca/R/distsumlpmin.R:108
 msgid "Iter. "
 msgstr "Iter."
 
+#: orloca/R/distsuml2min.R:143 orloca/R/distsumlpmin.R:146
 msgid ""
 "The algorithm seems converges very slowly. Trying now with the smooth "
 "version."
@@ -76,27 +66,78 @@ msgstr ""
 "El algoritmo parece converger muy lentamente. Intentando con la versión "
 "suavizada."
 
+#: orloca/R/distsumlp.R:38 orloca/R/distsumlp.R:54 orloca/R/distsumlpmin.R:37
 msgid "is not a valid value for p, use 1 <= p"
 msgstr "no es un valor válido para p, use 1<=p"
 
+#: orloca/R/distsumlpmin.R:84
 msgid "Maximun number of iteration reached"
 msgstr "Se ha alcanzado el número máximo de iteraciones"
 
+#: orloca/R/distsumlpmin.R:95
 msgid "Value for smooth parameter non valid"
 msgstr "Valor del parámetro de suavizado no válido"
 
+#: orloca/R/distsumlpmin.R:95
 msgid "Reseting to its default value"
 msgstr "Restaurando a su valor por defecto"
 
-msgid "zsummin: Maximun number of iteration reached"
-msgstr "zsummin: Se ha alcanzado el número máximo de iteraciones"
+#: orloca/R/distsummin.R:61
+msgid "distsummin: Maximun number of iteration reached"
+msgstr "distsummin: Se ha alcanzado el número máximo de iteraciones"
 
+#: orloca/R/distsummin.R:61
 msgid ""
 "The solution may be non-optimal.\n"
 "Perhaps, you could try increasing max.iter value."
 msgstr ""
 "La solución podría no ser óptima.\n"
 "Tal vez, podría intentar incrementar el valor de max.iter."
+
+#: orloca/R/loca.p.R:38
+msgid "orloca"
+msgstr "orloca.es"
+
+#: orloca/R/loca.p.R:55
+msgid "NA's values are not allowed"
+msgstr "Valores NA no permitidos"
+
+#: orloca/R/loca.p.R:57
+msgid "The length of w ("
+msgstr "La longitud de w ("
+
+#: orloca/R/loca.p.R:57
+msgid ") should be the same as the length of x, and y ("
+msgstr ") debería ser la misma que la longitud de x, e y ("
+
+#: orloca/R/loca.p.R:57
+msgid ") or 0"
+msgstr ") ó 0"
+
+#: orloca/R/loca.p.R:59
+msgid "The length of x and y are different"
+msgstr "La longitud de x y de y son diferentes"
+
+#: orloca/R/plot.loca.p.R:31
+msgid "Plot of loca.p"
+msgstr "Gráfico loca.p"
+
+#: orloca/R/rloca.p.R:43
+msgid "Parameter groups must be numeric"
+msgstr "El parámetro groups debe ser numérico"
+
+#~ msgid "Parameter groups must be numeric.\n"
+#~ msgstr "El parámetro groups debe ser numérico.\n"
+
+#~ msgid ""
+#~ "The length of x.min, x.max, x.gmin and x.gmax, should be equal to m an at "
+#~ "least 1"
+#~ msgstr ""
+#~ "La longitud de x.min, x.max, x.gmin y x.gmax, debe ser igual a m y al "
+#~ "menos 1"
+
+#~ msgid "If groups is a vector its sum should match n."
+#~ msgstr "Si groups es un vector su suma debe coincidir con n"
 
 #~ msgid "Optimality condition reached at demand point.\n"
 #~ msgstr ""

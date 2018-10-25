@@ -20,7 +20,7 @@ contour(o, img=img, main=gettext('Andalusia'), xleft=xmin, ybottom=ymin, xright=
 
 # Look for optimal location
 andalusia.loca.p <- loca.p(andalusia$x[1:8], andalusia$y[1:8])
-sol <- zsummin(andalusia.loca.p)
+sol <- distsummin(andalusia.loca.p)
 # The optimal solution is located 35 Km northest from Antequera
 # Antequera is usually considered as the geographical center of Andalusia
 sol

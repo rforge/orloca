@@ -1,9 +1,8 @@
 #' Cities of Andalusia
 #' 
 #' The 'andalusia' data frame has 12 rows and 4 columns, which are the geographical position of the main capital cities of andalusia.
-#' @name andalusia-data
+#' @name andalusia
 #' @docType data
-#' @aliases andalusia
 #' @keywords data andalusia
 #' @seealso See also \code{\link{orloca-package}}.
 #'

@@ -6,7 +6,6 @@
 #'
 #' @name plot
 #' @docType methods
-#' @aliases plot-methods plot,loca.p-method plot.loca.p
 #' @examples
 #' # A new unweighted loca.p object
 #' loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
