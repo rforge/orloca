@@ -3,12 +3,9 @@
 \docType{class}
 \name{loca.p}
 \alias{loca.p}
-\alias{initialize,loca.p-method}
-\alias{loca.p-class}
-\alias{print.loca.p}
-\alias{print,loca.p-method}
-\alias{summary-method}
-\alias{summary,loca.p-method}
+\alias{initialize}
+\alias{print}
+\alias{summary}
 \title{loca.p class for Operations Research LOCational Analysis}
 \arguments{
 \item{x}{is a vector of the x coordinates of the demand points.}

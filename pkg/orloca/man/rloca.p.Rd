@@ -5,7 +5,8 @@
 \title{Random instances generator of loca.p class object}
 \usage{
 rloca.p(n, xmin = 0, xmax = 1, ymin = 0, ymax = 1, label = "",
-  groups = 0, xgmin = xmin, xgmax = xmax, ygmin = ymin, ygmax = ymax)
+  groups = 0, xgmin = xmin, xgmax = xmax, ygmin = ymin,
+  ygmax = ymax)
 }
 \arguments{
 \item{n}{The number of demand points.}

@@ -2,7 +2,6 @@
 % Please edit documentation in R/persp.loca.p.R
 \name{persp.loca.p}
 \alias{persp.loca.p}
-\alias{persp,loca.p-method}
 \title{Plots of the min-sum objective function}
 \usage{
 \method{persp}{loca.p}(x, lp = numeric(0), xmin = min(x@x),
@@ -29,7 +28,7 @@
 A plot a 3D plot or min-sum function.
 }
 \description{
-\code{persp} provides a graphical representations of min-sum function (\code{zsum}).
+\code{persp} provides a graphical representations of min-sum function (\code{distsum}).
 }
 \details{
 If \eqn{p<1} then \eqn{l_p} ara not a norm, so only \eqn{p>=1} are valid values.

@@ -2,13 +2,13 @@
 % Please edit documentation in R/contour.loca.p.R
 \name{contour.loca.p}
 \alias{contour.loca.p}
-\alias{contour,loca.p-method}
 \title{Plots of the min-sum objective function}
 \usage{
-\method{contour}{loca.p}(x, lp = numeric(0), xmin = min(min(x@x), xleft),
-  xmax = max(max(x@x), xright), ymin = min(min(x@y), ybottom),
-  ymax = max(max(x@y), ytop), n = 100, img = NULL, xleft = min(x@x),
-  ybottom = min(x@y), xright = max(x@x), ytop = max(x@y), ...)
+\method{contour}{loca.p}(x, lp = numeric(0), xmin = min(min(x@x),
+  xleft), xmax = max(max(x@x), xright), ymin = min(min(x@y), ybottom),
+  ymax = max(max(x@y), ytop), n = 100, img = NULL,
+  xleft = min(x@x), ybottom = min(x@y), xright = max(x@x),
+  ytop = max(x@y), ...)
 }
 \arguments{
 \item{x}{The loca.p object to compute the objective.}
@@ -38,10 +38,10 @@
 \item{\ldots}{Other options.}
 }
 \value{
-\code{contour.loca.p} plots a contour plot of min-sum function (\code{zsum}).
+\code{contour.loca.p} plots a contour plot of min-sum function (\code{distsum}).
 }
 \description{
-\code{contour} provides a graphical representations of min-sum function (\code{zsum}).
+\code{contour} provides a graphical representations of min-sum function (\code{distsum}).
 }
 \details{
 If \eqn{p<1} then \eqn{l_p} ara not a norm, so only \eqn{p>=1} are valid values.

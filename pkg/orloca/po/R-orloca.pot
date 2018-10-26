@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-25 19:49+0200\n"
+"POT-Creation-Date: 2018-10-24 22:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,71 +22,13 @@ msgid "The second dimension of matrix must be 2 or 3."
 msgstr ""
 
 #: orloca/R/contour.loca.p.R:51 orloca/R/contour.loca.p.R:81
-#: orloca/R/distsum.R:44 orloca/R/distsumgra.R:45 orloca/R/distsummin.R:55
-#: orloca/R/persp.loca.p.R:46
+#: orloca/R/persp.loca.p.R:46 orloca/R/zsum.R:40 orloca/R/zsumgra.R:42
+#: orloca/R/zsummin.R:51
 msgid "is not a valid value for lp, use 1 <= lp"
 msgstr ""
 
 #: orloca/R/contour.loca.p.R:58 orloca/R/plot.loca.p.R:38
 msgid "The given img object is not a raster image and cannot be coerce to it."
-msgstr ""
-
-#: orloca/R/distsuml2min.R:51 orloca/R/distsumlpmin.R:50
-msgid "Iter."
-msgstr ""
-
-#: orloca/R/distsuml2min.R:63 orloca/R/distsuml2min.R:123
-#: orloca/R/distsumlpmin.R:62 orloca/R/distsumlpmin.R:126
-msgid "Optimality condition reached at demand point."
-msgstr ""
-
-#: orloca/R/distsuml2min.R:69 orloca/R/distsuml2min.R:130
-#: orloca/R/distsumlpmin.R:68 orloca/R/distsumlpmin.R:133
-msgid "Optimality condition reached."
-msgstr ""
-
-#: orloca/R/distsuml2min.R:94
-msgid "Value for smooth parameter non valid:"
-msgstr ""
-
-#: orloca/R/distsuml2min.R:94
-msgid "Reseting to its default value."
-msgstr ""
-
-#: orloca/R/distsuml2min.R:107 orloca/R/distsumlpmin.R:108
-msgid "Iter. "
-msgstr ""
-
-#: orloca/R/distsuml2min.R:143 orloca/R/distsumlpmin.R:146
-msgid ""
-"The algorithm seems converges very slowly. Trying now with the smooth "
-"version."
-msgstr ""
-
-#: orloca/R/distsumlp.R:38 orloca/R/distsumlp.R:54 orloca/R/distsumlpmin.R:37
-msgid "is not a valid value for p, use 1 <= p"
-msgstr ""
-
-#: orloca/R/distsumlpmin.R:84
-msgid "Maximun number of iteration reached"
-msgstr ""
-
-#: orloca/R/distsumlpmin.R:95
-msgid "Value for smooth parameter non valid"
-msgstr ""
-
-#: orloca/R/distsumlpmin.R:95
-msgid "Reseting to its default value"
-msgstr ""
-
-#: orloca/R/distsummin.R:61
-msgid "distsummin: Maximun number of iteration reached"
-msgstr ""
-
-#: orloca/R/distsummin.R:61
-msgid ""
-"The solution may be non-optimal.\n"
-"Perhaps, you could try increasing max.iter value."
 msgstr ""
 
 #: orloca/R/loca.p.R:38
@@ -117,6 +59,78 @@ msgstr ""
 msgid "Plot of loca.p"
 msgstr ""
 
+#: orloca/R/rloca.m.R:38
+msgid "Parameter groups must be numeric.\n"
+msgstr ""
+
+#: orloca/R/rloca.m.R:39
+msgid ""
+"The length of x.min, x.max, x.gmin and x.gmax, should be equal to m an at "
+"least 1"
+msgstr ""
+
+#: orloca/R/rloca.m.R:40
+msgid "If groups is a vector its sum should match n."
+msgstr ""
+
 #: orloca/R/rloca.p.R:43
 msgid "Parameter groups must be numeric"
+msgstr ""
+
+#: orloca/R/zsuml2min.R:51 orloca/R/zsumlpmin.R:51
+msgid "Iter."
+msgstr ""
+
+#: orloca/R/zsuml2min.R:63 orloca/R/zsuml2min.R:123 orloca/R/zsumlpmin.R:63
+#: orloca/R/zsumlpmin.R:127
+msgid "Optimality condition reached at demand point."
+msgstr ""
+
+#: orloca/R/zsuml2min.R:69 orloca/R/zsuml2min.R:130 orloca/R/zsumlpmin.R:69
+#: orloca/R/zsumlpmin.R:134
+msgid "Optimality condition reached."
+msgstr ""
+
+#: orloca/R/zsuml2min.R:94
+msgid "Value for smooth parameter non valid:"
+msgstr ""
+
+#: orloca/R/zsuml2min.R:94
+msgid "Reseting to its default value."
+msgstr ""
+
+#: orloca/R/zsuml2min.R:107 orloca/R/zsumlpmin.R:109
+msgid "Iter. "
+msgstr ""
+
+#: orloca/R/zsuml2min.R:143 orloca/R/zsumlpmin.R:147
+msgid ""
+"The algorithm seems converges very slowly. Trying now with the smooth "
+"version."
+msgstr ""
+
+#: orloca/R/zsumlp.R:38 orloca/R/zsumlp.R:54 orloca/R/zsumlpmin.R:38
+msgid "is not a valid value for p, use 1 <= p"
+msgstr ""
+
+#: orloca/R/zsumlpmin.R:85
+msgid "Maximun number of iteration reached"
+msgstr ""
+
+#: orloca/R/zsumlpmin.R:96
+msgid "Value for smooth parameter non valid"
+msgstr ""
+
+#: orloca/R/zsumlpmin.R:96
+msgid "Reseting to its default value"
+msgstr ""
+
+#: orloca/R/zsummin.R:57
+msgid "distsummin: Maximun number of iteration reached"
+msgstr ""
+
+#: orloca/R/zsummin.R:57
+msgid ""
+"The solution may be non-optimal.\n"
+"Perhaps, you could try increasing max.iter value."
 msgstr ""
