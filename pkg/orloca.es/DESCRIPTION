@@ -2,7 +2,7 @@ Package: orloca.es
 Type: Package
 Depends: orloca (>= 4.6)
 Language: es
-Title: Spanish version of orloca package
+Title: Spanish version of orloca package. Modelos de localizacion en investigacion operativa
 Version: 4.6
 Date: 2018-10-27
 Author: Manuel Munoz-Marquez <manuel.munoz@uca.es>
