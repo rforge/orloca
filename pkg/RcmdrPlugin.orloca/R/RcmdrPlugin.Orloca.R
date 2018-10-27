@@ -167,7 +167,7 @@ dialogSuffix(rows=7, columns=2, focus=nEntry)
 }
 
 
-Rcmdr.zsum <- function(){
+Rcmdr.distsum <- function(){
 initializeDialog(title=gettext("Evaluation of Objective Function for weighted sum Location Problem", domain="R-RcmdrPlugin.orloca"))
 xVar <- tclVar("0")
 xEntry <- tkentry(top, width="6", textvariable=xVar)
@@ -177,27 +177,27 @@ onOK <- function(){
 	closeDialog()
 	x <- as.numeric(tclvalue(xVar))
         if (is.na(x)){
-            errorCondition(recall=Rcmdr.zsum, message=gettext("x-axis must be a number.", domain="R-RcmdrPlugin.orloca"))
+            errorCondition(recall=Rcmdr.distsum, message=gettext("x-axis must be a number.", domain="R-RcmdrPlugin.orloca"))
             return()
             }
 	y <- as.numeric(tclvalue(yVar))
         if (is.na(y)){
-            errorCondition(recall=Rcmdr.zsum, message=gettext("y-axis must be a number.", domain="R-RcmdrPlugin.orloca"))
+            errorCondition(recall=Rcmdr.distsum, message=gettext("y-axis must be a number.", domain="R-RcmdrPlugin.orloca"))
             return()
             }
-        command <- paste("zsum(as(", ActiveDataSet(), ", \"loca.p\") , x = ", x,", y = ", y, sep="")
+        command <- paste("distsum(as(", ActiveDataSet(), ", \"loca.p\") , x = ", x,", y = ", y, sep="")
         command <- paste(command, .RcmdrPlugin.orloca.get.norma(), sep="")
         command <- paste(command, ") \n# ", sep="")
         command <- paste(command, gettext("Weighted sum of distances", domain="R-RcmdrPlugin.orloca"), sep="")
 	doItAndPrint(command)
-        command <- paste("zsumgra(as(", ActiveDataSet(), ", \"loca.p\") , x = ", x,", y = ", y, sep="")
+        command <- paste("distsumgra(as(", ActiveDataSet(), ", \"loca.p\") , x = ", x,", y = ", y, sep="")
         command <- paste(command, .RcmdrPlugin.orloca.get.norma(), sep="")
         command <- paste(command, ") # ", sep="")
         command <- paste(command, gettext("Gradient of the weighted sum of distances function", domain="R-RcmdrPlugin.orloca"), sep="")
 	doItAndPrint(command)
 	tkfocus(CommanderWindow())
 	}
-OKCancelHelp(helpSubject="zsum")
+OKCancelHelp(helpSubject="distsum")
 tkgrid(tklabel(top, text=gettext("x-axis", domain="R-RcmdrPlugin.orloca")), xEntry, sticky="e")
 tkgrid(tklabel(top, text=gettext("y-axis", domain="R-RcmdrPlugin.orloca")), yEntry, sticky="e")
 tkgrid(buttonsFrame, sticky="w", columnspan=2)
@@ -206,7 +206,7 @@ tkgrid.configure(yEntry, sticky="w")
 dialogSuffix(rows=2, columns=2, focus=xEntry)
 }
 
-Rcmdr.zsummin <- function(){
+Rcmdr.distsummin <- function(){
 initializeDialog(title=gettext("Solve weighted sum Location Problem", domain="R-RcmdrPlugin.orloca"))
 xVar <- tclVar("0")
 xEntry <- tkentry(top, width="6", textvariable=xVar)
@@ -225,37 +225,37 @@ onOK <- function(){
 	closeDialog()
 	x <- as.numeric(tclvalue(xVar))
         if (is.na(x)){
-            errorCondition(recall=Rcmdr.zsummin, message=gettext("x-axis must be a number.", domain="R-RcmdrPlugin.orloca"))
+            errorCondition(recall=Rcmdr.distsummin, message=gettext("x-axis must be a number.", domain="R-RcmdrPlugin.orloca"))
             return()
             }
 	y <- as.numeric(tclvalue(yVar))
         if (is.na(y)){
-            errorCondition(recall=Rcmdr.zsummin, message=gettext("y-axis must be a number.", domain="R-RcmdrPlugin.orloca"))
+            errorCondition(recall=Rcmdr.distsummin, message=gettext("y-axis must be a number.", domain="R-RcmdrPlugin.orloca"))
             return()
             }
 	n <- as.numeric(tclvalue(nVar))
         if (is.na(n) || n <= 0){
-            errorCondition(recall=Rcmdr.zsummin, message=gettext("The maximum number of iterations must be a positive integer", domain="R-RcmdrPlugin.orloca"))
+            errorCondition(recall=Rcmdr.distsummin, message=gettext("The maximum number of iterations must be a positive integer", domain="R-RcmdrPlugin.orloca"))
             return()
             }
 	eps <- as.numeric(tclvalue(epsVar))
         if (is.na(eps) || eps <= 0){
-            errorCondition(recall=Rcmdr.zsummin, message=gettext("The norm of the gradient must be positive.", domain="R-RcmdrPlugin.orloca"))
+            errorCondition(recall=Rcmdr.distsummin, message=gettext("The norm of the gradient must be positive.", domain="R-RcmdrPlugin.orloca"))
             return()
             }
         algorithm <- tclvalue(algorithmVariable)
-        command <- paste(".sol <- zsummin(as(", ActiveDataSet(), ", \"loca.p\") , x = ", x,", y = ", y,", eps =", eps, ", algorithm =\"", algorithm, "\"", sep="")
+        command <- paste(".sol <- distsummin(as(", ActiveDataSet(), ", \"loca.p\") , x = ", x,", y = ", y,", eps =", eps, ", algorithm =\"", algorithm, "\"", sep="")
         command <- paste(command, .RcmdrPlugin.orloca.get.norma(), " ) # ", gettext("Solve the minsum location problem", domain="R-RcmdrPlugin.orloca"), sep="")
 	doItAndPrint(command)
         doItAndPrint(paste(".sol #", gettext("Show the solution", domain="R-RcmdrPlugin.orloca")))
-        command <- paste("zsum(as(", ActiveDataSet(), ", \"loca.p\") , x =", .sol[1], ", y = ", .sol[2], wep="")
+        command <- paste("distsum(as(", ActiveDataSet(), ", \"loca.p\") , x =", .sol[1], ", y = ", .sol[2], wep="")
         command <- paste(command, .RcmdrPlugin.orloca.get.norma(), sep="")
         command <- paste(command, ") # ", gettext("Weighted sum of distances", domain="R-RcmdrPlugin.orloca"), sep="")
         doItAndPrint(command)
         doItAndPrint("remove(.sol)")
 	tkfocus(CommanderWindow())
 	}
-OKCancelHelp(helpSubject="zsummin")
+OKCancelHelp(helpSubject="distsummin")
 tkgrid(tklabel(top, text=gettext("Maximum number of iterations", domain="R-RcmdrPlugin.orloca")), nEntry, sticky="w")
 tkgrid.configure(nEntry, sticky="e")
 tkgrid(tklabel(top, text=gettext("x-axis", domain="R-RcmdrPlugin.orloca")), xEntry, sticky="w")
@@ -290,6 +290,16 @@ Rcmdr.help.RcmdrPlugin.orloca <- function(){
    doItAndPrint(command)
    invisible(NULL)
 }
+
+Rcmdr.help.RcmdrPlugin.orloca.vignettes <- function(){
+   # To ensure that menu name is included in pot file
+   gettext("Help: Planar Location with orloca", domain="R-RcmdrPlugin.orloca")
+   command <- paste("vignette(\"", gettext("planarlocation", domain="R-RcmdrPlugin.orloca"), sep="")
+   command <- paste(command, "\")", sep="")
+   doItAndPrint(command)
+   invisible(NULL)
+}
+
 
 Rcmdr.summary.loca.p <- function(){
    # To ensure that menu name is included in pot file
@@ -348,7 +358,7 @@ onOK <- function(){
             }
         return()
 	}
-OKCancelHelp(helpSubject="zsum")
+OKCancelHelp(helpSubject="distsum")
 tkgrid(normaFrame, sticky="w")
 tkgrid(tklabel(top, text=gettext("p = ", domain="R-RcmdrPlugin.orloca")), nameEntry, sticky="e")
 tkgrid(buttonsFrame, sticky="w", columnspan=2)

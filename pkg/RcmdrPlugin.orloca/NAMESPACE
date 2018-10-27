@@ -2,14 +2,14 @@ import(orloca, orloca.es, stats, Rcmdr)
 importFrom(tcltk, tkfont.create, ttkprogressbar, tkwidget, setTkProgressBar)
 
 export(activeDataSetLocaP,
-       Rcmdr.contour.zsum,
-       Rcmdr.help.orloca, Rcmdr.help.RcmdrPlugin.orloca,
+       Rcmdr.contour.distsum,
+       Rcmdr.distsum, Rcmdr.distsummin,
+       Rcmdr.help.orloca, Rcmdr.help.RcmdrPlugin.orloca, Rcmdr.help.RcmdrPlugin.orloca.vignettes,
        Rcmdr.new.loca.p,
        Rcmdr.orloca.norm,
-       Rcmdr.persp.zsum, Rcmdr.plot.contour.loca.p, Rcmdr.plot.loca.p,
+       Rcmdr.persp.distsum, Rcmdr.plot.contour.loca.p, Rcmdr.plot.loca.p,
        Rcmdr.rloca.p,
-       Rcmdr.summary.loca.p,
-       Rcmdr.zsum, Rcmdr.zsummin)
+       Rcmdr.summary.loca.p)
 
 
 

@@ -1,7 +1,7 @@
 # Some Rcmdr menus for the orloca package
 # When the plug-in is loaded, these menus are merged with the standard Rcmdr menus
 
-# last modified: May 2013 by Munoz-Marquez
+# last modified: Oct 2017 by Munoz-Marquez
 
 #   type    menu/item      operation/parent  label                               command/menu                activation   install?
 item    topMenu          cascade         "Orloca"                                orlocaMenu                  ""           "packageAvailable('orloca')"
@@ -14,16 +14,16 @@ menu    orlocapMenu      orlocaMenu      ""                                     
 item    orlocapMenu      command         "New loca.p"				 Rcmdr.new.loca.p            ""                      "packageAvailable('orloca')"
 item    orlocapMenu      command         "New loca.p Random Instance"         	 Rcmdr.rloca.p               ""                      "packageAvailable('orloca')"
 item    orlocapMenu      command         "Summary"          			 Rcmdr.summary.loca.p        "activeDataSetLocaP()"  "packageAvailable('orloca')"
-item    orlocapMenu      command         "Evaluation of Objective Function for weighted sum Location Problem" Rcmdr.zsum "activeDataSetLocaP()" "packageAvailable('orloca')"
-item    orlocapMenu      command         "Solve weighted sum Location Problem"        Rcmdr.zsummin               "activeDataSetLocaP()"  "packageAvailable('orloca')"
+item    orlocapMenu      command         "Evaluation of Objective Function for weighted sum Location Problem" Rcmdr.distsum "activeDataSetLocaP()" "packageAvailable('orloca')"
+item    orlocapMenu      command         "Solve weighted sum Location Problem"        Rcmdr.distsummin               "activeDataSetLocaP()"  "packageAvailable('orloca')"
 
 # Planar location menu: graphics
 item    orlocapMenu       cascade         "Graphics"                              orlocagMenu "" ""
 menu    orlocagMenu      orlocapMenu      "" "" "" ""
 item    orlocagMenu       command         "Demands Points Plot"           	 Rcmdr.plot.loca.p           "activeDataSetLocaP()"  "packageAvailable('orloca')"
-item    orlocagMenu       command         "Contour Plot of zsum"        		 Rcmdr.contour.zsum          "activeDataSetLocaP()"  "packageAvailable('orloca')"
+item    orlocagMenu       command         "Contour Plot of distsum"		 Rcmdr.contour.distsum          "activeDataSetLocaP()"  "packageAvailable('orloca')"
 item    orlocagMenu       command         "Demand & Contour Plot"           	 Rcmdr.plot.contour.loca.p   "activeDataSetLocaP()"  "packageAvailable('orloca')"
-item    orlocagMenu       command         "3D Plot of zsum"        		 Rcmdr.persp.zsum            "activeDataSetLocaP()"  "packageAvailable('orloca')"
+item    orlocagMenu       command         "3D Plot of distsum"        		 Rcmdr.persp.distsum            "activeDataSetLocaP()"  "packageAvailable('orloca')"
 
 # Planar location menu: options
 item    orlocapMenu       cascade         "Options"                               oorlocaMenu                 ""                      "packageAvailable('orloca')"
@@ -38,4 +38,5 @@ item    oorlocaMenu      command         "Show/Set norm"			 Rcmdr.orloca.norm   
 item    orlocaMenu       cascade         "Help"                                  orlocahelpMenu                   ""                      "packageAvailable('orloca')"
 menu    orlocahelpMenu   orlocaMenu      ""                                      ""                          ""                      "" 
 item    orlocahelpMenu   command         "Help about orloca"	 		 Rcmdr.help.orloca           ""                      "packageAvailable('orloca')"
-item    orlocahelpMenu   command         "Help about RcmdrPlugin.orloca"	 Rcmdr.help.RcmdrPlugin.orloca           ""                      "packageAvailable('orloca')"
+item    orlocahelpMenu   command         "Help about RcmdrPlugin.orloca"	 Rcmdr.help.RcmdrPlugin.orloca           ""     "packageAvailable('orloca')"
+item    orlocahelpMenu	 command	 "Help: Planar Location with orloca" Rcmdr.help.RcmdrPlugin.orloca.vignettes		 ""	"packageAvailable('orloca')"
