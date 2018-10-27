@@ -1,7 +1,6 @@
 \name{plot}
 \docType{methods}
-\alias{plot-methods}
-\alias{plot,loca.p-method}
+\alias{plot}
 \alias{plot.loca.p}
 \encoding{UTF-8}
 
@@ -40,15 +39,15 @@
 \section{Valor}{
   La \enc{representación}{representacion} \enc{gráfica}{grafica} de los puntos de demanda.
 }
-\section{\enc{Véase}{Vease} \enc{también}{tambien}}{\enc{Véase}{Vease} \enc{también}{tambien} \code{\link{orloca.es-package}},
-  \code{\link{loca.p}} y \code{\link{plot.zsum}}.}
+\section{\enc{Véase}{Vease} \enc{también}{tambien}}{
+  \enc{Véase}{Vease} \enc{también}{tambien} \code{\link{orloca.es-package}},
+  \code{\link{loca.p}} y \code{\link{plot}}.}
+
 \section{Ejemplos}{
 # Un objeto de la clase loca.p sin pesos
-  
 loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
 # El grafico del objeto loca.p
-
 plot(loca)
 }
 \keyword{classes}

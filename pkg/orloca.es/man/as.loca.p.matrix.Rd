@@ -1,10 +1,5 @@
-\docType{methods}
-\name{as-methods}
-\alias{as-methods}
-\alias{as.data.frame}
-\alias{as.matrix}
-\alias{as.loca.p,data.frame-method}
-\alias{as.loca.p,matrix-method}
+\name{as.loca.p.matrix}
+\alias{as.loca.p.matrix}
 \encoding{UTF-8}
 
 \title{as-methods}

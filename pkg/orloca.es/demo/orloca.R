@@ -11,7 +11,7 @@ print(o)
 plot(o)
 
 # Evaluacion de la funcion en el punto (0, 0.5)
-zsum(o, x=0, y=0.5)
+distsum(o, x=0, y=0.5)
 
 # Grafica de las curvas de nivel de la funcion objetivo
 contour(o)
@@ -32,22 +32,22 @@ plot(loca.p(x=.55, y=.62), img=img,  xlim=c(0,1), ylim=c(0,1), xleft=0, ybottom=
 contour(loca.p(x=.55, y=.62), img=img,  xmin=0, ymin=0, xmax=1, ymax=1, xleft=0, ybottom=0, xright=1, ytop=1)
 
 # Busqueda del minimo
-zsummin(o)
+distsummin(o)
 
 # Nuevo objeto aleatorio loca.p con 10 puntos de demanda
 p <- rloca.p(10)
 
 # Busqueda del minimo 
-sol <- zsummin(p)
+sol <- distsummin(p)
 
 # El minimo
 sol
 
 # Evaluacion de la funcion en el minimo
-zsum(p, sol[1], sol[2])
+distsum(p, sol[1], sol[2])
 
 # Calculo del tiempo de ejecucion
-system.time(zsummin(p))
+system.time(distsummin(p))
 
 # Restauracion de los parametros graficos
 par(opar)

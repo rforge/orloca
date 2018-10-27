@@ -1,13 +1,8 @@
-\docType{methods}
-\name{as-methods}
-\alias{as-methods}
-\alias{as.data.frame}
-\alias{as.matrix}
-\alias{as.loca.p,data.frame-method}
-\alias{as.loca.p,matrix-method}
+\name{as.data.frame.loca.p}
+\alias{as.data.frame.loca.p}
 \encoding{UTF-8}
 
-\title{as-methods}
+\title{as.data.frame.loca.p M\enc{é}{e}todo S3 para convertir de loca.p a data.frame}
 \section{Argumentos}{
   \describe{
   \item{x:}{es el objeto a convertir a la nueva clase.}

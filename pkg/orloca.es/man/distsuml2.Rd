@@ -27,6 +27,10 @@ zsuml2gra(o, x=0, y=0, partial=F)
 
   \code{zsumgra} devuelve el vector gradiente de la \enc{función}{funcion} \code{zsum}.
 }
+\section{Detalles}{
+  La \enc{función}{funcion} zsuml2 \enc{está}{esta} marcada como obsoleta
+  y \enc{será}{sera} borrada de nuevas versiones del paquete.
+}
 \keyword{classes}
 \keyword{internal}
 \keyword{optimize}

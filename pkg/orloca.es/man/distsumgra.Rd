@@ -1,16 +1,16 @@
 \docType{methods}
-\name{zsumgra}
-\alias{zsumgra}
-\alias{zsumgra,loca.p-method}
+\name{distsumgra}
+\alias{distsumgra}
+\alias{distsumgra,loca.p-method}
 \encoding{UTF-8}
 
-\title{Calculo del gradiente de la funcion zsum}
+\title{Calculo del gradiente de la funcion distsum}
 
-\description{\code{zsumgra} calcula el
-gradiente de la fuci\enc{ó}{o}n zsum}
+\description{\code{distsumgra} calcula el
+gradiente de la fuci\enc{ó}{o}n distsum}
 
 \section{Uso}{
-zsumgra(o, x = 0, y = 0, lp = numeric(0), partial = F)
+distsumgra(o, x = 0, y = 0, lp = numeric(0), partial = F)
 }
 
 \section{Argumentos}{
@@ -27,36 +27,34 @@ zsumgra(o, x = 0, y = 0, lp = numeric(0), partial = F)
 }
 
 \section{Valor}{
-\code{zsumgra} devuelve el vector gradiente de la funci\enc{ó}{o}n
+\code{distsumgra} devuelve el vector gradiente de la funci\enc{ó}{o}n
 min-sum del problema de localizaci\enc{ó}{o}n, \eqn{\sum_{a_i \in o} w_i
   d(a_i, (x,y))}, donde \eqn{d(a_i, (x,y))} da la distancia
 eucl\enc{í}{i}dea o la distancia \eqn{l_p} entre \eqn{a_i} y el punto \eqn{(x,y)}.
 }
-
+\section{Detalles}{
+  La \enc{función}{funcion} zsumgra \enc{está}{esta} marcada como obsoleta
+  y \enc{será}{sera} borrada de nuevas versiones del paquete.
+}
 \section{Ejemplos}{
 # Un nuevo objeto loca.p no ponderado
-
 loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
-# Evaluacion de zsum en (0, 0)
+# Evaluacion de distsum en (0, 0)
+distsum(loca)
 
-zsum(loca)
-
-# Evaluacion de zsum en (1, 3)
-
-zsum(loca, 1, 3)
+# Evaluacion de distsum en (1, 3)
+distsum(loca, 1, 3)
 
 # Calculo de la funcion objetivo en el punto (3, 4) usando la norma lp con p = 2.5
-
-zsum(loca, 3, 4, lp=2.5)
+distsum(loca, 3, 4, lp=2.5)
 
 # El gradiente de la funcion en el punto (1,3)
-
-zsumgra(loca, 1, 3)
+distsumgra(loca, 1, 3)
 
 }
 \seealso{
-V\enc{é}{e}ase \code{\link{orloca-package}} y \code{\link{zsum}}.
+V\enc{é}{e}ase \code{\link{orloca-package}} y \code{\link{distsum}}.
 }
 \keyword{classes}
 \keyword{optimize}

@@ -57,19 +57,15 @@ rloca.p(n, xmin = 0, xmax = 1, ymin = 0, ymax = 1, groups = 0,
 
 \section{Ejemplos}{
 # Un objeto aleatorio loca.p en el cuadrado unidad con 5 puntos de demanda
-
 rloca.p(5)
 
 # En otra region
-
 rloca.p(10, xmin=-2, xmax=2, ymin=-2, ymax=2)
 
 # Cinco grupos
-
 rloca.p(48, groups=5)
 
 # Tres grupos de distinto tamano
-
 rloca.p(1, groups=c(10, 7, 2))
 }
 \keyword{datagen}

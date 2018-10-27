@@ -1,14 +1,9 @@
 \name{loca.p-class}
 \docType{class}
-\alias{loca.p-class}
 \alias{loca.p}
-\alias{print-method}
-\alias{print.loca.p}
-\alias{print,loca.p-method}
-\alias{summary-method}
-\alias{summary.loca.p}
-\alias{summary,loca.p-method}
-\alias{initialize,loca.p-method}
+\alias{print}
+\alias{summary}
+\alias{initialize}
 \encoding{UTF-8}
 
 \title{Clase de objetos loca.p para Localizacion en Investigacion Operativa}
@@ -47,15 +42,12 @@
 
 \section{Ejemplos}{
 # Un objeto loca.p sin pesos
-
 loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
 # o
-
 loca <- new("loca.p", x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
 # Un ejemplo con pesos y nombre
-
 locb <- new("loca.p", x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1), w = c(1, 2, 1, 2), label = "Caso Ponderado")
 }
 \keyword{classes}

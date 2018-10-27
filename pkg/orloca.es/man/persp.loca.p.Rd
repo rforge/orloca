@@ -1,12 +1,11 @@
-\name{plot.zsum}
-\alias{plot.zsum}
+\name{persp.distsum}
 \alias{persp.loca.p}
 \alias{persp,loca.p-method}
 \encoding{UTF-8}
 
 \title{Grafica de la funcion objetivo min-sum}
 \description{
-  \code{persp} proporciona la \enc{representación}{representacion} \enc{gráfica}{grafica} de la \enc{función}{funcion} objetivo del problema min-sum (\code{zsum}).
+  \code{persp} proporciona la \enc{representación}{representacion} \enc{gráfica}{grafica} de la \enc{función}{funcion} objetivo del problema min-sum (\code{distsum}).
 }
 \section{Uso}{
   ## Metodo S3 para la clase \code{loca.p}
@@ -38,11 +37,9 @@
 
 \section{Ejemplos}{
 # Un objeto loca.p sin pesos
-
 loca <- loca.p(x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1))
 
 # El grafico 3D del objeto loca.p
-
 persp(loca)
 }
 \keyword{classes}
