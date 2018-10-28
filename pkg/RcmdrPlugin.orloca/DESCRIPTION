@@ -7,6 +7,8 @@ Author: Manuel Munoz-Marquez <manuel.munoz@uca.es>
 Maintainer: Manuel Munoz-Marquez <manuel.munoz@uca.es>
 Depends: orloca (>= 4.6)
 Imports: Rcmdr
+Suggests: knitr
+VignetteBuilder: knitr
 Description: A GUI for the orloca package is provided as a Rcmdr plug-in. The package deals with location problems on the plane.
 Language: en, es
 License: GPL (>= 3)

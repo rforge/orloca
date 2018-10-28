@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RcmdrPlugin.orloca 4.5\n"
 "Report-Msgid-Bugs-To: manuel.munoz@uca.es\n"
-"POT-Creation-Date: 2018-10-27 16:37+0200\n"
+"POT-Creation-Date: 2018-10-28 21:23+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -122,16 +122,22 @@ msgstr ""
 msgid "orloca"
 msgstr ""
 
+msgid "Planar Location with orloca"
+msgstr ""
+
+msgid "planarlocation"
+msgstr ""
+
 msgid "Help about RcmdrPlugin.orloca"
 msgstr ""
 
 msgid "RcmdrPlugin.orloca"
 msgstr ""
 
-msgid "Help: Planar Location with orloca"
+msgid "Planar Location with Rcmdr"
 msgstr ""
 
-msgid "planarlocation"
+msgid "planarlocationRcmdr"
 msgstr ""
 
 msgid "Summary"

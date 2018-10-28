@@ -272,7 +272,6 @@ dialogSuffix(rows=20, columns=2, focus=xEntry)
 }
 
 
-
 Rcmdr.help.orloca <- function(){
    # To ensure that menu name is included in pot file
    gettext("Help about orloca", domain="R-RcmdrPlugin.orloca")
@@ -281,6 +280,16 @@ Rcmdr.help.orloca <- function(){
    doItAndPrint(command)
    invisible(NULL)
 }
+
+Rcmdr.help.orloca.vignettes <- function(){
+   # To ensure that menu name is included in pot file
+   gettext("Planar Location with orloca", domain="R-RcmdrPlugin.orloca")
+   command <- paste("vignette(\"", gettext("planarlocation", domain="R-RcmdrPlugin.orloca"), sep="")
+   command <- paste(command, "\")", sep="")
+   doItAndPrint(command)
+   invisible(NULL)
+}
+
 
 Rcmdr.help.RcmdrPlugin.orloca <- function(){
    # To ensure that menu name is included in pot file
@@ -293,8 +302,8 @@ Rcmdr.help.RcmdrPlugin.orloca <- function(){
 
 Rcmdr.help.RcmdrPlugin.orloca.vignettes <- function(){
    # To ensure that menu name is included in pot file
-   gettext("Help: Planar Location with orloca", domain="R-RcmdrPlugin.orloca")
-   command <- paste("vignette(\"", gettext("planarlocation", domain="R-RcmdrPlugin.orloca"), sep="")
+   gettext("Planar Location with Rcmdr", domain="R-RcmdrPlugin.orloca")
+   command <- paste("vignette(\"", gettext("planarlocationRcmdr", domain="R-RcmdrPlugin.orloca"), sep="")
    command <- paste(command, "\")", sep="")
    doItAndPrint(command)
    invisible(NULL)

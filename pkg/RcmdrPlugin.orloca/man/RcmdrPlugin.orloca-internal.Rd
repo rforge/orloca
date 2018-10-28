@@ -3,6 +3,7 @@
 \alias{activeDataSetLocaP}
 \alias{Rcmdr.contour.distsum}
 \alias{Rcmdr.help.orloca}
+\alias{Rcmdr.help.orloca.vignettes}
 \alias{Rcmdr.help.RcmdrPlugin.orloca}
 \alias{Rcmdr.help.RcmdrPlugin.orloca.vignettes}
 \alias{Rcmdr.new.loca.p}
