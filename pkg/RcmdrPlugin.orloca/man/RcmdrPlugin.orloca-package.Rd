@@ -19,23 +19,19 @@
   GUI. These functions include: data manipulation, plot of the demand 
   points set and the objective function, and also the resolution of the location
   problem.
-
-  Parallel computation functions provided by \code{orloca} package are not available
-  throughout the GUI.   
 }
 \details{
 \tabular{ll}{
 Package: \tab RcmdrPlugin.orloca\cr
 Type: \tab Package\cr
 Version: \tab 4.7\cr
-Date: \tab 2018-10-28\cr
+Date: \tab 2018-10-29\cr
 License: \tab GPL version 3 or newer\cr
 }
 }
 
 \author{
-Fernando Fernandez-Palacin <fernando.fernandez@uca.es> and Manuel
-Munoz-Marquez <manuel.munoz@uca.es>
+Manuel Munoz-Marquez <manuel.munoz@uca.es>
 
 Maintainer: Manuel Munoz-Marquez <manuel.munoz@uca.es>
 }

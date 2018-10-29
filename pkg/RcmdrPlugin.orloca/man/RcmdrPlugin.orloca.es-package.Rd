@@ -24,16 +24,13 @@ disponibles en la interfaz. Estas funciones incluyen: la
 \enc{manipulación}{manipulacion} de datos, la \enc{gráfica}{grafica} de
 los puntos de demanda y la \enc{función}{funcion} objetivo, y la \enc{resolución}{resolucion} del
 problema de \enc{localización}{localizacion}.
-
-Las funciones de \enc{computación}{computacion} paralela proporcionadas
-por el paquete \code{orloca} no \enc{están}{estan} disponibles en la interfaz \enc{gráfica}{grafica}.
 }
 \details{
 \tabular{ll}{
 Paquete: \tab RcmdrPlugin.orloca\cr
 Tipo: \tab Paquete\cr
-Version: \tab 4.6\cr
-Fecha: \tab 2018-07-06\cr
+Version: \tab 4.7\cr
+Fecha: \tab 2018-10-29\cr
 Licencia: \tab GPL (>= 3)\cr
 }
 }

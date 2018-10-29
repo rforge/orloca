@@ -218,7 +218,7 @@ epsVar <- tclVar("0.001")
 epsEntry <- tkentry(top, width="6", textvariable=epsVar)
 gettext("Gradient", domain="R-RcmdrPlugin.orloca")
 gettext("Search method", domain="R-RcmdrPlugin.orloca")
-radioButtons(name="algorithm", buttons=c("w", "g", "s", "u"), values=c("w", "g", "s", "u"), initialValue="w", labels=gettext(c("Weiszfeld", "Gradient", "Search method", "ucminf"), domain="R-RcmdrPlugin.orloca"), title=gettext("Select algorithm", domain="R-RcmdrPlugin.orloca"))
+radioButtons(name="algorithm", buttons=c("Weiszfeld", "gradient", "ucminf", "NelderMead", "BFGS", "CG", "LBFGSB", "SANN"), values=c("Weiszfeld", "gradient", "ucminf", "Nelder-Mead", "BFGS", "CG", "L-BFGS-B", "SANN"), initialValue="Weiszfeld", labels=gettext(c("Weiszfeld", "gradient", "ucminf", "Nelder-Mead", "BFGS", "CG", "L-BFGS-B", "SANN"), domain="R-RcmdrPlugin.orloca"), title=gettext("Select algorithm", domain="R-RcmdrPlugin.orloca"))
 
 #tkgrid(labelRcmdr(statisticFrame), sticky="w")
 onOK <- function(){

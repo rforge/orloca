@@ -18,7 +18,5 @@
 \alias{Rcmdr.distsummin}
 
 \encoding{UTF-8}
-\description{Internal functions (should not be called by the user) for
-  RcmdrPlugin.orloca packages. 
-  For user information ask for help about \code{\link[RcmdrPlugin.orloca]{RcmdrPlugin.orloca}}.}
+\description{Internal functions (should not be called by the user) for RcmdrPlugin.orloca packages.}
 \keyword{internal}
