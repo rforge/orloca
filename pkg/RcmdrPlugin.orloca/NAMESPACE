@@ -1,4 +1,4 @@
-import(orloca, stats, Rcmdr)
+import(orloca, orloca.es, stats, Rcmdr)
 importFrom(tcltk, tkfont.create, ttkprogressbar, tkwidget, setTkProgressBar)
 
 export(activeDataSetLocaP,
