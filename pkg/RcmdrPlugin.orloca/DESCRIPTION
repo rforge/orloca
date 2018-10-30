@@ -2,7 +2,7 @@ Package: RcmdrPlugin.orloca
 Type: Package
 Title: A GUI for Planar Location Problems
 Version: 4.7
-Date: 2018-10-29
+Date: 2018-10-30
 Author: Manuel Munoz-Marquez <manuel.munoz@uca.es>
 Maintainer: Manuel Munoz-Marquez <manuel.munoz@uca.es>
 Depends: orloca (>= 4.6), orloca.es (>= 4.6)
