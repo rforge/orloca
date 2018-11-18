@@ -30,7 +30,7 @@ problema de \enc{localización}{localizacion}.
 Paquete: \tab RcmdrPlugin.orloca\cr
 Tipo: \tab Paquete\cr
 Version: \tab 4.7\cr
-Fecha: \tab 2018-11-05\cr
+Fecha: \tab 2018-11-18\cr
 Licencia: \tab GPL (>= 3)\cr
 }
 }
