@@ -1,5 +1,9 @@
+Version 4.7
+2019-03-28
+ * New parameter in function rloca.p to randomly gerenate the weights
+ * Bug fixed in rloca.p 
 Version 4.6
-2018-10-24
+2018-10-26
  * zsum functions rename to distsum
  * Other minor changes to package
 Version 4.5

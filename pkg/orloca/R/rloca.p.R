@@ -30,6 +30,8 @@
 #' @param xmax Maximum value for the x coordinates of the demand points.
 #' @param ymin Minimum value for the y coordinates of the demand points.
 #' @param ymax Maximum value for the y coordinates of the demand points.
+#' @param wmin Minimum value for weights
+#' @param wmax Maximum value for weights
 #' @param label The label for the new loca.p object.
 #' @param groups The number of (almost) equal size groups to generate, or a list size of the groups to generate. In the second case \code{n} will be ignored.
 #' @param xgmin Minimum value for the x coordinate of demand points with respect to the group reference point.
@@ -38,47 +40,48 @@
 #' @param ygmax Maximum value for the y coordinate of demand points with respect to the group reference point.
 #' @return If the arguments are valid values, it returns a new object of \code{loca.p} class, else it returns an error.
 #' @export
-rloca.p <- function (n, xmin=0, xmax=1, ymin=0, ymax=1, label = '', groups=0, xgmin=xmin, xgmax=xmax, ygmin=ymin, ygmax=ymax)
-   {
-     if (!is.numeric(groups)) stop(paste(gettext("Parameter groups must be numeric", domain = "R-orloca")))
-     if (identical(groups, 0))
-       {
-         new("loca.p", x=runif(n, xmin, xmax), y=runif(n, ymin, ymax), label = label)
-       }
-     else if (isTRUE(length(groups) ==  1))
-       {
-         x = numeric(0)
-         y = numeric(0)
-#         w = numeric(0)
-         for(i in 1:groups)
-           {
-             gx <- runif(1, xmin, xmax)
-             gy <- runif(1, xmin, xmax)
-             gn <- floor(n/(groups-i+1))
-             n <- n - gn
-             x <- c(x, gx + runif(gn, xgmin, xgmax))
-             y <- c(y, gy + runif(gn, ygmin, ygmax))
-#             w <- c(w, rep(i,gn))
-           }
-#         new("loca.p", x=x, y=y, w=w)
-         new("loca.p", x = x, y = y, label = label)
-       }
-     else
-       {
-         x = numeric(0)
-         y = numeric(0)
-#         w = numeric(0)
-         i <- 1
-         for(gn in groups)
-           {
-             gx <- runif(1, xmin, xmax)
-             gy <- runif(1, xmin, xmax)
-             x <- c(x, gx + runif(gn, xgmin, xgmax))
-             y <- c(y, gy + runif(gn, ygmin, ygmax))
-#             w <- c(w, rep(i,gn))
-             i <- i + 1
-           }
-#         new("loca.p", x=x, y=y, w=w)
-         new("loca.p", x=x, y=y, label = label)
-       }
-   }
+rloca.p <- function (n, xmin=0, xmax=1, ymin=0, ymax=1, wmin=1, wmax=1, label = '', groups=0, xgmin=xmin, xgmax=xmax, ygmin=ymin, ygmax=ymax)
+{
+    if (!is.numeric(groups)) stop(paste(gettext("Parameter groups must be numeric", domain = "R-orloca")))
+    if (identical(groups, 0))
+    {
+        x <- runif(n, xmin, xmax)
+        y <- runif(n, ymin, ymax)
+        w <- runif(n, wmin, wmax) 
+    }
+    else if (isTRUE(length(groups) ==  1))
+    {
+        x = numeric(0)
+        y = numeric(0)
+        w = numeric(0)
+        for(i in 1:groups)
+        {
+            gx <- runif(1, xgmin, xgmax)
+            gy <- runif(1, ygmin, ygmax)
+            ## Distribute the groups as uniform as possible
+            gn <- floor(n/(groups-i+1))
+            n <- n - gn
+            x <- c(x, gx + runif(gn, xmin, xmax))
+            y <- c(y, gy + runif(gn, ymin, ymax))
+            w <- c(w, runif(gn, wmin, wmax))
+        }
+ 
+    }
+    else
+    {
+        x = numeric(0)
+        y = numeric(0)
+        w = numeric(0)
+        i <- 1
+        for(gn in groups)
+        {
+            gx <- runif(1, xgmin, xgmax)
+            gy <- runif(1, ygmin, ygmax)
+            x <- c(x, gx + runif(gn, xmin, xmax))
+            y <- c(y, gy + runif(gn, ymin, ymax))
+            w <- c(w, runif(gn, wmin, wmax))
+            i <- i + 1
+        }
+    }
+        new("loca.p", x = x, y = y, w = w, label = label)
+}
