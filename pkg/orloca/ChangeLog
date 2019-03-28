@@ -1,5 +1,5 @@
-Version 4.7
-2019-03-28
+Version 4.8
+2019-03-29
  * New parameter in function rloca.p to randomly gerenate the weights
  * Bug fixed in rloca.p 
 Version 4.6

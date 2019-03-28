@@ -1,11 +1,11 @@
 Package: orloca
 Type: Package
 Depends: methods, png, ucminf
-Imports: grDevices, graphics, knitr, stats
+Imports: grDevices, graphics, knitr, rmarkdown, stats
 VignetteBuilder: knitr
 Title: Operations Research LOCational Analysis Models
-Version: 4.7
-Date: 2019-03-27
+Version: 4.8
+Date: 2019-03-29
 Author: Manuel Munoz-Marquez <manuel.munoz@uca.es>
 Maintainer: Manuel Munoz-Marquez <manuel.munoz@uca.es>
 Description: Objects and methods to handle and solve the min-sum location problem, also known as Fermat-Weber problem. The min-sum location problem search for a point such that the weighted sum of the distances to the demand points are minimized. See "The Fermat-Weber location problem revisited" by Brimberg, Mathematical Programming, 1, pg. 71-76, 1995. <DOI:10.1007/BF01592245>.
@@ -15,4 +15,4 @@ License: GPL (>= 3)
 URL: http://knuth.uca.es/orloca
 RoxygenNote: 6.1.1
 NeedsCompilation: no
-Packaged: 2019-03-27 22:58:23 UTC; mmarquez
+Packaged: 2019-03-28 21:34:21 UTC; mmarquez
