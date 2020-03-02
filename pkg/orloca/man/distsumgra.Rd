@@ -4,7 +4,6 @@
 \name{distsumgra}
 \alias{distsumgra}
 \alias{distsumgra,loca.p-method}
-\alias{zsumgra}
 \title{Computes the gradient of distsum function}
 \usage{
 distsumgra(o, x = 0, y = 0, lp = numeric(0), partial = F)

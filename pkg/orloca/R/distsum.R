@@ -3,7 +3,7 @@
 #' The objective function and the gradient function for the min-sum location problem.
 #'
 #' @name distsum
-#' @aliases distsum distsum,loca.p-method zsum
+#' @aliases distsum distsum,loca.p-method
 #' @docType methods
 #' @keywords classes optimize
 #' @param o An object of \code{loca.p} class.
@@ -45,5 +45,17 @@ setMethod("distsum", "loca.p", function(o, x=0, y=0, lp=numeric(0))
    }
 )
 
+#' @rdname zsum
+#' @name zsum
+#' @aliases zsum
+#' @title zsum
+#' @docType methods
+#' @keywords deprecated
+#' @description
+#' The function zsum is deprected and could be removed in next version of the package. Use \link{distsum} instead.
+#' @param \ldots Parameters passed to distsum
 #' @export
-zsum <- function(...) distsum(...)
+zsum <- function(...) {
+    warning('The function zsum is deprected and could be removed in next version of the package. Use distsum instead.')
+    distsum(...)
+    }

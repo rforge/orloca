@@ -3,7 +3,6 @@
 \docType{class}
 \name{loca.p}
 \alias{loca.p}
-\alias{initialize}
 \alias{print}
 \alias{summary}
 \title{loca.p class for Operations Research LOCational Analysis}

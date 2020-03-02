@@ -4,8 +4,16 @@
 \alias{persp.loca.p}
 \title{Plots of the min-sum objective function}
 \usage{
-\method{persp}{loca.p}(x, lp = numeric(0), xmin = min(x@x),
-  xmax = max(x@x), ymin = min(x@y), ymax = max(x@y), n = 10, ...)
+\method{persp}{loca.p}(
+  x,
+  lp = numeric(0),
+  xmin = min(x@x),
+  xmax = max(x@x),
+  ymin = min(x@y),
+  ymax = max(x@y),
+  n = 10,
+  ...
+)
 }
 \arguments{
 \item{x}{The loca.p object to compute the objective.}

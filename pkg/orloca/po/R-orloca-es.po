@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: orloca 2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-25 19:49+0200\n"
-"PO-Revision-Date: 2018-10-25 19:50+0200\n"
+"POT-Creation-Date: 2020-03-02 12:57+0100\n"
+"PO-Revision-Date: 2020-03-02 12:57+0100\n"
 "Last-Translator: Manuel Munoz-Marquez <manuel.munoz@uca.es>\n"
 "Language-Team: Spanish <manuel.munoz@uca.es>\n"
 "Language: es\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: orloca/R/as.R:63
 msgid "The second dimension of matrix must be 2 or 3."
@@ -32,33 +32,30 @@ msgstr "no es un valor válido para lp, use 1<=lp"
 msgid "The given img object is not a raster image and cannot be coerce to it."
 msgstr "El objeto img no es una imagen raster y no se puede convertir en una."
 
-#: orloca/R/distsuml2min.R:51 orloca/R/distsumlpmin.R:50
-msgid "Iter."
-msgstr "Iter."
+#: orloca/R/distsuml2min.R:48 orloca/R/distsuml2min.R:93
+#: orloca/R/distsumlpmin.R:50 orloca/R/distsumlpmin.R:108
+msgid "Iter"
+msgstr "Iter"
 
-#: orloca/R/distsuml2min.R:63 orloca/R/distsuml2min.R:123
+#: orloca/R/distsuml2min.R:58 orloca/R/distsuml2min.R:107
 #: orloca/R/distsumlpmin.R:62 orloca/R/distsumlpmin.R:126
 msgid "Optimality condition reached at demand point."
 msgstr "Se ha alcanzado la condición de optimalidad en un punto de demanda."
 
-#: orloca/R/distsuml2min.R:69 orloca/R/distsuml2min.R:130
+#: orloca/R/distsuml2min.R:62 orloca/R/distsuml2min.R:111
 #: orloca/R/distsumlpmin.R:68 orloca/R/distsumlpmin.R:133
 msgid "Optimality condition reached."
 msgstr "Se ha alcanzado la condición de optimalidad."
 
-#: orloca/R/distsuml2min.R:94
+#: orloca/R/distsuml2min.R:82
 msgid "Value for smooth parameter non valid:"
 msgstr "Valor del parámetro de suavizado no válido:"
 
-#: orloca/R/distsuml2min.R:94
+#: orloca/R/distsuml2min.R:82
 msgid "Reseting to its default value."
 msgstr "Restaurando a su valor por defecto."
 
-#: orloca/R/distsuml2min.R:107 orloca/R/distsumlpmin.R:108
-msgid "Iter. "
-msgstr "Iter."
-
-#: orloca/R/distsuml2min.R:143 orloca/R/distsumlpmin.R:146
+#: orloca/R/distsuml2min.R:123 orloca/R/distsumlpmin.R:146
 msgid ""
 "The algorithm seems converges very slowly. Trying now with the smooth "
 "version."
@@ -122,9 +119,12 @@ msgstr "La longitud de x y de y son diferentes"
 msgid "Plot of loca.p"
 msgstr "Gráfico loca.p"
 
-#: orloca/R/rloca.p.R:43
+#: orloca/R/rloca.p.R:45
 msgid "Parameter groups must be numeric"
 msgstr "El parámetro groups debe ser numérico"
+
+#~ msgid "Iter. "
+#~ msgstr "Iter."
 
 #~ msgid "Parameter groups must be numeric.\n"
 #~ msgstr "El parámetro groups debe ser numérico.\n"

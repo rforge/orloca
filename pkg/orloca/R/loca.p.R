@@ -3,7 +3,7 @@
 #' An object of class \code{loca.p} represents a weighted location problem with a finite demand points set.
 #' The \code{\link{orloca-package}} is mainly devoted to deals with location problems.
 #'
-#' @aliases initialize loca.p print summary
+#' @aliases loca.p print summary
 #' @docType class
 #' @name loca.p
 #' @details

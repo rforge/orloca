@@ -3,7 +3,7 @@
 #' Solve the min-sum location problem for a given \code{loca.p} class object.
 #' 
 #' @name distsummin
-#' @aliases distsummin distsummin,loca.p-method zsummin
+#' @aliases distsummin distsummin,loca.p-method
 #' @keywords classes optimize
 #' @details
 #' The algorithms Weiszfeld and gradient include and optimality test for demand points.
@@ -19,7 +19,7 @@
 #' @param x The x coordinate of the starting point. It's default value is 0.
 #' @param y The y coordinate of the starting point. It's default value is 0.
 #' @param lp If given, the \eqn{l_p} norm will be used instead of the Euclidean norm.
-#' @param max.iter Maximum number of iterations allowed. It's default value is 100.
+#' @param max.iter Maximum number of iterations allowed. It's default value is 100000.
 #' @param eps The module of the gradient in the stop rule. It's default value is 1e-3.
 #' @param verbose If TRUE the function produces detailed output. It's default value is FALSE.
 #' @param algorithm The method to be use. For this version of the package, the valid values are: "gradient" for a gradient based method, "search" for local search method (this option is deprecated), "ucminf" for optimization with ucminf from ucminf package, and "Weiszfeld" for the Weiszfeld method or any of the valid method for optim function, now "Nelder-Mead", "BFGS", "CG", "L-BFGS-B", "SANN". "Weiszfeld" is the default value.
@@ -42,13 +42,13 @@
 #' The function zsummin is deprecated and will be removed from new versions of the package.
 #' 
 setGeneric("distsummin",
-           function (o, x=0, y=0, lp=numeric(0), max.iter=100, eps=1.e-3, verbose=FALSE, algorithm="Weiszfeld", ...) standardGeneric("distsummin")
+           function (o, x=0, y=0, lp=numeric(0), max.iter=100000, eps=1.e-3, verbose=FALSE, algorithm="Weiszfeld", ...) standardGeneric("distsummin")
 )
 
 # Check lp value and call to the specific function
 #' @export
 setMethod("distsummin", "loca.p",
-function (o, x=0, y=0, lp=numeric(0), max.iter=100, eps=1.e-3, verbose=FALSE, algorithm="Weiszfeld", ...)
+function (o, x=0, y=0, lp=numeric(0), max.iter=100000, eps=1.e-3, verbose=FALSE, algorithm="Weiszfeld", ...)
    {
      if (length(lp) == 0) return(distsuml2min(o=o, x=x, y=y, max.iter=max.iter, eps=eps, verbose=verbose, algorithm=algorithm, ...))
      else if (lp >= 1) return(distsumlpmin(o=o, x=x, y=y, p=lp, max.iter=max.iter, eps=eps, verbose=verbose, algorithm=algorithm, ...))
@@ -61,5 +61,17 @@ warning.max.iter <- function(max.iter)
     warning(paste(gettext("distsummin: Maximun number of iteration reached", domain = "R-orloca"), " (max.iter = ", max.iter, ")\n", gettext("The solution may be non-optimal.\nPerhaps, you could try increasing max.iter value.", domain = "R-orloca"), sep=""), call. = F)
   }
 
+#' @rdname zsummin
+#' @name zsummin
+#' @aliases zsummin
+#' @title zsummin
+#' @docType methods
+#' @keywords deprecated
+#' @description
+#' The function zsummin is deprected and could be removed in next version of the package. Use \link{distsummin} instead.
+#' @param \ldots Parameters passed to distsummin
 #' @export
-zsummin <- function(...) distsummin(...)
+zsummin <- function(...) {
+    warning('The function zsum is deprected and could be removed in next version of the package. Use distsum instead.')
+    distsummin(...)
+    }

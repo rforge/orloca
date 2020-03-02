@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-27 23:56+0100\n"
+"POT-Creation-Date: 2020-03-02 12:57+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,33 +31,30 @@ msgstr ""
 msgid "The given img object is not a raster image and cannot be coerce to it."
 msgstr ""
 
-#: orloca/R/distsuml2min.R:51 orloca/R/distsumlpmin.R:50
-msgid "Iter."
+#: orloca/R/distsuml2min.R:48 orloca/R/distsuml2min.R:93
+#: orloca/R/distsumlpmin.R:50 orloca/R/distsumlpmin.R:108
+msgid "Iter"
 msgstr ""
 
-#: orloca/R/distsuml2min.R:63 orloca/R/distsuml2min.R:123
+#: orloca/R/distsuml2min.R:58 orloca/R/distsuml2min.R:107
 #: orloca/R/distsumlpmin.R:62 orloca/R/distsumlpmin.R:126
 msgid "Optimality condition reached at demand point."
 msgstr ""
 
-#: orloca/R/distsuml2min.R:69 orloca/R/distsuml2min.R:130
+#: orloca/R/distsuml2min.R:62 orloca/R/distsuml2min.R:111
 #: orloca/R/distsumlpmin.R:68 orloca/R/distsumlpmin.R:133
 msgid "Optimality condition reached."
 msgstr ""
 
-#: orloca/R/distsuml2min.R:94
+#: orloca/R/distsuml2min.R:82
 msgid "Value for smooth parameter non valid:"
 msgstr ""
 
-#: orloca/R/distsuml2min.R:94
+#: orloca/R/distsuml2min.R:82
 msgid "Reseting to its default value."
 msgstr ""
 
-#: orloca/R/distsuml2min.R:107 orloca/R/distsumlpmin.R:108
-msgid "Iter. "
-msgstr ""
-
-#: orloca/R/distsuml2min.R:143 orloca/R/distsumlpmin.R:146
+#: orloca/R/distsuml2min.R:123 orloca/R/distsumlpmin.R:146
 msgid ""
 "The algorithm seems converges very slowly. Trying now with the smooth "
 "version."

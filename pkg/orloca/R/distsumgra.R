@@ -3,7 +3,7 @@
 #' The gradient function for the min-sum location problem.
 #'
 #' @name distsumgra
-#' @aliases distsumgra  distsumgra,loca.p-method zsumgra
+#' @aliases distsumgra distsumgra,loca.p-method
 #' @docType methods
 #' @keywords classes optimize
 #' @param o An object of \code{loca.p} class.
@@ -46,5 +46,17 @@ setMethod("distsumgra", "loca.p", function(o, x=0, y=0, lp=numeric(0), partial=F
    }
 )
 
+#' @rdname zsumgra
+#' @name zsumgra
+#' @aliases zsumgra
+#' @title zsumgra
+#' @docType methods
+#' @keywords deprecated
+#' @description
+#' The function zsumgra is deprected and could be removed in next version of the package. Use \link{distsumgra} instead.
+#' @param \ldots Parameters passed to distsumgra
 #' @export
-zsumgra <- function(...) distsumgra(...)
+zsumgra <- function(...) {
+    warning('The function zsumgra is deprected and could be removed in next version of the package. Use distsumgra instead.') 
+    distsumgra(...)
+    }

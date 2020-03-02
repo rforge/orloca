@@ -5,8 +5,7 @@
 \title{as.data.frame.loca.p
 S3 method to convert from loca.p to data.frame}
 \usage{
-\method{as.data.frame}{loca.p}(x, row.names = NULL, optional = FALSE,
-  ...)
+\method{as.data.frame}{loca.p}(x, row.names = NULL, optional = FALSE, ...)
 }
 \arguments{
 \item{x}{is the object to convert to the new class object.}

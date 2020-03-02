@@ -47,7 +47,7 @@ distsumlpmingradient.loca.p <- function (o, x=0, y=0, p=2, max.iter=100, eps=1.e
    z <- distsumlp(o, u[1], u[2], p)
    for (i in 0:max.iter)
       {
-      if (verbose) cat(paste(gettext("Iter.", domain = "R-orloca"), i, ": (", u[1], ",", u[2], ") ", z, "\n", sep=""))
+      if (verbose) cat(paste(gettext("Iter", domain = "R-orloca"), ".", i, ": (", u[1], ",", u[2], ") ", z, "\n", sep=""))
       g <- distsumlpgra(o, u[1], u[2], p)
       mg <- sum(g^2)
       if (is.na(mg))
@@ -105,7 +105,7 @@ distsumlpminWeiszfeld.loca.p <- function (o, x=0, y=0, p=2, max.iter=100, eps=1.
      {
    for (i in i.i:i.s)
       {
-      if (verbose) cat(paste(gettext("Iter. ", domain = "R-orloca"), i, ": (", u[1], ",", u[2], ") ", distsumlp(o, u[1], u[2], p), "\n", sep=""))
+      if (verbose) cat(paste(gettext("Iter", domain = "R-orloca"), ". ", i, ": (", u[1], ",", u[2], ") ", distsumlp(o, u[1], u[2], p), "\n", sep=""))
       # Compute the distances to demand points in l2 norm
       n <- (abs(u[1]-o@x)^p+abs(u[2]-o@y)^p)^(1/p)
       # Check for demand point proximities

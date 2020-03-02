@@ -4,11 +4,21 @@
 \alias{contour.loca.p}
 \title{Plots of the min-sum objective function}
 \usage{
-\method{contour}{loca.p}(x, lp = numeric(0), xmin = min(min(x@x),
-  xleft), xmax = max(max(x@x), xright), ymin = min(min(x@y), ybottom),
-  ymax = max(max(x@y), ytop), n = 100, img = NULL,
-  xleft = min(x@x), ybottom = min(x@y), xright = max(x@x),
-  ytop = max(x@y), ...)
+\method{contour}{loca.p}(
+  x,
+  lp = numeric(0),
+  xmin = min(min(x@x), xleft),
+  xmax = max(max(x@x), xright),
+  ymin = min(min(x@y), ybottom),
+  ymax = max(max(x@y), ytop),
+  n = 100,
+  img = NULL,
+  xleft = min(x@x),
+  ybottom = min(x@y),
+  xright = max(x@x),
+  ytop = max(x@y),
+  ...
+)
 }
 \arguments{
 \item{x}{The loca.p object to compute the objective.}

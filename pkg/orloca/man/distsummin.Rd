@@ -3,11 +3,19 @@
 \name{distsummin}
 \alias{distsummin}
 \alias{distsummin,loca.p-method}
-\alias{zsummin}
 \title{Returns the solution of the minimization problem}
 \usage{
-distsummin(o, x = 0, y = 0, lp = numeric(0), max.iter = 100,
-  eps = 0.001, verbose = FALSE, algorithm = "Weiszfeld", ...)
+distsummin(
+  o,
+  x = 0,
+  y = 0,
+  lp = numeric(0),
+  max.iter = 1e+05,
+  eps = 0.001,
+  verbose = FALSE,
+  algorithm = "Weiszfeld",
+  ...
+)
 }
 \arguments{
 \item{o}{An object of loca.p class.}
@@ -18,7 +26,7 @@ distsummin(o, x = 0, y = 0, lp = numeric(0), max.iter = 100,
 
 \item{lp}{If given, the \eqn{l_p} norm will be used instead of the Euclidean norm.}
 
-\item{max.iter}{Maximum number of iterations allowed. It's default value is 100.}
+\item{max.iter}{Maximum number of iterations allowed. It's default value is 100000.}
 
 \item{eps}{The module of the gradient in the stop rule. It's default value is 1e-3.}
 

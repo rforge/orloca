@@ -4,7 +4,6 @@
 \name{distsum}
 \alias{distsum}
 \alias{distsum,loca.p-method}
-\alias{zsum}
 \title{Computes distsum function}
 \usage{
 distsum(o, x = 0, y = 0, lp = numeric(0))

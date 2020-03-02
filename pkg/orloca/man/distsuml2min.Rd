@@ -5,8 +5,16 @@
 \alias{distsuml2min,loca.p-method}
 \title{distsuml2min at orloca package}
 \usage{
-distsuml2min(o, x = 0, y = 0, max.iter = 100, eps = 0.001,
-  verbose = FALSE, algorithm = "Weiszfeld", ...)
+distsuml2min(
+  o,
+  x = 0,
+  y = 0,
+  max.iter = 100,
+  eps = 0.001,
+  verbose = FALSE,
+  algorithm = "Weiszfeld",
+  ...
+)
 }
 \arguments{
 \item{o}{An object of loca.p class.}
@@ -15,7 +23,7 @@ distsuml2min(o, x = 0, y = 0, max.iter = 100, eps = 0.001,
 
 \item{y}{The y coordinate of the starting point. It's default value is 0.}
 
-\item{max.iter}{Maximum number of iterations allowed. It's default value is 100.}
+\item{max.iter}{Maximum number of iterations allowed. It's default value is 100000.}
 
 \item{eps}{The module of the gradient in the stop rule. It's default value is 1e-3.}
 
