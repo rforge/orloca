@@ -9,7 +9,7 @@
 }
 \section{Uso}{
 distsummin(o, x=0, y=0, lp=numeric(0), max.iter=100, eps=1.e-3, 
-   verbose=FALSE, algorithm="weiszfeld", \ldots)
+   verbose=FALSE, algorithm="Weiszfeld", \ldots)
 }
 \section{Argumentos}{
   \describe{

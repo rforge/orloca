@@ -27,8 +27,8 @@
 \preformatted{
 Package:   orloca.es
 Type:      Package
-Version:   4.6
-Date:      2018-10-27
+Version:   4.9
+Date:      2020-03-06
 License:   GPL (>= 3)
 }
 El paquete proporciona una clase, \code{loca.p}, que representa un problema de localizaci\enc{ó}{o}n con un conjunto finito de puntos de demanda sobre el plano. Tambi\enc{é}{e}n es posible representar los puntos y la funci\enc{ó}{o}n objetivo. Dicha funci\enc{ó}{o}n objetivo representa la suma de los desplazamientos de los usuarios al servicio.

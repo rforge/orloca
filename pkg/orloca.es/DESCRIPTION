@@ -1,10 +1,10 @@
 Package: orloca.es
 Type: Package
-Depends: orloca (>= 4.6)
+Depends: orloca (>= 4.9)
 Language: es
 Title: Spanish version of orloca package. Modelos de localizacion en investigacion operativa
-Version: 4.6
-Date: 2018-10-27
+Version: 4.9
+Date: 2020-03-06
 Author: Manuel Munoz-Marquez <manuel.munoz@uca.es>
 Maintainer: Manuel Munoz-Marquez <manuel.munoz@uca.es>
 Description: Help and demo in Spanish of the orloca package. (Ayuda y demo en espanol del paquete orloca.) Objetos y metodos para manejar y resolver el problema de localizacion de suma minima, tambien conocido como problema de Fermat-Weber. El problema de localizacion de suma minima busca un punto tal que la suma ponderada de las distancias a los puntos de demanda se minimice. Vease "The Fermat-Weber location problem revisited" por Brimberg, Mathematical Programming, 1, pag. 71-76, 1995. <DOI: 10.1007/BF01592245>.

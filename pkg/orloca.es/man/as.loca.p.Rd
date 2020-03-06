@@ -2,7 +2,7 @@
 \alias{as.loca.p}
 \encoding{UTF-8}
 
-\title{as.loca.p M\enc{é}{e}todo S3 para convertir a loca.p}
+\title{as.loca.p M\enc{é}{e}todo para compatibilidad con clases S3, principalmente para el test de documentaci\enc{ó}{o}n}
 \section{Argumentos}{
   \describe{
   \item{x:}{es el objeto a convertir a la nueva clase.}
