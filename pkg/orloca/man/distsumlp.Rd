@@ -29,7 +29,7 @@ distsumlp(o, x = 0, y = 0, p = 2)
 distsum and distsumgra functions with \eqn{l_p} norm. Mainly for internal use.
 }
 \details{
-If \eqn{p<1} then \eqn{l_p} are not a norm, so only \eqn{p>=1} are valid values.
+If \eqn{p<1} then \eqn{l_p} is not a norm, so only \eqn{p>=1} are valid values.
 
 Since \eqn{l_2} norm is the Euclidean norm, when \eqn{p=2} \code{distsumlp} are equal to \code{distsum}, and \code{distsumlpgra} are equal to \code{distsumgra}.
 But the computations involved are greater for the firsts form.

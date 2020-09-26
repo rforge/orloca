@@ -5,7 +5,7 @@
 #' @name persp.loca.p
 #'
 #' @details
-#' If \eqn{p<1} then \eqn{l_p} ara not a norm, so only \eqn{p>=1} are valid values.
+#' If \eqn{p<1} then \eqn{l_p} is not a norm, so only \eqn{p>=1} are valid values.
 #'
 #' @keywords classes hplot
 #' @param x The loca.p object to compute the objective.

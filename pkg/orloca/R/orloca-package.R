@@ -16,9 +16,9 @@
 #' 
 #' Type:      Package
 #' 
-#' Version:   4.9
+#' Version:   4.10
 #' 
-#' Date:      2020-03-02
+#' Date:      2020-09-23
 #' 
 #' License:   GPL (>= 3)
 #' }

@@ -1,3 +1,6 @@
+Version 4.10
+2020-09-26
+ * Corrected bug in contour plot that avoid null range plots
 Version 4.9
 2020-03-02
  * Functions zsum* marked as deprecated

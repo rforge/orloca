@@ -39,7 +39,7 @@ A plot a 3D plot or min-sum function.
 \code{persp} provides a graphical representations of min-sum function (\code{distsum}).
 }
 \details{
-If \eqn{p<1} then \eqn{l_p} ara not a norm, so only \eqn{p>=1} are valid values.
+If \eqn{p<1} then \eqn{l_p} is not a norm, so only \eqn{p>=1} are valid values.
 }
 \examples{
 # A new unweighted loca.p object
